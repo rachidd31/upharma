@@ -148,6 +148,8 @@ class TimeOffResource extends Resource
                                         return __('time_off::filament/clusters/management/resources/time-off.form.fields.days', ['days' => $startDate->diffInDays($endDate) + 1]);
                                     }),
                                 Forms\Components\Textarea::make('private_name')
+                                    ->autosize(false)
+                                    ->rows(5)
                                     ->label(__('time_off::filament/clusters/management/resources/time-off.form.fields.description'))
                                     ->live(),
                                 Forms\Components\FileUpload::make('attachment')

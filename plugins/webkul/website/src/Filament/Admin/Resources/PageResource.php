@@ -71,7 +71,9 @@ class PageResource extends Resource
                                 Forms\Components\TextInput::make('meta_keywords')
                                     ->label(__('website::filament/admin/resources/page.form.sections.seo.fields.meta-keywords')),
                                 Forms\Components\Textarea::make('meta_description')
-                                    ->label(__('website::filament/admin/resources/page.form.sections.seo.fields.meta-description')),
+                                    ->autosize(false)
+                                    ->label(__('website::filament/admin/resources/page.form.fields.meta-description'))
+                                    ->maxLength(65535),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),

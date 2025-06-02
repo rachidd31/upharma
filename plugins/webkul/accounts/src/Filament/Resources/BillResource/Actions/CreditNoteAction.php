@@ -37,7 +37,8 @@ class CreditNoteAction extends Action
             function (Form $form) {
                 return $form->schema([
                     Forms\Components\Textarea::make('reason')
-                        ->label(__('Reason displayed on Credit Note'))
+                        ->autosize(false)
+                        ->label(__('accounts::filament/resources/bill.actions.create-credit-note.form.fields.reason'))
                         ->required(),
                     Forms\Components\DatePicker::make('date')
                         ->label(__('Reason displayed on Credit Note'))

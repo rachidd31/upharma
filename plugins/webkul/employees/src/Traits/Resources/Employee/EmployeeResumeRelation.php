@@ -73,7 +73,11 @@ trait EmployeeResumeRelation
                         ->required()
                         ->reactive(),
                     Forms\Components\Textarea::make('description')
-                        ->label(__('employees::filament/resources/employee/relation-manager/resume.form.sections.fields.description')),
+                        ->autosize(false)
+                        ->maxLength(65535)
+                        ->hiddenOn('create')
+                        ->visible(fn ($record) => $record && $record->description)
+                        ->readOnly(),
                 ])->columns(2),
             ]);
     }

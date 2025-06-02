@@ -927,10 +927,20 @@ class EmployeeResource extends Resource
                                                             ->disabled(fn (Get $get) => $get('departure_reason_id') === null)
                                                             ->required(fn (Get $get) => $get('departure_reason_id') !== null),
                                                         Forms\Components\Textarea::make('departure_description')
+                                                            ->autosize(false)
+                                                            ->maxLength(65535)
                                                             ->label(__('employees::filament/resources/employee.form.tabs.settings.fields.departure-description'))
                                                             ->hidden(fn (Get $get) => $get('departure_reason_id') === null)
                                                             ->disabled(fn (Get $get) => $get('departure_reason_id') === null)
                                                             ->required(fn (Get $get) => $get('departure_reason_id') !== null),
+                                                        Forms\Components\Textarea::make('additional_note')
+                                                            ->autosize(false)
+                                                            ->maxLength(65535)
+                                                            ->label(__('employees::filament/resources/employee.form.tabs.settings.fields.additional-note'))
+                                                            ->hidden(fn (Get $get) => $get('departure_reason_id') === null),
+                                                        Forms\Components\Textarea::make('notes')
+                                                            ->autosize(false)
+                                                            ->maxLength(65535),
                                                     ])->columns(2),
                                                 Forms\Components\Fieldset::make(__('employees::filament/resources/employee.form.tabs.settings.fields.additional-information'))
                                                     ->schema([
@@ -1891,6 +1901,14 @@ class EmployeeResource extends Resource
                                                         Infolists\Components\TextEntry::make('departure_description')
                                                             ->placeholder('—')
                                                             ->label(__('employees::filament/resources/employee.infolist.tabs.settings.entries.departure-description')),
+                                                        Forms\Components\Textarea::make('additional_note')
+                                                            ->autosize(false)
+                                                            ->maxLength(65535)
+                                                            ->label(__('employees::filament/resources/employee.form.tabs.settings.fields.additional-note'))
+                                                            ->hidden(fn (Get $get) => $get('departure_reason_id') === null),
+                                                        Forms\Components\Textarea::make('notes')
+                                                            ->autosize(false)
+                                                            ->maxLength(65535),
                                                     ])
                                                     ->columns(2),
                                                 Infolists\Components\Fieldset::make(__('employees::filament/resources/employee.infolist.tabs.settings.entries.additional-information'))

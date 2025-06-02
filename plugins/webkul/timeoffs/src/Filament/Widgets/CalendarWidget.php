@@ -19,6 +19,8 @@ use Webkul\TimeOff\Models\Leave;
 
 class CalendarWidget extends FullCalendarWidget
 {
+    protected static bool $isLazy = false;
+
     public Model|string|null $model = Leave::class;
 
     public function config(): array
@@ -240,6 +242,8 @@ class CalendarWidget extends FullCalendarWidget
                     return $startDate->diffInDays($endDate) + 1 .' day(s)';
                 }),
             Forms\Components\Textarea::make('private_name')
+                ->autosize(false)
+                ->rows(5)
                 ->label(__('time_off::filament/widgets/calendar-widget.form.fields.description')),
         ];
     }

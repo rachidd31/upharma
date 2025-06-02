@@ -72,8 +72,9 @@ class ActivityTypeResource extends Resource
                                             ->searchable()
                                             ->preload(),
                                         Forms\Components\Textarea::make('summary')
+                                            ->autosize(false)
                                             ->label(__('support::filament/resources/activity-type.form.sections.activity-type-details.fields.summary'))
-                                            ->columnSpanFull(),
+                                            ->maxLength(65535),
                                         Forms\Components\RichEditor::make('default_note')
                                             ->label(__('support::filament/resources/activity-type.form.sections.activity-type-details.fields.note'))
                                             ->columnSpanFull(),

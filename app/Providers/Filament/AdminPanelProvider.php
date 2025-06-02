@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Webkul\Support\PluginManager;
 use Filament\Navigation\NavigationGroup;
+use Livewire\Livewire;
 
 class AdminPanelProvider extends PanelProvider
 {

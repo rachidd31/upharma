@@ -60,7 +60,9 @@ class PostResource extends Resource
                                     ->maxLength(255)
                                     ->unique(Post::class, 'slug', ignoreRecord: true),
                                 Forms\Components\Textarea::make('sub_title')
-                                    ->label(__('blogs::filament/admin/resources/post.form.sections.general.fields.sub-title')),
+                                    ->autosize(false)
+                                    ->label(__('blogs::filament/admin/resources/post.form.sections.general.fields.sub-title'))
+                                    ->maxLength(65535),
                                 Forms\Components\RichEditor::make('content')
                                     ->label(__('blogs::filament/admin/resources/post.form.sections.general.fields.content'))
                                     ->required(),
@@ -76,7 +78,9 @@ class PostResource extends Resource
                                 Forms\Components\TextInput::make('meta_keywords')
                                     ->label(__('blogs::filament/admin/resources/post.form.sections.seo.fields.meta-keywords')),
                                 Forms\Components\Textarea::make('meta_description')
-                                    ->label(__('blogs::filament/admin/resources/post.form.sections.seo.fields.meta-description')),
+                                    ->autosize(false)
+                                    ->label(__('blogs::filament/admin/resources/post.form.sections.seo.fields.meta-description'))
+                                    ->maxLength(65535),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -100,7 +104,10 @@ class PostResource extends Resource
                                         Forms\Components\TextInput::make('name')
                                             ->label(__('blogs::filament/admin/resources/post.form.sections.settings.fields.name'))
                                             ->required()
-                                            ->unique('blogs_tags'),
+                                            ->maxLength(255)
+                                            ->live(onBlur: true)
+                                            ->unique(ignoreRecord: true)
+                                            ->afterStateUpdated(fn (string $operation, $state, Forms\Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
                                         Forms\Components\ColorPicker::make('color')
                                             ->label(__('blogs::filament/admin/resources/post.form.sections.settings.fields.color')),
                                     ]),

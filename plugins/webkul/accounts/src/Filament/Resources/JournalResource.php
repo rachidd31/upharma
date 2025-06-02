@@ -107,6 +107,7 @@ class JournalResource extends Resource
                                             })
                                             ->schema([
                                                 Forms\Components\Textarea::make('relation_notes')
+                                                    ->autosize(false)
                                                     ->label(__('accounts::filament/resources/journal.form.tabs.incoming-payments.fields.relation-notes'))
                                                     ->placeholder(__('accounts::filament/resources/journal.form.tabs.incoming-payments.fields.relation-notes-placeholder')),
                                             ]),
@@ -121,6 +122,7 @@ class JournalResource extends Resource
                                             })
                                             ->schema([
                                                 Forms\Components\Textarea::make('relation_notes')
+                                                    ->autosize(false)
                                                     ->label('Relation Notes')
                                                     ->label(__('accounts::filament/resources/journal.form.tabs.outgoing-payments.fields.relation-notes'))
                                                     ->label(__('accounts::filament/resources/journal.form.tabs.outgoing-payments.fields.relation-notes-placeholder')),

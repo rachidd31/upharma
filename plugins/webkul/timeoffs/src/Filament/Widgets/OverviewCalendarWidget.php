@@ -238,6 +238,8 @@ class OverviewCalendarWidget extends FullCalendarWidget
                     return $startDate->diffInDays($endDate).' day(s)';
                 }),
             Forms\Components\Textarea::make('private_name')
+                ->autosize(false)
+                ->rows(5)
                 ->label(__('time_off::filament/widgets/overview-calendar-widget.form.fields.description')),
         ];
     }
