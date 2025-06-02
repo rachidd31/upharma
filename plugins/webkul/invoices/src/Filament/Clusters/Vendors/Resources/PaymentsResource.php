@@ -2,7 +2,7 @@
 
 namespace Webkul\Invoice\Filament\Clusters\Vendors\Resources;
 
-use Filament\Tables\Table;
+use Filament\Pages\SubNavigationPosition;
 use Webkul\Account\Filament\Resources\PaymentsResource as BasePaymentsResource;
 use Webkul\Invoice\Filament\Clusters\Vendors;
 use Webkul\Invoice\Filament\Clusters\Vendors\Resources\PaymentsResource\Pages;
@@ -18,6 +18,8 @@ class PaymentsResource extends BasePaymentsResource
 
     protected static ?string $cluster = Vendors::class;
 
+    protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
+
     public static function getModelLabel(): string
     {
         return __('invoices::filament/clusters/vendors/resources/payment.title');
@@ -31,16 +33,6 @@ class PaymentsResource extends BasePaymentsResource
     public static function getNavigationGroup(): ?string
     {
         return null;
-    }
-
-    public static function table(Table $table): Table
-    {
-        return BasePaymentsResource::table($table)
-            ->modifyQueryUsing(function ($query) {
-                $query->whereHas('partner', function ($query) {
-                    $query->where('sub_type', 'supplier');
-                });
-            });
     }
 
     public static function getPages(): array

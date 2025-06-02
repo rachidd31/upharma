@@ -12,7 +12,9 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Product\Enums\ProductType;
 use Webkul\Product\Models\Category;
@@ -53,6 +55,7 @@ class ProductResource extends Resource
                                         Forms\Components\TextInput::make('name')
                                             ->label(__('products::filament/resources/product.form.sections.general.fields.name'))
                                             ->required()
+                                            ->maxLength(255)
                                             ->unique('products_tags'),
                                     ]),
                             ]),
@@ -71,11 +74,13 @@ class ProductResource extends Resource
                                         Forms\Components\TextInput::make('weight')
                                             ->label(__('products::filament/resources/product.form.sections.inventory.fieldsets.logistics.fields.weight'))
                                             ->numeric()
-                                            ->minValue(0),
+                                            ->minValue(0)
+                                            ->maxValue(99999999999),
                                         Forms\Components\TextInput::make('volume')
                                             ->label(__('products::filament/resources/product.form.sections.inventory.fieldsets.logistics.fields.volume'))
                                             ->numeric()
-                                            ->minValue(0),
+                                            ->minValue(0)
+                                            ->maxValue(99999999999),
                                     ]),
                             ])
                             ->visible(fn (Forms\Get $get): bool => $get('type') == ProductType::GOODS->value),
@@ -119,11 +124,13 @@ class ProductResource extends Resource
                                     ->label(__('products::filament/resources/product.form.sections.pricing.fields.price'))
                                     ->numeric()
                                     ->required()
-                                    ->default(0.00),
+                                    ->default(0.00)
+                                    ->minValue(0),
                                 Forms\Components\TextInput::make('cost')
                                     ->label(__('products::filament/resources/product.form.sections.pricing.fields.cost'))
                                     ->numeric()
-                                    ->default(0.00),
+                                    ->default(0.00)
+                                    ->minValue(0),
                                 Forms\Components\Hidden::make('uom_id')
                                     ->default(UOM::first()->id),
                                 Forms\Components\Hidden::make('uom_po_id')
@@ -162,7 +169,6 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('variants_count')
                     ->label(__('products::filament/resources/product.table.columns.variants'))
                     ->placeholder('—')
-                    ->searchable()
                     ->counts('variants')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('reference')
@@ -178,7 +184,6 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('responsible.name')
                     ->label(__('products::filament/resources/product.table.columns.responsible'))
                     ->placeholder('—')
-                    ->searchable()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('barcode')
@@ -205,7 +210,6 @@ class ProductResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('type')
                     ->label(__('products::filament/resources/product.table.columns.type'))
-                    ->searchable()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -342,11 +346,22 @@ class ProductResource extends Resource
                                 ->body(__('products::filament/resources/product.table.actions.delete.notification.body')),
                         ),
                     Tables\Actions\ForceDeleteAction::make()
+                        ->action(function (Product $record) {
+                            try {
+                                $record->forceDelete();
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('products::filament/resources/product.table.actions.force-delete.notification.error.title'))
+                                    ->body(__('products::filament/resources/product.table.actions.force-delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
                                 ->success()
-                                ->title(__('products::filament/resources/product.table.actions.force-delete.notification.title'))
-                                ->body(__('products::filament/resources/product.table.actions.force-delete.notification.body')),
+                                ->title(__('products::filament/resources/product.table.actions.force-delete.notification.success.title'))
+                                ->body(__('products::filament/resources/product.table.actions.force-delete.notification.success.body')),
                         ),
                 ]),
             ])
@@ -407,17 +422,25 @@ class ProductResource extends Resource
                                 ->body(__('products::filament/resources/product.table.bulk-actions.delete.notification.body')),
                         ),
                     Tables\Actions\ForceDeleteBulkAction::make()
+                        ->action(function (Collection $records) {
+                            try {
+                                $records->each(fn (Model $record) => $record->forceDelete());
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.error.title'))
+                                    ->body(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
                                 ->success()
-                                ->title(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.title'))
-                                ->body(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.body')),
+                                ->title(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.success.title'))
+                                ->body(__('products::filament/resources/product.table.bulk-actions.force-delete.notification.success.body')),
                         ),
                 ]),
-            ])
-            ->modifyQueryUsing(function (Builder $query) {
-                $query->whereNull('parent_id');
-            });
+            ]);
     }
 
     public static function infolist(Infolist $infolist): Infolist

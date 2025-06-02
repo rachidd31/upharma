@@ -7,6 +7,7 @@ use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Partner\Models\Partner;
 use Webkul\Sale\Enums\OrderState;
+use Webkul\Sale\Facades\SaleOrder;
 use Webkul\Sale\Filament\Clusters\Orders\Resources\QuotationResource;
 
 class CreateQuotation extends CreateRecord
@@ -33,7 +34,7 @@ class CreateQuotation extends CreateRecord
         $data['creator_id'] = $user->id;
         $data['user_id'] = $user->id;
         $data['company_id'] = $user->default_company_id;
-        $data['state'] = OrderState::DRAFT->value;
+        $data['state'] = OrderState::DRAFT;
         $data['create_date'] = now();
 
         if ($data['partner_id']) {
@@ -49,6 +50,6 @@ class CreateQuotation extends CreateRecord
 
     protected function afterCreate(): void
     {
-        QuotationResource::collectTotals($this->getRecord());
+        SaleOrder::computeSaleOrder($this->getRecord());
     }
 }

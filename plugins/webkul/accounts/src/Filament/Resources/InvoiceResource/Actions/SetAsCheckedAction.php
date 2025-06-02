@@ -4,6 +4,7 @@ namespace Webkul\Account\Filament\Resources\InvoiceResource\Actions;
 
 use Filament\Actions\Action;
 use Webkul\Account\Enums\MoveState;
+use Webkul\Account\Facades\Account;
 use Webkul\Account\Models\Move;
 
 class SetAsCheckedAction extends Action
@@ -22,15 +23,14 @@ class SetAsCheckedAction extends Action
             ->label(__('accounts::filament/resources/invoice/actions/set-as-checked-action.title'))
             ->color('gray')
             ->action(function (Move $record, $livewire): void {
-                $record->checked = true;
-                $record->save();
+                $record = Account::setAsChecked($record);
 
                 $livewire->refreshFormData(['checked']);
             })
             ->hidden(function (Move $record) {
                 return
                     $record->checked
-                    || $record->state == MoveState::DRAFT->value;
+                    || $record->state == MoveState::DRAFT;
             });
     }
 }

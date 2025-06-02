@@ -10,7 +10,9 @@ use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Webkul\Account\Filament\Resources\TaxGroupResource\Pages;
 use Webkul\Account\Models\TaxGroup;
 
@@ -21,22 +23,6 @@ class TaxGroupResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-group';
 
     protected static bool $shouldRegisterNavigation = false;
-
-    public static function getGloballySearchableAttributes(): array
-    {
-        return [
-            'company.name',
-            'name',
-        ];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('accounts::filament/resources/tax-group.global-search.company') => $record->company?->name ?? '—',
-            __('accounts::filament/resources/tax-group.global-search.name')    => $record->name ?? '—',
-        ];
-    }
 
     public static function form(Form $form): Form
     {
@@ -119,6 +105,17 @@ class TaxGroupResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
+                    ->action(function (TaxGroup $record) {
+                        try {
+                            $record->delete();
+                        } catch (QueryException $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title(__('accounts::filament/resources/tax-group.table.actions.delete.notification.error.title'))
+                                ->body(__('accounts::filament/resources/tax-group.table.actions.delete.notification.error.body'))
+                                ->send();
+                        }
+                    })
                     ->successNotification(
                         Notification::make()
                             ->title(__('accounts::filament/resources/tax-group.table.actions.delete.notification.title'))
@@ -128,10 +125,21 @@ class TaxGroupResource extends Resource
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make()
+                        ->action(function (Collection $records) {
+                            try {
+                                $records->each(fn (Model $record) => $record->delete());
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.error.title'))
+                                    ->body(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
-                                ->title(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.title'))
-                                ->body(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.body'))
+                                ->title(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.success.title'))
+                                ->body(__('accounts::filament/resources/tax-group.table.bulk-actions.delete.notification.success.body'))
                         ),
                 ]),
             ]);

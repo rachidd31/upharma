@@ -8,6 +8,7 @@ use Filament\Pages\SubNavigationPosition;
 use Filament\Resources\Pages\EditRecord;
 use Webkul\Chatter\Filament\Actions as ChatterActions;
 use Webkul\Sale\Enums\OrderState;
+use Webkul\Sale\Facades\SaleOrder;
 use Webkul\Sale\Filament\Clusters\Orders\Resources\QuotationResource;
 use Webkul\Sale\Filament\Clusters\Orders\Resources\QuotationResource\Actions as BaseActions;
 
@@ -17,7 +18,7 @@ class EditQuotation extends EditRecord
 
     protected function getRedirectUrl(): string
     {
-        return $this->getResource()::getUrl('view', ['record' => $this->getRecord()]);
+        return $this->getResource()::getUrl('edit', ['record' => $this->getRecord()]);
     }
 
     public function getSubNavigationPosition(): SubNavigationPosition
@@ -46,7 +47,7 @@ class EditQuotation extends EditRecord
             BaseActions\SendByEmailAction::make(),
             BaseActions\LockAndUnlockAction::make(),
             Actions\DeleteAction::make()
-                ->hidden(fn () => $this->getRecord()->state == OrderState::SALE->value)
+                ->hidden(fn () => $this->getRecord()->state == OrderState::SALE)
                 ->successNotification(
                     Notification::make()
                         ->success()
@@ -58,8 +59,6 @@ class EditQuotation extends EditRecord
 
     protected function afterSave(): void
     {
-        $record = $this->getRecord();
-
-        QuotationResource::collectTotals($record);
+        SaleOrder::computeSaleOrder($this->getRecord());
     }
 }

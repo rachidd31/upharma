@@ -33,6 +33,8 @@ class StorageCategoryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    protected static bool $isGloballySearchable = false;
+
     public static function isDiscovered(): bool
     {
         if (app()->runningInConsole()) {
@@ -65,7 +67,9 @@ class StorageCategoryResource extends Resource
                         Forms\Components\TextInput::make('max_weight')
                             ->label(__('inventories::filament/clusters/configurations/resources/storage-category.form.sections.general.fields.max-weight'))
                             ->numeric()
-                            ->default(0.0000),
+                            ->default(0.0000)
+                            ->minValue(0)
+                            ->maxValue(99999999),
                         Forms\Components\Select::make('allow_new_products')
                             ->label(__('inventories::filament/clusters/configurations/resources/storage-category.form.sections.general.fields.allow-new-products'))
                             ->options(AllowNewProduct::class)

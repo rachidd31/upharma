@@ -16,7 +16,6 @@ use Spatie\Permission\Models\Role;
 use Webkul\Security\Enums\PermissionType;
 use Webkul\Security\Filament\Resources\UserResource\Pages;
 use Webkul\Security\Models\User;
-use Webkul\Support\Models\Company;
 
 class UserResource extends Resource
 {
@@ -155,12 +154,10 @@ class UserResource extends Resource
                                                     ->fillForm(function (array $arguments): array {
                                                         return [
                                                             'user_id' => Auth::id(),
-                                                            'sort'    => Company::max('sort') + 1,
                                                         ];
                                                     })
                                                     ->mutateFormDataUsing(function (array $data) {
                                                         $data['user_id'] = Auth::id();
-                                                        $data['sort'] = Company::max('sort') + 1;
 
                                                         return $data;
                                                     });
@@ -185,13 +182,15 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label(__('security::filament/resources/user.table.columns.name'))
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->limit(50),
                 Tables\Columns\TextColumn::make('email')
                     ->label(__('security::filament/resources/user.table.columns.email'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('teams.name')
-                    ->label(__('security::filament/resources/user.table.columns.teams')),
+                    ->label(__('security::filament/resources/user.table.columns.teams'))
+                    ->badge(),
                 Tables\Columns\TextColumn::make('roles.name')
                     ->sortable()
                     ->label(__('security::filament/resources/user.table.columns.role')),
@@ -331,6 +330,9 @@ class UserResource extends Resource
                                         Infolists\Components\TextEntry::make('name')
                                             ->icon('heroicon-o-user')
                                             ->placeholder('—')
+                                            ->extraAttributes([
+                                                'style' => 'word-break: break-all;',
+                                            ])
                                             ->label(__('security::filament/resources/user.infolist.sections.general-information.entries.name')),
                                         Infolists\Components\TextEntry::make('email')
                                             ->icon('heroicon-o-envelope')

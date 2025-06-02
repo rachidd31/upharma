@@ -11,7 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Employee\Filament\Clusters\Configurations;
 use Webkul\Employee\Filament\Clusters\Configurations\Resources\DepartureReasonResource\Pages;
@@ -38,18 +37,6 @@ class DepartureReasonResource extends Resource
     public static function getNavigationLabel(): string
     {
         return __('employees::filament/clusters/configurations/resources/departure-reason.navigation.title');
-    }
-
-    public static function getGloballySearchableAttributes(): array
-    {
-        return ['name', 'reason_code'];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('employees::filament/clusters/configurations/resources/departure-reason.global-search.name') => $record->name ?? '—',
-        ];
     }
 
     public static function form(Form $form): Form
@@ -147,8 +134,6 @@ class DepartureReasonResource extends Resource
                             ->body(__('employees::filament/clusters/configurations/resources/departure-reason.table.actions.edit.notification.body')),
                     )
                     ->mutateFormDataUsing(function (array $data): array {
-                        $data['sort'] = $data['sort'] ?? DepartureReason::max('sort') + 1;
-
                         $data['reason_code'] = $data['reason_code'] ?? crc32($data['name']) % 100000;
 
                         $data['creator_id'] = $data['creator_id'] ?? Auth::user()->id;

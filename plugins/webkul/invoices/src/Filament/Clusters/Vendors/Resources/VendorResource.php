@@ -7,15 +7,16 @@ use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Infolists;
 use Filament\Infolists\Infolist;
+use Filament\Pages\SubNavigationPosition;
 use Filament\Resources\Pages\Page;
 use Filament\Resources\RelationManagers\RelationGroup;
 use Filament\Tables\Table;
-use Webkul\Contact\Filament\Resources\PartnerResource as BaseVendorResource;
 use Webkul\Invoice\Enums;
 use Webkul\Invoice\Filament\Clusters\Vendors;
 use Webkul\Invoice\Filament\Clusters\Vendors\Resources\VendorResource\Pages;
 use Webkul\Invoice\Filament\Clusters\Vendors\Resources\VendorResource\RelationManagers;
 use Webkul\Invoice\Models\Partner;
+use Webkul\Partner\Filament\Resources\PartnerResource as BaseVendorResource;
 
 class VendorResource extends BaseVendorResource
 {
@@ -30,6 +31,8 @@ class VendorResource extends BaseVendorResource
     protected static ?int $navigationSort = 4;
 
     protected static ?string $cluster = Vendors::class;
+
+    protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Top;
 
     public static function getModelLabel(): string
     {

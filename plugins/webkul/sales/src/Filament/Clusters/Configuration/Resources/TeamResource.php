@@ -11,7 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
 use Webkul\Sale\Filament\Clusters\Configuration;
 use Webkul\Sale\Filament\Clusters\Configuration\Resources\TeamResource\Pages;
 use Webkul\Sale\Models\Team;
@@ -34,26 +33,6 @@ class TeamResource extends Resource
     public static function getNavigationLabel(): string
     {
         return __('sales::filament/clusters/configurations/resources/team.navigation.title');
-    }
-
-    public static function getGloballySearchableAttributes(): array
-    {
-        return [
-            'company.name',
-            'user.name',
-            'name',
-            'invoiced_target',
-        ];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('sales::filament/clusters/configurations/resources/team.global-search.company-name')    => $record->company?->name ?? '—',
-            __('sales::filament/clusters/configurations/resources/team.global-search.user-name')       => $record->user?->name ?? '—',
-            __('sales::filament/clusters/configurations/resources/team.global-search.name')            => $record->name ?? '—',
-            __('sales::filament/clusters/configurations/resources/team.global-search.invoiced-target') => $record->invoiced_target ?? '—',
-        ];
     }
 
     public static function form(Form $form): Form
@@ -86,11 +65,14 @@ class TeamResource extends Resource
                                 Forms\Components\TextInput::make('invoiced_target')
                                     ->numeric()
                                     ->default(0)
+                                    ->minValue(0)
+                                    ->maxValue(99999999999)
                                     ->label(__('sales::filament/clusters/configurations/resources/team.form.sections.fields.fieldset.team-details.fields.invoiced-target'))
                                     ->autocomplete(false)
                                     ->suffix(__('sales::filament/clusters/configurations/resources/team.form.sections.fields.fieldset.team-details.fields.invoiced-target-suffix')),
                                 Forms\Components\ColorPicker::make('color')
-                                    ->label(__('sales::filament/clusters/configurations/resources/team.form.sections.fields.fieldset.team-details.fields.color')),
+                                    ->label(__('sales::filament/clusters/configurations/resources/team.form.sections.fields.fieldset.team-details.fields.color'))
+                                    ->hexColor(),
                                 Forms\Components\Select::make('sales_team_members')
                                     ->relationship('members', 'name')
                                     ->multiple()
@@ -116,19 +98,15 @@ class TeamResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('company.name')
                     ->label(__('sales::filament/clusters/configurations/resources/team.table.columns.company'))
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('user.name')
                     ->label(__('sales::filament/clusters/configurations/resources/team.table.columns.team-leader'))
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\ColorColumn::make('color')
                     ->label(__('sales::filament/clusters/configurations/resources/team.table.columns.color'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('createdBy.name')
-                    ->label(__('Created By'))
                     ->label(__('sales::filament/clusters/configurations/resources/team.table.columns.created-by'))
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('name')
                     ->label(__('sales::filament/clusters/configurations/resources/team.table.columns.name'))

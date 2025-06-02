@@ -6,6 +6,7 @@ use Filament\Actions\Action;
 use Livewire\Component;
 use Webkul\Account\Enums\MoveState;
 use Webkul\Account\Enums\MoveType;
+use Webkul\Account\Facades\Account;
 use Webkul\Account\Models\Move;
 
 class CancelAction extends Action
@@ -23,20 +24,14 @@ class CancelAction extends Action
             ->label(__('accounts::filament/resources/invoice/actions/cancel-action.title'))
             ->color('gray')
             ->action(function (Move $record, Component $livewire): void {
-                $record->state = MoveState::CANCEL->value;
-                $record->save();
-
-                $record->allLines->each(function ($moveLine) {
-                    $moveLine->parent_state = MoveState::POSTED->value;
-                    $moveLine->save();
-                });
+                $record = Account::cancel($record);
 
                 $livewire->refreshFormData(['state', 'parent_state']);
             })
             ->hidden(function (Move $record) {
                 return
-                    $record->state != MoveState::DRAFT->value
-                    || $record->move_type == MoveType::ENTRY->value;
+                    $record->state != MoveState::DRAFT
+                    || $record->move_type == MoveType::ENTRY;
             });
     }
 }

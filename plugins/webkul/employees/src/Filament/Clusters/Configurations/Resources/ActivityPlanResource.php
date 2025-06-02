@@ -11,7 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Webkul\Employee\Filament\Clusters\Configurations;
 use Webkul\Employee\Filament\Clusters\Configurations\Resources\ActivityPlanResource\Pages;
 use Webkul\Employee\Filament\Clusters\Configurations\Resources\ActivityPlanResource\RelationManagers;
@@ -30,23 +30,6 @@ class ActivityPlanResource extends Resource
     public static function getNavigationLabel(): string
     {
         return __('employees::filament/clusters/configurations/resources/activity-plan.navigation.title');
-    }
-
-    public static function getGloballySearchableAttributes(): array
-    {
-        return ['name', 'department.name', 'company.name', 'plugin', 'createdBy.name'];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.name')         => $record->name ?? '—',
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.department')   => $record->department?->name ?? '—',
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.manager')      => $record->department?->manager?->name ?? '—',
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.company')      => $record->company?->name ?? '—',
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.plugin')       => $record->plugin ?? '—',
-            __('employees::filament/clusters/configurations/resources/activity-plan.global-search.creator-name') => $record->createdBy?->name ?? '—',
-        ];
     }
 
     public static function form(Form $form): Form
@@ -89,15 +72,12 @@ class ActivityPlanResource extends Resource
                     ->label(__('employees::filament/clusters/configurations/resources/activity-plan.table.columns.name'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('department.name')
-                    ->numeric()
                     ->label(__('employees::filament/clusters/configurations/resources/activity-plan.table.columns.department'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('department.manager.name')
-                    ->numeric()
                     ->label(__('employees::filament/clusters/configurations/resources/activity-plan.table.columns.manager'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('company.name')
-                    ->numeric()
                     ->label(__('employees::filament/clusters/configurations/resources/activity-plan.table.columns.company'))
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
@@ -246,6 +226,17 @@ class ActivityPlanResource extends Resource
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
                     ->icon('heroicon-o-plus-circle')
+                    ->mutateFormDataUsing(function (array $data): array {
+                        $user = Auth::user();
+
+                        $data['plugin'] = 'employees';
+
+                        $data['creator_id'] = $user->id;
+
+                        $data['company_id'] ??= $user->defaultCompany?->id;
+
+                        return $data;
+                    })
                     ->successNotification(
                         Notification::make()
                             ->success()

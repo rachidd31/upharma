@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Webkul\Inventory\Database\Factories\MoveFactory;
 use Webkul\Inventory\Enums;
 use Webkul\Partner\Models\Partner;
+use Webkul\Purchase\Models\OrderLine as PurchaseOrderLine;
+use Webkul\Sale\Models\OrderLine as SaleOrderLine;
 use Webkul\Security\Models\User;
 use Webkul\Support\Models\Company;
 use Webkul\Support\Models\UOM;
@@ -46,6 +48,8 @@ class Move extends Model
         'is_picked',
         'is_scraped',
         'is_inventory',
+        'is_refund',
+        'deadline',
         'reservation_date',
         'scheduled_at',
         'product_id',
@@ -64,6 +68,8 @@ class Move extends Model
         'scrap_id',
         'company_id',
         'creator_id',
+        'purchase_order_line_id',
+        'sale_order_line_id',
     ];
 
     /**
@@ -77,11 +83,60 @@ class Move extends Model
         'is_picked'        => 'boolean',
         'is_scraped'       => 'boolean',
         'is_inventory'     => 'boolean',
+        'is_refund'        => 'boolean',
         'reservation_date' => 'date',
         'scheduled_at'     => 'datetime',
         'deadline'         => 'datetime',
         'alert_Date'       => 'datetime',
     ];
+
+    /**
+     * Determines if a stock move is a purchase return
+     *
+     * @return bool True if the move is a purchase return, false otherwise
+     */
+    public function isPurchaseReturn()
+    {
+        return $this->destinationLocation->type === Enums\LocationType::SUPPLIER
+            || (
+                $this->originReturnedMove
+                && $this->destinationLocation->id === $this->destinationLocation->company->inter_company_location_id
+            );
+    }
+
+    /**
+     * Determines if a stock move is a purchase return
+     *
+     * @return bool True if the move is a purchase return, false otherwise
+     */
+    public function isDropshipped()
+    {
+        return (
+            $this->sourceLocation->type === Enums\LocationType::SUPPLIER
+            || ($this->sourceLocation->type === Enums\LocationType::TRANSIT && ! $this->sourceLocation->company_id)
+        )
+            && (
+                $this->destinationLocation->type === Enums\LocationType::CUSTOMER
+                || ($this->destinationLocation->type === Enums\LocationType::TRANSIT && ! $this->destinationLocation->company_id)
+            );
+    }
+
+    /**
+     * Determines if a stock move is a purchase return
+     *
+     * @return bool True if the move is a purchase return, false otherwise
+     */
+    public function isDropshippedReturned()
+    {
+        return (
+            $this->sourceLocation->type === Enums\LocationType::CUSTOMER
+            || ($this->sourceLocation->type === Enums\LocationType::TRANSIT && ! $this->sourceLocation->company_id)
+        )
+            && (
+                $this->destinationLocation->type === Enums\LocationType::SUPPLIER
+                || ($this->destinationLocation->type === Enums\LocationType::TRANSIT && ! $this->destinationLocation->company_id)
+            );
+    }
 
     public function product(): BelongsTo
     {
@@ -95,17 +150,17 @@ class Move extends Model
 
     public function sourceLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class)->withTrashed();
     }
 
     public function destinationLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class)->withTrashed();
     }
 
     public function finalLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class)->withTrashed();
     }
 
     public function partner(): BelongsTo
@@ -181,6 +236,16 @@ class Move extends Model
     public function shouldBypassReservation(): bool
     {
         return $this->sourceLocation->shouldBypassReservation() || ! $this->product->is_storable;
+    }
+
+    public function purchaseOrderLine(): BelongsTo
+    {
+        return $this->belongsTo(PurchaseOrderLine::class, 'purchase_order_line_id');
+    }
+
+    public function saleOrderLine(): BelongsTo
+    {
+        return $this->belongsTo(SaleOrderLine::class, 'sale_order_line_id');
     }
 
     protected static function newFactory(): MoveFactory

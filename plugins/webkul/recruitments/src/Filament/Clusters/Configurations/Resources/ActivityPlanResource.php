@@ -6,6 +6,7 @@ use Filament\Notifications\Notification;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Auth;
 use Webkul\Employee\Filament\Clusters\Configurations\Resources\ActivityPlanResource as BaseActivityPlanResource;
 use Webkul\Recruitment\Filament\Clusters\Configurations;
 use Webkul\Recruitment\Filament\Clusters\Configurations\Resources\ActivityPlanResource\Pages;
@@ -30,15 +31,12 @@ class ActivityPlanResource extends BaseActivityPlanResource
                     ->label(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.columns.name'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('department.name')
-                    ->numeric()
                     ->label(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.columns.department'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('department.manager.name')
-                    ->numeric()
                     ->label(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.columns.manager'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('company.name')
-                    ->numeric()
                     ->label(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.columns.company'))
                     ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
@@ -186,7 +184,24 @@ class ActivityPlanResource extends BaseActivityPlanResource
             ])
             ->emptyStateActions([
                 Tables\Actions\CreateAction::make()
-                    ->icon('heroicon-o-plus-circle'),
+                    ->icon('heroicon-o-plus-circle')
+                    ->mutateFormDataUsing(function (array $data): array {
+                        $user = Auth::user();
+
+                        $data['plugin'] = 'recruitments';
+
+                        $data['creator_id'] = $user->id;
+
+                        $data['company_id'] ??= $user->defaultCompany?->id;
+
+                        return $data;
+                    })
+                    ->successNotification(
+                        Notification::make()
+                            ->success()
+                            ->title(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.empty-state.create.notification.title'))
+                            ->body(__('recruitments::filament/clusters/configurations/resources/activity-plan.table.empty-state.create.notification.body')),
+                    ),
             ])
             ->modifyQueryUsing(function ($query) {
                 $query->where('plugin', 'recruitments');

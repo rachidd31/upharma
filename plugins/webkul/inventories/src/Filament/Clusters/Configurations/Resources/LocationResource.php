@@ -14,6 +14,9 @@ use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Inventory\Enums\LocationType;
 use Webkul\Inventory\Filament\Clusters\Configurations;
@@ -33,6 +36,8 @@ class LocationResource extends Resource
     protected static ?string $cluster = Configurations::class;
 
     protected static ?string $recordTitleAttribute = 'full_name';
+
+    protected static bool $isGloballySearchable = false;
 
     public static function isDiscovered(): bool
     {
@@ -254,11 +259,22 @@ class LocationResource extends Resource
                             ->body(__('inventories::filament/clusters/configurations/resources/location.table.actions.delete.notification.body')),
                     ),
                 Tables\Actions\ForceDeleteAction::make()
+                    ->action(function (Location $record) {
+                        try {
+                            $record->forceDelete();
+                        } catch (QueryException $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.error.title'))
+                                ->body(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.error.body'))
+                                ->send();
+                        }
+                    })
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.title'))
-                            ->body(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.body')),
+                            ->title(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.success.title'))
+                            ->body(__('inventories::filament/clusters/configurations/resources/location.table.actions.force-delete.notification.success.body')),
                     ),
             ])
             ->bulkActions([
@@ -292,11 +308,22 @@ class LocationResource extends Resource
                                 ->body(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.delete.notification.body')),
                         ),
                     Tables\Actions\ForceDeleteBulkAction::make()
+                        ->action(function (Collection $records) {
+                            try {
+                                $records->each(fn (Model $record) => $record->forceDelete());
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.error.title'))
+                                    ->body(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
                                 ->success()
-                                ->title(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.title'))
-                                ->body(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.body')),
+                                ->title(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.success.title'))
+                                ->body(__('inventories::filament/clusters/configurations/resources/location.table.bulk-actions.force-delete.notification.success.body')),
                         ),
                 ]),
             ])
@@ -416,13 +443,6 @@ class LocationResource extends Resource
             Pages\ViewLocation::class,
             Pages\EditLocation::class,
         ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array

@@ -9,7 +9,6 @@ use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Recruitment\Filament\Clusters\Configurations;
 use Webkul\Recruitment\Filament\Clusters\Configurations\Resources\StageResource\Pages;
@@ -40,19 +39,6 @@ class StageResource extends Resource
         return __('recruitments::filament/clusters/configurations/resources/stage.navigation.title');
     }
 
-    public static function getGloballySearchableAttributes(): array
-    {
-        return ['name', 'createdBy.name'];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('recruitments::filament/clusters/configurations/resources/stage.global-search.name')       => $record->name ?? '—',
-            __('recruitments::filament/clusters/configurations/resources/stage.global-search.created-by') => $record->createdBy?->name ?? '—',
-        ];
-    }
-
     public static function form(Forms\Form $form): Forms\Form
     {
         return $form->schema([
@@ -69,11 +55,6 @@ class StageResource extends Resource
                                                 ->required(),
                                             Forms\Components\TextInput::make('name')
                                                 ->label(__('recruitments::filament/clusters/configurations/resources/stage.form.sections.general-information.fields.stage-name'))
-                                                ->required(),
-                                            Forms\Components\TextInput::make('sort')
-                                                ->label(__('recruitments::filament/clusters/configurations/resources/stage.form.sections.general-information.fields.sort'))
-                                                ->numeric()
-                                                ->default(Stage::max('sort') + 1)
                                                 ->required(),
                                             Forms\Components\RichEditor::make('requirements')
                                                 ->label(__('recruitments::filament/clusters/configurations/resources/stage.form.sections.general-information.fields.requirements'))

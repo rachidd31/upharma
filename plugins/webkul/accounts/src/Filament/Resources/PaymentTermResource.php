@@ -14,7 +14,6 @@ use Filament\Resources\RelationManagers\RelationGroup;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\HtmlString;
 use Webkul\Account\Enums\EarlyPayDiscount;
 use Webkul\Account\Filament\Resources\PaymentTermResource\Pages;
@@ -30,22 +29,6 @@ class PaymentTermResource extends Resource
     protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::Start;
 
     protected static bool $shouldRegisterNavigation = false;
-
-    public static function getGloballySearchableAttributes(): array
-    {
-        return [
-            'company.name',
-            'name',
-        ];
-    }
-
-    public static function getGlobalSearchResultDetails(Model $record): array
-    {
-        return [
-            __('accounts::filament/resources/payment-term.global-search.company-name') => $record->company?->name ?? '—',
-            __('accounts::filament/resources/payment-term.global-search.payment-term') => $record->name ?? '—',
-        ];
-    }
 
     public static function form(Form $form): Form
     {
@@ -74,10 +57,15 @@ class PaymentTermResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('discount_percentage')
                                     ->required()
+                                    ->numeric()
+                                    ->maxValue(100)
+                                    ->minValue(0)
                                     ->suffix(__('%'))
                                     ->hiddenLabel(),
                                 Forms\Components\TextInput::make('discount_days')
                                     ->required()
+                                    ->integer()
+                                    ->minValue(0)
                                     ->prefix(__('accounts::filament/resources/payment-term.form.sections.fields.discount-days-prefix'))
                                     ->suffix(__('accounts::filament/resources/payment-term.form.sections.fields.discount-days-suffix'))
                                     ->hiddenLabel(),
@@ -92,12 +80,6 @@ class PaymentTermResource extends Resource
                             ])->columns(2),
                         Forms\Components\RichEditor::make('note')
                             ->label(__('accounts::filament/resources/payment-term.form.sections.fields.note')),
-                        Forms\Components\Group::make()
-                            ->schema([
-                                Forms\Components\Toggle::make('is_active')
-                                    ->inline(false)
-                                    ->label(__('accounts::filament/resources/payment-term.form.sections.fields.status')),
-                            ])->columns(2),
                     ]),
             ]);
     }
@@ -114,31 +96,16 @@ class PaymentTermResource extends Resource
                     ->label(__('accounts::filament/resources/payment-term.table.columns.company'))
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('discount_days')
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.discount-days'))
-                    ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('early_pay_discount')
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.early-pay-discount'))
-                    ->searchable()
-                    ->formatStateUsing(fn ($state) => EarlyPayDiscount::options()[$state])
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('is_active')
-                    ->boolean()
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.status'))
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('display_on_invoice')
-                    ->boolean()
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.display-on-invoice'))
-                    ->sortable(),
-                Tables\Columns\IconColumn::make('early_discount')
-                    ->boolean()
-                    ->label(__('Early Discount'))
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.early-discount'))
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('createdBy.name')
-                    ->label(__('accounts::filament/resources/payment-term.table.columns.created-by'))
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->label(__('accounts::filament/resources/payment-term.table.columns.created-at'))
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->label(__('accounts::filament/resources/payment-term.table.columns.updated-at'))
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->groups([
                 Tables\Grouping\Group::make('company.name')
@@ -251,9 +218,6 @@ class PaymentTermResource extends Resource
                                     ->columnSpanFull()
                                     ->formatStateUsing(fn ($state) => new HtmlString($state))
                                     ->placeholder('—'),
-                                Infolists\Components\IconEntry::make('is_active')
-                                    ->label(__('accounts::filament/resources/payment-term.infolist.sections.entries.status'))
-                                    ->boolean(),
                             ]),
                     ]),
             ]);

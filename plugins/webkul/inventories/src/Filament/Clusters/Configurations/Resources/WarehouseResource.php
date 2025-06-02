@@ -13,6 +13,9 @@ use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Field\Filament\Traits\HasCustomFields;
 use Webkul\Inventory\Enums\DeliveryStep;
@@ -21,7 +24,7 @@ use Webkul\Inventory\Filament\Clusters\Configurations;
 use Webkul\Inventory\Filament\Clusters\Configurations\Resources\WarehouseResource\Pages;
 use Webkul\Inventory\Models\Warehouse;
 use Webkul\Inventory\Settings\WarehouseSettings;
-use Webkul\Partner\Filament\Resources\AddressResource;
+use Webkul\Partner\Filament\Resources\PartnerResource;
 
 class WarehouseResource extends Resource
 {
@@ -36,6 +39,8 @@ class WarehouseResource extends Resource
     protected static ?string $cluster = Configurations::class;
 
     protected static ?string $recordTitleAttribute = 'name';
+
+    protected static bool $isGloballySearchable = false;
 
     public static function getNavigationGroup(): string
     {
@@ -69,7 +74,7 @@ class WarehouseResource extends Resource
                                     ->required()
                                     ->maxLength(255)
                                     ->placeholder(__('inventories::filament/clusters/configurations/resources/warehouse.form.sections.general.fields.code-placeholder'))
-                                    ->hintIcon('heroicon-m-question-mark-circle', tooltip: __('inventories::filament/clusters/configurations/resources/warehouse.form.sections.settings.fields.code-hint-tooltip'))
+                                    ->hintIcon('heroicon-m-question-mark-circle', tooltip: __('inventories::filament/clusters/configurations/resources/warehouse.form.sections.general.fields.code-hint-tooltip'))
                                     ->unique(ignoreRecord: true),
 
                                 Forms\Components\Group::make()
@@ -85,7 +90,7 @@ class WarehouseResource extends Resource
                                             ->relationship('partnerAddress', 'name')
                                             ->searchable()
                                             ->preload()
-                                            ->createOptionForm(fn (Form $form): Form => AddressResource::form($form)),
+                                            ->createOptionForm(fn (Form $form): Form => PartnerResource::form($form)),
                                     ])
                                     ->columns(2),
                             ]),
@@ -205,11 +210,22 @@ class WarehouseResource extends Resource
                             ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.delete.notification.body')),
                     ),
                 Tables\Actions\ForceDeleteAction::make()
+                    ->action(function (Warehouse $record) {
+                        try {
+                            $record->forceDelete();
+                        } catch (QueryException $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.error.title'))
+                                ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.error.body'))
+                                ->send();
+                        }
+                    })
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.title'))
-                            ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.body')),
+                            ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.success.title'))
+                            ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.actions.force-delete.notification.success.body')),
                     ),
             ])
             ->bulkActions([
@@ -229,11 +245,22 @@ class WarehouseResource extends Resource
                                 ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.delete.notification.body')),
                         ),
                     Tables\Actions\ForceDeleteBulkAction::make()
+                        ->action(function (Collection $records) {
+                            try {
+                                $records->each(fn (Model $record) => $record->forceDelete());
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.error.title'))
+                                    ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
                                 ->success()
-                                ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.title'))
-                                ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.body')),
+                                ->title(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.success.title'))
+                                ->body(__('inventories::filament/clusters/configurations/resources/warehouse.table.bulk-actions.force-delete.notification.success.body')),
                         ),
                 ]),
             ])

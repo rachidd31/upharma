@@ -6,8 +6,8 @@ use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Livewire\Component;
 use Webkul\Purchase\Enums\OrderState;
+use Webkul\Purchase\Facades\PurchaseOrder;
 use Webkul\Purchase\Models\Order;
-use Webkul\Purchase\Settings\OrderSettings;
 
 class ConfirmAction extends Action
 {
@@ -24,17 +24,8 @@ class ConfirmAction extends Action
             ->label(__('purchases::filament/admin/clusters/orders/resources/order/actions/confirm.label'))
             ->requiresConfirmation()
             ->color(fn (): string => $this->getRecord()->state === OrderState::DRAFT ? 'gray' : 'primary')
-            ->action(function (Order $record, Component $livewire, OrderSettings $orderSettings): void {
-                $record->update([
-                    'state'       => $orderSettings->enable_lock_confirmed_orders ? OrderState::DONE : OrderState::PURCHASE,
-                    'approved_at' => now(),
-                ]);
-
-                foreach ($record->lines as $move) {
-                    $move->update([
-                        'state' => $orderSettings->enable_lock_confirmed_orders ? OrderState::DONE : OrderState::PURCHASE,
-                    ]);
-                }
+            ->action(function (Order $record, Component $livewire): void {
+                $record = PurchaseOrder::confirmPurchaseOrder($record);
 
                 $livewire->updateForm();
 

@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Webkul\Chatter\Traits\HasChatter;
 use Webkul\Field\Traits\HasCustomFields;
 use Webkul\Partner\Models\Partner;
 use Webkul\Security\Models\User;
 use Webkul\Support\Database\Factories\CompanyFactory;
 
-class Company extends Model
+class Company extends Model implements Sortable
 {
-    use HasChatter, HasCustomFields, HasFactory, SoftDeletes;
+    use HasChatter, HasCustomFields, HasFactory, SoftDeletes, SortableTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -33,14 +35,36 @@ class Company extends Model
         'email',
         'phone',
         'mobile',
+        'street1',
+        'street2',
+        'city',
+        'zip',
+        'state_id',
+        'country_id',
         'logo',
         'color',
         'is_active',
         'founded_date',
         'creator_id',
         'currency_id',
+        'partner_id',
         'website',
     ];
+
+    public $sortable = [
+        'order_column_name'  => 'sort',
+        'sort_when_creating' => true,
+    ];
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
 
     /**
      * Get the creator of the company
@@ -111,11 +135,6 @@ class Company extends Model
         return $query->where('is_active', true);
     }
 
-    public function address()
-    {
-        return $this->hasOne(CompanyAddress::class);
-    }
-
     protected static function newFactory(): CompanyFactory
     {
         return CompanyFactory::new();
@@ -128,65 +147,58 @@ class Company extends Model
     {
         parent::boot();
 
-        static::saved(function ($company) {
+        static::creating(function ($company) {
             if (! $company->partner_id) {
-                $company->handlePartnerCreation($company);
-            } else {
-                $company->handlePartnerUpdation($company);
+                $partner = Partner::create([
+                    'creator_id'       => $company->creator_id ?? Auth::id(),
+                    'sub_type'         => 'company',
+                    'company_registry' => $company->registration_number,
+                    'name'             => $company->name,
+                    'email'            => $company->email,
+                    'website'          => $company->website,
+                    'tax_id'           => $company->tax_id,
+                    'phone'            => $company->phone,
+                    'mobile'           => $company->mobile,
+                    'color'            => $company->color,
+                    'street1'          => $company->street1,
+                    'street2'          => $company->street2,
+                    'city'             => $company->city,
+                    'zip'              => $company->zip,
+                    'state_id'         => $company->state_id,
+                    'country_id'       => $company->country_id,
+                    'parent_id'        => $company->parent_id,
+                    'company_id'       => $company->id,
+                ]);
+
+                $company->partner_id = $partner->id;
             }
         });
-    }
 
-    /**
-     * Handle the creation of a partner.
-     */
-    private function handlePartnerCreation(self $company)
-    {
-        $partner = $company->partner()->create([
-            'creator_id'       => $company->creator_id ?? Auth::id(),
-            'sub_type'         => 'company',
-            'company_registry' => $company->registration_number,
-            'name'             => $company->name,
-            'email'            => $company->email,
-            'website'          => $company->website,
-            'tax_id'           => $company->tax_id,
-            'phone'            => $company->phone,
-            'mobile'           => $company->mobile,
-            'color'            => $company->color,
-            'parent_id'        => $company->parent_id,
-            'company_id'       => $company->id,
-        ]);
-
-        $company->partner_id = $partner->id;
-        $company->save();
-    }
-
-    /**
-     * Handle the updation of a partner.
-     */
-    private function handlePartnerUpdation(self $company)
-    {
-        $partner = Partner::updateOrCreate(
-            ['id' => $company->partner_id],
-            [
-                'creator_id'       => $company->creator_id ?? Auth::id(),
-                'sub_type'         => 'company',
-                'company_registry' => $company->registration_number,
-                'name'             => $company->name,
-                'email'            => $company->email,
-                'website'          => $company->website,
-                'tax_id'           => $company->tax_id,
-                'phone'            => $company->phone,
-                'mobile'           => $company->mobile,
-                'color'            => $company->color,
-                'parent_id'        => $company->parent_id,
-                'company_id'       => $company->id,
-            ]
-        );
-
-        if ($company->partner_id !== $partner->id) {
-            $company->partner_id = $partner->id;
-            $company->save();
-        }
+        static::saved(function ($company) {
+            Partner::updateOrCreate(
+                [
+                    'id' => $company->partner_id,
+                ], [
+                    'creator_id'       => $company->creator_id ?? Auth::id(),
+                    'sub_type'         => 'company',
+                    'company_registry' => $company->registration_number,
+                    'name'             => $company->name,
+                    'email'            => $company->email,
+                    'website'          => $company->website,
+                    'tax_id'           => $company->tax_id,
+                    'phone'            => $company->phone,
+                    'mobile'           => $company->mobile,
+                    'color'            => $company->color,
+                    'street1'          => $company->street1,
+                    'street2'          => $company->street2,
+                    'city'             => $company->city,
+                    'zip'              => $company->zip,
+                    'state_id'         => $company->state_id,
+                    'country_id'       => $company->country_id,
+                    'parent_id'        => $company->parent_id,
+                    'company_id'       => $company->id,
+                ]
+            );
+        });
     }
 }

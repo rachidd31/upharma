@@ -64,14 +64,8 @@ class ProductResource extends BaseProductResource
             Pages\EditProduct::class,
             Pages\ManageAttributes::class,
             Pages\ManageVariants::class,
+            Pages\ManageVendors::class,
         ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
@@ -83,6 +77,7 @@ class ProductResource extends BaseProductResource
             'edit'       => Pages\EditProduct::route('/{record}/edit'),
             'attributes' => Pages\ManageAttributes::route('/{record}/attributes'),
             'variants'   => Pages\ManageVariants::route('/{record}/variants'),
+            'vendors'    => Pages\ManageVendors::route('/{record}/vendors'),
         ];
     }
 }

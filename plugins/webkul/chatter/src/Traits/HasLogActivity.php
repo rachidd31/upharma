@@ -2,6 +2,7 @@
 
 namespace Webkul\Chatter\Traits;
 
+use BackedEnum;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -13,8 +14,8 @@ trait HasLogActivity
      */
     public static function bootHasLogActivity()
     {
-        static::created(fn(Model $model) => $model->logModelActivity('created'));
-        static::updated(fn(Model $model) => $model->logModelActivity('updated'));
+        static::created(fn (Model $model) => $model->logModelActivity('created'));
+        static::updated(fn (Model $model) => $model->logModelActivity('updated'));
 
         if (method_exists(static::class, 'bootSoftDeletes')) {
             static::deleted(function (Model $model) {
@@ -24,9 +25,9 @@ trait HasLogActivity
                     $model->logModelActivity('hard_deleted');
                 }
             });
-            static::restored(fn(Model $model) => $model->logModelActivity('restored'));
+            static::restored(fn (Model $model) => $model->logModelActivity('restored'));
         } else {
-            static::deleting(fn(Model $model) => $model->logModelActivity('deleted'));
+            static::deleting(fn (Model $model) => $model->logModelActivity('deleted'));
         }
     }
 
@@ -69,6 +70,7 @@ trait HasLogActivity
     protected function getLogAttributes(): array
     {
         $normalized = [];
+
         foreach (property_exists($this, 'logAttributes') ? $this->logAttributes : [] as $key => $value) {
             if (is_int($key)) {
                 $normalized[$value] = $value;
@@ -111,7 +113,7 @@ trait HasLogActivity
 
             return $instance ? $instance->$attribute : null;
         } catch (\Exception $e) {
-            Log::error("Error getting related value for {$relation}.{$attribute}: " . $e->getMessage());
+            Log::error("Error getting related value for {$relation}.{$attribute}: ".$e->getMessage());
 
             return null;
         }
@@ -166,7 +168,7 @@ trait HasLogActivity
                 }
             }
         } catch (\Exception $e) {
-            Log::error("Error tracking relationship changes for {$relation}.{$attribute}: " . $e->getMessage());
+            Log::error("Error tracking relationship changes for {$relation}.{$attribute}: ".$e->getMessage());
         }
 
         return null;
@@ -280,15 +282,39 @@ trait HasLogActivity
             return $value ? 'Yes' : 'No';
         }
 
-        if ($value instanceof \UnitEnum) {
-            if (method_exists($value, 'getLabel')) {
-                return $value->getLabel();
-            }
+        if (
+            $value !== null
+            && isset($this->casts[$key])
+        ) {
+            $castType = $this->casts[$key];
 
-            return $value->value;
+            if (class_exists($castType) && is_subclass_of($castType, BackedEnum::class)) {
+                try {
+                    if ($value instanceof BackedEnum) {
+                        if (method_exists($value, 'getLabel')) {
+                            return $value->getLabel();
+                        }
+
+                        return $value->value;
+                    }
+
+                    $enumInstance = $castType::from($value);
+
+                    if (method_exists($enumInstance, 'getLabel')) {
+                        return $enumInstance->getLabel();
+                    }
+
+                    return $enumInstance->value;
+                } catch (\Exception $e) {
+                    return $value;
+                }
+            }
         }
 
-        if (! is_array($value) && json_decode($value, true)) {
+        if (
+            ! is_array($value)
+            && json_decode($value, true)
+        ) {
             $value = json_decode($value, true);
         }
 

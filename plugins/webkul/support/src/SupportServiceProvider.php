@@ -2,6 +2,10 @@
 
 namespace Webkul\Support;
 
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
@@ -30,7 +34,6 @@ class SupportServiceProvider extends PackageServiceProvider
                 '2024_12_10_092657_create_companies_table',
                 '2024_12_10_100944_create_user_allowed_companies_table',
                 '2024_12_10_101420_create_banks_table',
-                '2024_12_10_092658_create_company_addresses_table',
                 '2024_12_12_114620_create_activity_plans_table',
                 '2024_12_12_115256_create_activity_types_table',
                 '2024_12_12_115728_create_activity_plan_templates_table',
@@ -40,12 +43,13 @@ class SupportServiceProvider extends PackageServiceProvider
                 '2025_01_03_061445_create_email_logs_table',
                 '2025_01_03_105625_create_unit_of_measure_categories_table',
                 '2025_01_03_105627_create_unit_of_measures_table',
-                '2025_01_07_131336_add_partner_address_id_column_company_addresses_table',
                 '2025_01_07_125015_add_partner_id_to_companies_table',
                 '2025_01_09_111545_create_utm_mediums_table',
                 '2025_01_09_114324_create_utm_sources_table',
-                '2025_02_07_094256_create_utm_stages_table',
-                '2025_02_07_094325_create_utm_campaigns_table',
+                '2025_01_10_094256_create_utm_stages_table',
+                '2025_01_10_094325_create_utm_campaigns_table',
+                '2025_04_04_061507_add_address_columns_in_companies_table',
+                '2025_04_04_062023_alter_companies_table',
             ])
             ->runsMigrations()
             ->hasCommands([
@@ -55,13 +59,46 @@ class SupportServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
+        include __DIR__.'/helpers.php';
+
         Livewire::component('accept-invitation', AcceptInvitation::class);
 
         Gate::policy(Role::class, RolePolicy::class);
+
+        Event::listen('aureus.installed', 'Webkul\Support\Listeners\Installer@installed');
+
+        /**
+         * Route to access template applied image file
+         */
+        $this->app['router']->get('cache/{filename}', [
+            'uses' => 'Webkul\Support\Http\Controllers\ImageCacheController@getImage',
+            'as'   => 'image_cache',
+        ])->where(['filename' => '[ \w\\.\\/\\-\\@\(\)\=]+']);
     }
 
     public function packageRegistered(): void
     {
-        //
+        $version = '1.0.0-alpha1';
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::USER_MENU_PROFILE_BEFORE,
+            fn (): string => Blade::render(<<<'BLADE'
+                <x-filament::dropdown.list>
+                    <x-filament::dropdown.list.item>
+                        <div class="flex items-center gap-2">
+                            <img
+                                src="{{ url('cache/logo.png') }}"
+                                width="24"
+                                height="24"
+                            />
+
+                            Version {{$version}}
+                        </div>
+                    </x-filament::dropdown.list.item>
+                </x-filament::dropdown.list>
+            BLADE, [
+                'version' => $version,
+            ]),
+        );
     }
 }

@@ -8,6 +8,7 @@ use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Webkul\Partner\Models\BankAccount;
 
 class BankAccountResource extends Resource
@@ -15,6 +16,8 @@ class BankAccountResource extends Resource
     protected static ?string $model = BankAccount::class;
 
     protected static bool $shouldRegisterNavigation = false;
+
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
 
     public static function getNavigationGroup(): string
     {
@@ -33,17 +36,28 @@ class BankAccountResource extends Resource
                 Forms\Components\TextInput::make('account_number')
                     ->label(__('partners::filament/resources/bank-account.form.account-number'))
                     ->required()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\Toggle::make('can_send_money')
                     ->label(__('partners::filament/resources/bank-account.form.can-send-money'))
                     ->inline(false),
                 Forms\Components\Select::make('bank_id')
                     ->label(__('partners::filament/resources/bank-account.form.bank'))
-                    ->relationship('bank', 'name')
+                    ->relationship(
+                        'bank',
+                        'name',
+                        modifyQueryUsing: fn (Builder $query) => $query->withTrashed(),
+                    )
+                    ->getOptionLabelFromRecordUsing(function ($record): string {
+                        return $record->name.($record->trashed() ? ' (Deleted)' : '');
+                    })
+                    ->disableOptionWhen(function ($label) {
+                        return str_contains($label, ' (Deleted)');
+                    })
                     ->required()
                     ->searchable()
-                    ->createOptionForm(fn (Form $form) => BankResource::form($form))
-                    ->preload(),
+                    ->preload()
+                    ->createOptionForm(fn (Form $form) => BankResource::form($form)),
                 Forms\Components\Select::make('partner_id')
                     ->label(__('partners::filament/resources/bank-account.form.account-holder'))
                     ->relationship('partner', 'name')

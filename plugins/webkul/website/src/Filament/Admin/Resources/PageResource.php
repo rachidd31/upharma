@@ -71,9 +71,7 @@ class PageResource extends Resource
                                 Forms\Components\TextInput::make('meta_keywords')
                                     ->label(__('website::filament/admin/resources/page.form.sections.seo.fields.meta-keywords')),
                                 Forms\Components\Textarea::make('meta_description')
-                                    ->autosize(false)
-                                    ->label(__('website::filament/admin/resources/page.form.fields.meta-description'))
-                                    ->maxLength(65535),
+                                    ->label(__('website::filament/admin/resources/page.form.sections.seo.fields.meta-description')),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -274,7 +272,7 @@ class PageResource extends Resource
                                     ->label(__('website::filament/admin/resources/page.infolist.sections.settings.entries.is-header-visible'))
                                     ->boolean(),
 
-                                Infolists\Components\IconEntry::make('is_header_visible')
+                                Infolists\Components\IconEntry::make('is_footer_visible')
                                     ->label(__('website::filament/admin/resources/page.infolist.sections.settings.entries.is-footer-visible'))
                                     ->boolean(),
                             ]),

@@ -18,7 +18,6 @@ use Webkul\Support\Enums\ActivityDelayInterval;
 use Webkul\Support\Enums\ActivityDelayUnit;
 use Webkul\Support\Enums\ActivityResponsibleType;
 use Webkul\Support\Filament\Resources\ActivityTypeResource;
-use Webkul\Support\Models\ActivityPlanTemplate;
 use Webkul\Support\Models\ActivityType;
 
 class ActivityTemplateRelationManager extends RelationManager
@@ -90,7 +89,8 @@ class ActivityTemplateRelationManager extends RelationManager
                                             ->label(__('employees::filament/clusters/configurations/resources/activity-plan/relation-managers/activity-template.form.sections.delay-information.fields.delay-count'))
                                             ->numeric()
                                             ->default(0)
-                                            ->minValue(0),
+                                            ->minValue(0)
+                                            ->maxValue(99999999999),
                                         Forms\Components\Select::make('delay_unit')
                                             ->label(__('employees::filament/clusters/configurations/resources/activity-plan/relation-managers/activity-template.form.sections.delay-information.fields.delay-unit'))
                                             ->searchable()
@@ -191,7 +191,6 @@ class ActivityTemplateRelationManager extends RelationManager
                     ->mutateFormDataUsing(function (array $data): array {
                         return [
                             ...$data,
-                            'sort'       => ActivityPlanTemplate::max('sort') + 1,
                             'creator_id' => Auth::user()->id,
                         ];
                     })
@@ -211,7 +210,6 @@ class ActivityTemplateRelationManager extends RelationManager
                         ->mutateFormDataUsing(function (array $data): array {
                             return [
                                 ...$data,
-                                'sort'       => ActivityPlanTemplate::max('sort') + 1,
                                 'creator_id' => Auth::user()->id,
                             ];
                         })

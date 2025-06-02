@@ -5,6 +5,7 @@ namespace Webkul\Inventory\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Webkul\Chatter\Traits\HasChatter;
@@ -12,8 +13,9 @@ use Webkul\Chatter\Traits\HasLogActivity;
 use Webkul\Field\Traits\HasCustomFields;
 use Webkul\Inventory\Database\Factories\OperationFactory;
 use Webkul\Inventory\Enums;
-use Webkul\Partner\Models\Address;
 use Webkul\Partner\Models\Partner;
+use Webkul\Purchase\Models\Order as PurchaseOrder;
+use Webkul\Sale\Models\Order as SaleOrder;
 use Webkul\Security\Models\User;
 use Webkul\Support\Models\Company;
 
@@ -54,9 +56,9 @@ class Operation extends Model
         'back_order_id',
         'return_id',
         'partner_id',
-        'partner_address_id',
         'company_id',
         'creator_id',
+        'sale_order_id',
     ];
 
     /**
@@ -97,7 +99,6 @@ class Operation extends Model
         'backOrder.name'                => 'Back Order',
         'return.name'                   => 'Return',
         'partner.name'                  => 'Partner',
-        'partnerAddress.name'           => 'Partner Address',
         'company.name'                  => 'Company',
         'creator.name'                  => 'Creator',
     ];
@@ -114,25 +115,25 @@ class Operation extends Model
 
     public function operationType(): BelongsTo
     {
-        return $this->belongsTo(OperationType::class);
+        return $this->belongsTo(OperationType::class)->withTrashed();
     }
 
     public function sourceLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class)->withTrashed();
     }
 
     public function destinationLocation(): BelongsTo
     {
-        return $this->belongsTo(Location::class);
+        return $this->belongsTo(Location::class)->withTrashed();
     }
 
-    public function backOrder(): BelongsTo
+    public function backOrderOf(): BelongsTo
     {
         return $this->belongsTo(self::class);
     }
 
-    public function return(): BelongsTo
+    public function returnOf(): BelongsTo
     {
         return $this->belongsTo(self::class);
     }
@@ -140,11 +141,6 @@ class Operation extends Model
     public function partner(): BelongsTo
     {
         return $this->belongsTo(Partner::class);
-    }
-
-    public function partnerAddress(): BelongsTo
-    {
-        return $this->belongsTo(Address::class);
     }
 
     public function company(): BelongsTo
@@ -170,6 +166,16 @@ class Operation extends Model
     public function packages(): HasManyThrough
     {
         return $this->hasManyThrough(Package::class, MoveLine::class, 'operation_id', 'id', 'id', 'result_package_id');
+    }
+
+    public function purchaseOrders(): BelongsToMany
+    {
+        return $this->belongsToMany(PurchaseOrder::class, 'purchases_order_operations', 'inventory_operation_id', 'purchase_order_id');
+    }
+
+    public function saleOrder(): BelongsTo
+    {
+        return $this->belongsTo(SaleOrder::class, 'sale_order_id');
     }
 
     /**

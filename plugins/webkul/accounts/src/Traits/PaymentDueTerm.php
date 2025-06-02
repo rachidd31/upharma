@@ -22,7 +22,9 @@ trait PaymentDueTerm
                 Forms\Components\TextInput::make('value_amount')
                     ->label(__('accounts::traits/payment-due-term.form.due'))
                     ->default(100)
-                    ->numeric(),
+                    ->numeric()
+                    ->minValue(0)
+                    ->maxValue(99999999999),
                 Forms\Components\Select::make('delay_type')
                     ->options(Enums\DelayType::class)
                     ->label(__('accounts::traits/payment-due-term.form.delay-type'))
@@ -33,6 +35,8 @@ trait PaymentDueTerm
                 Forms\Components\TextInput::make('nb_days')
                     ->default(0)
                     ->numeric()
+                    ->minValue(0)
+                    ->maxValue(99999999999)
                     ->label(__('accounts::traits/payment-due-term.form.days')),
                 Forms\Components\Select::make('payment_id')
                     ->relationship('paymentTerm', 'name')
@@ -70,15 +74,15 @@ trait PaymentDueTerm
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title('accounts::traits/payment-due-term.table.actions.edit.notification.title')
-                            ->body('accounts::traits/payment-due-term.table.actions.edit.notification.body')
+                            ->title(__('accounts::traits/payment-due-term.table.actions.edit.notification.title'))
+                            ->body(__('accounts::traits/payment-due-term.table.actions.edit.notification.body'))
                     ),
                 Tables\Actions\DeleteAction::make()
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title('accounts::traits/payment-due-term.table.actions.delete.notification.title')
-                            ->body('accounts::traits/payment-due-term.table.actions.delete.notification.body')
+                            ->title(__('accounts::traits/payment-due-term.table.actions.delete.notification.title'))
+                            ->body(__('accounts::traits/payment-due-term.table.actions.delete.notification.body'))
                     ),
             ])
             ->headerActions([
@@ -86,8 +90,8 @@ trait PaymentDueTerm
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title('accounts::traits/payment-due-term.table.actions.delete.notification.title')
-                            ->body('accounts::traits/payment-due-term.table.actions.delete.notification.body')
+                            ->title(__('accounts::traits/payment-due-term.table.actions.delete.notification.title'))
+                            ->body(__('accounts::traits/payment-due-term.table.actions.delete.notification.body'))
                     )
                     ->icon('heroicon-o-plus-circle'),
             ]);

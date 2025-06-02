@@ -6,6 +6,7 @@ use BezhanSalleh\FilamentShield\Support\Utils;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -41,9 +42,13 @@ class InstallERP extends Command
 
         $this->generateRolesAndPermissions();
 
+        $this->storageLink();
+
         $this->runSeeder();
 
         $this->createAdminUser();
+
+        Event::dispatch('aureus.installed');
 
         $this->info('🎉 ERP System installation completed successfully!');
     }
@@ -101,9 +106,14 @@ class InstallERP extends Command
         $userModel = app(config('filament-shield.auth_provider_model.fqcn'));
 
         $adminData = [
-            'name'  => text('Name', required: true),
+            'name'  => text(
+                'Name',
+                default: 'Example',
+                required: true
+            ),
             'email' => text(
                 'Email address',
+                default: 'admin@example.com',
                 required: true,
                 validate: fn ($email) => $this->validateAdminEmail($email, $userModel)
             ),
@@ -182,5 +192,18 @@ class InstallERP extends Command
         if (PHP_OS_FAMILY == 'Linux') {
             exec("xdg-open {$repoUrl}");
         }
+    }
+
+    private function storageLink()
+    {
+        if (file_exists(public_path('storage'))) {
+            return;
+        }
+
+        $this->info('🔗 Linking storage directory...');
+
+        Artisan::call('storage:link', [], $this->getOutput());
+
+        $this->info('✅ Storage directory linked successfully.');
     }
 }

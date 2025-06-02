@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Webkul\Chatter\Traits\HasChatter;
 use Webkul\Chatter\Traits\HasLogActivity;
 use Webkul\Product\Database\Factories\ProductFactory;
@@ -16,9 +18,9 @@ use Webkul\Security\Models\User;
 use Webkul\Support\Models\Company;
 use Webkul\Support\Models\UOM;
 
-class Product extends Model
+class Product extends Model implements Sortable
 {
-    use HasChatter, HasFactory, HasLogActivity, SoftDeletes;
+    use HasChatter, HasFactory, HasLogActivity, SoftDeletes, SortableTrait;
 
     /**
      * Table name.
@@ -96,6 +98,11 @@ class Product extends Model
         'creator.name'  => 'Creator',
     ];
 
+    public $sortable = [
+        'order_column_name'  => 'sort',
+        'sort_when_creating' => true,
+    ];
+
     public function parent(): BelongsTo
     {
         return $this->belongsTo(self::class);
@@ -158,7 +165,12 @@ class Product extends Model
 
     public function supplierInformation(): HasMany
     {
-        return $this->hasMany(ProductSupplier::class);
+        if ($this->is_configurable) {
+            return $this->hasMany(ProductSupplier::class)
+                ->orWhereIn('product_id', $this->variants()->pluck('id'));
+        } else {
+            return $this->hasMany(ProductSupplier::class);
+        }
     }
 
     protected static function newFactory(): ProductFactory

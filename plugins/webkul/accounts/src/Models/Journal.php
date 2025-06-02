@@ -6,14 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\DB;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Webkul\Partner\Models\BankAccount;
 use Webkul\Security\Models\User;
 use Webkul\Support\Models\Company;
 use Webkul\Support\Models\Currency;
 
-class Journal extends Model
+class Journal extends Model implements Sortable
 {
-    use HasFactory;
+    use HasFactory, SortableTrait;
 
     protected $table = 'accounts_journals';
 
@@ -36,12 +38,16 @@ class Journal extends Model
         'bank_statements_source',
         'name',
         'order_override_regex',
-        'is_active',
         'auto_check_on_post',
         'restrict_mode_hash_table',
         'refund_order',
         'payment_order',
         'show_on_dashboard',
+    ];
+
+    public $sortable = [
+        'order_column_name'  => 'sort',
+        'sort_when_creating' => true,
     ];
 
     public function bankAccount()

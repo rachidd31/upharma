@@ -12,23 +12,27 @@ use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder\Constraints\RelationshipConstraint\Operators\IsRelatedToOperator;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Account\Enums\TypeTaxUse;
+use Webkul\Account\Facades\Tax as TaxFacade;
 use Webkul\Account\Filament\Resources\IncoTermResource;
 use Webkul\Account\Models\Partner;
-use Webkul\Account\Services\TaxService;
 use Webkul\Field\Filament\Forms\Components\ProgressStepper;
 use Webkul\Field\Filament\Traits\HasCustomFields;
+use Webkul\Product\Enums\ProductType;
 use Webkul\Product\Models\Packaging;
 use Webkul\Purchase\Enums;
 use Webkul\Purchase\Livewire\Summary;
 use Webkul\Purchase\Models\Order;
-use Webkul\Purchase\Models\OrderLine;
 use Webkul\Purchase\Models\Product;
 use Webkul\Purchase\Settings;
 use Webkul\Purchase\Settings\OrderSettings;
+use Webkul\Support\Models\Currency;
 use Webkul\Support\Models\UOM;
+use Webkul\Support\Package;
 
 class OrderResource extends Resource
 {
@@ -71,7 +75,6 @@ class OrderResource extends Resource
                                     ->relationship(
                                         'partner',
                                         'name',
-                                        fn ($query) => $query->where('sub_type', 'supplier')
                                     )
                                     ->searchable()
                                     ->required()
@@ -114,6 +117,7 @@ class OrderResource extends Resource
                                     ->disabled(fn ($record): bool => $record && ! in_array($record?->state, [Enums\OrderState::DRAFT, Enums\OrderState::SENT])),
                                 Forms\Components\TextInput::make('partner_reference')
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.sections.general.fields.vendor-reference'))
+                                    ->maxLength(255)
                                     ->hintIcon('heroicon-o-question-mark-circle', tooltip: __('purchases::filament/admin/clusters/orders/resources/order.form.sections.general.fields.vendor-reference-tooltip')),
                                 Forms\Components\Select::make('requisition_id')
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.sections.general.fields.agreement'))
@@ -165,6 +169,7 @@ class OrderResource extends Resource
                                 static::getProductRepeater(),
                                 Forms\Components\Livewire::make(Summary::class, function (Forms\Get $get) {
                                     return [
+                                        'currency' => Currency::find($get('currency_id')),
                                         'products' => $get('products'),
                                     ];
                                 })
@@ -192,7 +197,8 @@ class OrderResource extends Resource
                                             ->default(Auth::user()->default_company_id)
                                             ->disabled(fn ($record): bool => $record && ! in_array($record?->state, [Enums\OrderState::DRAFT, Enums\OrderState::SENT])),
                                         Forms\Components\TextInput::make('reference')
-                                            ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.additional.fields.source-document')),
+                                            ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.additional.fields.source-document'))
+                                            ->maxLength(255),
                                         Forms\Components\Select::make('incoterm_id')
                                             ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.additional.fields.incoterm'))
                                             ->relationship('incoterm', 'name')
@@ -203,6 +209,7 @@ class OrderResource extends Resource
                                             ->disabled(fn ($record): bool => $record && ! in_array($record?->state, [Enums\OrderState::DRAFT, Enums\OrderState::SENT, Enums\OrderState::PURCHASE])),
                                         Forms\Components\TextInput::make('reference')
                                             ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.additional.fields.incoterm-location'))
+                                            ->maxLength(255)
                                             ->disabled(fn ($record): bool => $record && ! in_array($record?->state, [Enums\OrderState::DRAFT, Enums\OrderState::SENT, Enums\OrderState::PURCHASE])),
                                     ]),
 
@@ -407,21 +414,43 @@ class OrderResource extends Resource
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\DeleteAction::make()
                         ->hidden(fn (Model $record) => $record->state == Enums\OrderState::DONE)
+                        ->action(function (Model $record) {
+                            try {
+                                $record->delete();
+                            } catch (QueryException $e) {
+                                Notification::make()
+                                    ->danger()
+                                    ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.error.title'))
+                                    ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.error.body'))
+                                    ->send();
+                            }
+                        })
                         ->successNotification(
                             Notification::make()
                                 ->success()
-                                ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.title'))
-                                ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.body')),
+                                ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.success.title'))
+                                ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.actions.delete.notification.success.body')),
                         ),
                 ]),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make()
+                    ->action(function (Collection $records) {
+                        try {
+                            $records->each(fn (Model $record) => $record->delete());
+                        } catch (QueryException $e) {
+                            Notification::make()
+                                ->danger()
+                                ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.error.title'))
+                                ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.error.body'))
+                                ->send();
+                        }
+                    })
                     ->successNotification(
                         Notification::make()
                             ->success()
-                            ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.title'))
-                            ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.body')),
+                            ->title(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.success.title'))
+                            ->body(__('purchases::filament/admin/clusters/orders/resources/order.table.bulk-actions.delete.notification.success.body')),
                     ),
             ])
             ->checkIfRecordIsSelectableUsing(
@@ -629,7 +658,11 @@ class OrderResource extends Resource
                             ->schema([
                                 Forms\Components\Select::make('product_id')
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.products.repeater.products.fields.product'))
-                                    ->relationship('product', 'name')
+                                    ->relationship(
+                                        'product',
+                                        'name',
+                                        fn ($query) => $query->where('type', ProductType::GOODS)->whereNull('is_configurable'),
+                                    )
                                     ->searchable()
                                     ->preload()
                                     ->live()
@@ -660,6 +693,7 @@ class OrderResource extends Resource
                                     ->required()
                                     ->default(1)
                                     ->numeric()
+                                    ->maxValue(99999999999)
                                     ->live()
                                     ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
                                         static::afterProductQtyUpdated($set, $get);
@@ -670,12 +704,14 @@ class OrderResource extends Resource
                                     ->required()
                                     ->default(0)
                                     ->numeric()
+                                    ->maxValue(99999999999)
                                     ->visible(fn ($record): bool => in_array($record?->order->state, [Enums\OrderState::PURCHASE, Enums\OrderState::DONE]))
-                                    ->disabled(fn ($record): bool => in_array($record?->order->state, [Enums\OrderState::DONE, Enums\OrderState::CANCELED])),
+                                    ->disabled(fn ($record): bool => in_array($record?->order->state, [Enums\OrderState::DONE, Enums\OrderState::CANCELED]) || $record?->qty_received_method == Enums\QtyReceivedMethod::STOCK_MOVE),
                                 Forms\Components\TextInput::make('qty_invoiced')
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.products.repeater.products.fields.billed'))
                                     ->default(0)
                                     ->numeric()
+                                    ->maxValue(99999999999)
                                     ->visible(fn ($record): bool => in_array($record?->order->state, [Enums\OrderState::PURCHASE, Enums\OrderState::DONE]))
                                     ->disabled(),
                                 Forms\Components\Select::make('uom_id')
@@ -697,6 +733,7 @@ class OrderResource extends Resource
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.products.repeater.products.fields.packaging-qty'))
                                     ->live()
                                     ->numeric()
+                                    ->maxValue(99999999999)
                                     ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
                                         static::afterProductPackagingQtyUpdated($set, $get);
                                     })
@@ -720,6 +757,8 @@ class OrderResource extends Resource
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.products.repeater.products.fields.unit-price'))
                                     ->numeric()
                                     ->default(0)
+                                    ->minValue(0)
+                                    ->maxValue(99999999999)
                                     ->required()
                                     ->live()
                                     ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
@@ -747,6 +786,8 @@ class OrderResource extends Resource
                                     ->label(__('purchases::filament/admin/clusters/orders/resources/order.form.tabs.products.repeater.products.fields.discount-percentage'))
                                     ->numeric()
                                     ->default(0)
+                                    ->minValue(0)
+                                    ->maxValue(100)
                                     ->live()
                                     ->afterStateUpdated(function (Forms\Set $set, Forms\Get $get) {
                                         self::calculateLineTotals($set, $get);
@@ -770,10 +811,16 @@ class OrderResource extends Resource
             ->mutateRelationshipDataBeforeCreateUsing(function (array $data, $record) {
                 $product = Product::find($data['product_id']);
 
+                $qtyReceivedMethod = Enums\QtyReceivedMethod::MANUAL;
+
+                if (Package::isPluginInstalled('inventories')) {
+                    $qtyReceivedMethod = Enums\QtyReceivedMethod::STOCK_MOVE;
+                }
+
                 $data = array_merge($data, [
                     'name'                => $product->name,
                     'state'               => $record->state->value,
-                    'qty_received_method' => 'manual',
+                    'qty_received_method' => $qtyReceivedMethod,
                     'uom_id'              => $data['uom_id'] ?? $product->uom_id,
                     'currency_id'         => $record->currency_id,
                     'partner_id'          => $record->partner_id,
@@ -992,75 +1039,12 @@ class OrderResource extends Resource
 
         $taxIds = $get($prefix.'taxes') ?? [];
 
-        [$subTotal, $taxAmount] = app(TaxService::class)->collectionTaxes($taxIds, $subTotal, $quantity);
+        [$subTotal, $taxAmount] = TaxFacade::collect($taxIds, $subTotal, $quantity);
 
         $set($prefix.'price_subtotal', round($subTotal, 4));
 
         $set($prefix.'price_tax', $taxAmount);
 
         $set($prefix.'price_total', $subTotal + $taxAmount);
-    }
-
-    public static function collectTotals(Order $record): void
-    {
-        $record->untaxed_amount = 0;
-        $record->tax_amount = 0;
-        $record->total_amount = 0;
-        $record->total_cc_amount = 0;
-        $record->invoice_count = 0;
-
-        foreach ($record->lines as $line) {
-            $line = static::collectLineTotals($line);
-
-            $record->untaxed_amount += $line->price_subtotal;
-            $record->tax_amount += $line->price_tax;
-            $record->total_amount += $line->price_total;
-            $record->total_cc_amount += $line->price_total;
-        }
-
-        $record->invoice_count = $record->accountMoves->count();
-
-        if ($record->qty_to_invoice != 0) {
-            $record->invoice_status = Enums\OrderInvoiceStatus::TO_INVOICED;
-        } else {
-            if ($record->invoice_count) {
-                $record->invoice_status = Enums\OrderInvoiceStatus::INVOICED;
-            } else {
-                $record->invoice_status = Enums\OrderInvoiceStatus::NO;
-            }
-        }
-
-        $record->save();
-    }
-
-    public static function collectLineTotals(OrderLine $line): OrderLine
-    {
-        $line->qty_received_manual = $line->qty_received ?? 0;
-
-        $line->qty_to_invoice = $line->qty_received - $line->qty_invoiced;
-
-        $subTotal = $line->price_unit * $line->product_qty;
-
-        $discountAmount = 0;
-
-        if ($line->discount > 0) {
-            $discountAmount = $subTotal * ($line->discount / 100);
-
-            $subTotal = $subTotal - $discountAmount;
-        }
-
-        $taxIds = $line->taxes->pluck('id')->toArray();
-
-        [$subTotal, $taxAmount] = app(TaxService::class)->collectionTaxes($taxIds, $subTotal, $line->product_qty);
-
-        $line->price_subtotal = round($subTotal, 4);
-
-        $line->price_tax = $taxAmount;
-
-        $line->price_total = $subTotal + $taxAmount;
-
-        $line->save();
-
-        return $line;
     }
 }

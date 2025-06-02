@@ -12,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Employee\Enums;
-use Webkul\Employee\Models\EmployeeResumeLineType;
 
 trait EmployeeResumeRelation
 {
@@ -42,9 +41,6 @@ trait EmployeeResumeRelation
                                     Forms\Components\Hidden::make('creator_id')
                                         ->default(Auth::user()->id)
                                         ->required(),
-                                    Forms\Components\Hidden::make('sort')
-                                        ->default(EmployeeResumeLineType::max('sort') + 1)
-                                        ->required(),
                                 ])->columns(2),
                         ])
                         ->createOptionAction(function (Action $action) {
@@ -73,11 +69,7 @@ trait EmployeeResumeRelation
                         ->required()
                         ->reactive(),
                     Forms\Components\Textarea::make('description')
-                        ->autosize(false)
-                        ->maxLength(65535)
-                        ->hiddenOn('create')
-                        ->visible(fn ($record) => $record && $record->description)
-                        ->readOnly(),
+                        ->label(__('employees::filament/resources/employee/relation-manager/resume.form.sections.fields.description')),
                 ])->columns(2),
             ]);
     }
