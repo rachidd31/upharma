@@ -2,26 +2,26 @@
 
 return [
     'navigation' => [
-        'title' => 'Recruitment',
+        'title' => 'Recrutement',
     ],
 
     'filters-form' => [
-        'job-position' => 'Job Position',
-        'departments'  => 'Departments',
-        'companies'    => 'Companies',
-        'stages'       => 'Stages',
+        'job-position' => 'Poste',
+        'departments'  => 'Départements',
+        'companies'    => 'Entreprises',
+        'stages'       => 'Étapes',
         'status'       => [
-            'title'   => 'Status',
+            'title'   => 'Statut',
             'options' => [
-                'all'      => 'All',
-                'ongoing'  => 'Ongoing',
-                'hired'    => 'Hired',
-                'refused'  => 'Refused',
-                'archived' => 'Archived',
+                'all'      => 'Tous',
+                'ongoing'  => 'En cours',
+                'hired'    => 'Embauché',
+                'refused'  => 'Refusé',
+                'archived' => 'Archivé',
             ],
         ],
 
-        'start-date' => 'Start Date',
-        'end-date'   => 'End Date',
+        'start-date' => 'Date de début',
+        'end-date'   => 'Date de fin',
     ],
 ];

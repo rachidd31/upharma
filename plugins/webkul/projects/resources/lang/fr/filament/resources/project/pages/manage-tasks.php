@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'title' => 'Tasks',
+    'title' => 'Tâches',
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Task',
+            'label' => 'Nouvelle Tâche',
         ],
     ],
 
@@ -13,33 +13,33 @@ return [
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Task restored',
-                    'body'  => 'The task has been restored successfully.',
+                    'title' => 'Tâche restaurée',
+                    'body'  => 'La tâche a été restaurée avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Task deleted',
-                    'body'  => 'The task has been deleted successfully.',
+                    'title' => 'Tâche supprimée',
+                    'body'  => 'La tâche a été supprimée avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Task force deleted',
-                    'body'  => 'The task has been force deleted successfully.',
+                    'title' => 'Tâche supprimée définitivement',
+                    'body'  => 'La tâche a été supprimée définitivement avec succès.',
                 ],
             ],
         ],
     ],
 
     'tabs' => [
-        'open-tasks'       => 'Open Tasks',
-        'my-tasks'         => 'My Tasks',
-        'unassigned-tasks' => 'Unassigned Tasks',
-        'closed-tasks'     => 'Closed Tasks',
-        'starred-tasks'    => 'Starred Tasks',
-        'archived-tasks'   => 'Archived Tasks',
+        'open-tasks'     => 'Tâches Ouvertes',
+        'my-tasks'       => 'Mes Tâches',
+        'unassigned-tasks' => 'Tâches Non Assignées',
+        'closed-tasks'   => 'Tâches Clôturées',
+        'starred-tasks'  => 'Tâches Suivies',
+        'archived-tasks' => 'Tâches Archivées',
     ],
 ];

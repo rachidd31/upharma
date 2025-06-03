@@ -4,11 +4,11 @@ return [
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Project Milestone',
+                'label' => 'Ajouter un jalon de projet',
 
                 'notification' => [
-                    'title' => 'Milestone created',
-                    'body'  => 'The milestone has been created successfully.',
+                    'title' => 'Jalon créé',
+                    'body'  => 'Le jalon a été créé avec succès.',
                 ],
             ],
         ],

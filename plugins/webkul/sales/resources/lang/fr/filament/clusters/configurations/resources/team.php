@@ -1,27 +1,27 @@
 <?php
 
 return [
-    'title' => 'Sales Teams',
+    'title' => 'Équipes de vente',
 
     'navigation' => [
-        'title' => 'Sales Teams',
+        'title' => 'Équipes de vente',
     ],
 
     'form' => [
         'sections' => [
             'fields' => [
-                'name'     => 'Sales Team',
-                'status'   => 'Status',
+                'name'     => "Équipe de vente",
+                'status'   => "Statut",
                 'fieldset' => [
                     'team-details' => [
-                        'title'  => 'Team Details',
+                        'title'  => "Détails de l'équipe",
                         'fields' => [
-                            'team-leader'            => 'Team Leader',
-                            'company'                => 'Company',
-                            'invoiced-target'        => 'Invoiced Target',
-                            'invoiced-target-suffix' => '/ Month',
-                            'color'                  => 'Color',
-                            'members'                => 'Members',
+                            'team-leader'            => "Chef d'équipe",
+                            'company'                => "Entreprise",
+                            'invoiced-target'        => "Objectif facturé",
+                            'invoiced-target-suffix' => "/ Mois",
+                            'color'                  => "Couleur",
+                            'members'                => "Membres",
                         ],
                     ],
                 ],
@@ -31,54 +31,54 @@ return [
 
     'table' => [
         'columns' => [
-            'id'              => 'ID',
-            'company'         => 'Company',
-            'team-leader'     => 'Team Leader',
-            'name'            => 'Name',
-            'status'          => 'Status',
-            'invoiced-target' => 'Invoiced Target',
-            'color'           => 'Color',
-            'created-by'      => 'Created By',
-            'created-at'      => 'Created At',
-            'updated-at'      => 'Updated At',
+            'id'              => "ID",
+            'company'         => "Entreprise",
+            'team-leader'     => "Chef d'équipe",
+            'name'            => "Nom",
+            'status'          => "Statut",
+            'invoiced-target' => "Objectif facturé",
+            'color'           => "Couleur",
+            'created-by'      => "Créé par",
+            'created-at'      => "Créé le",
+            'updated-at'      => "Mis à jour le",
         ],
 
         'filters' => [
-            'name'        => 'Name',
-            'team-leader' => 'Team Leader',
-            'company'     => 'Company',
-            'created-by'  => 'Created By',
-            'updated-at'  => 'Updated At',
-            'created-at'  => 'Created At',
+            'name'        => "Nom",
+            'team-leader' => "Chef d'équipe",
+            'company'     => "Entreprise",
+            'created-by'  => "Créé par",
+            'updated-at'  => "Mis à jour le",
+            'created-at'  => "Créé le",
         ],
 
         'groups' => [
-            'name'        => 'Name',
-            'company'     => ' Company',
-            'team-leader' => 'Team Leader',
-            'created-at'  => 'Created At',
-            'updated-at'  => 'Updated At',
+            'name'        => "Nom",
+            'company'     => "Entreprise",
+            'team-leader' => "Chef d'équipe",
+            'created-at'  => "Créé le",
+            'updated-at'  => "Mis à jour le",
         ],
 
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Sales Team restored',
-                    'body'  => 'The sales Team has been restored successfully.',
+                    'title' => "Équipe de vente restaurée",
+                    'body'  => "L'équipe de vente a été restaurée avec succès.",
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Sales Team deleted',
-                    'body'  => 'The sales Team has been deleted successfully.',
+                    'title' => "Équipe de vente supprimée",
+                    'body'  => "L'équipe de vente a été supprimée avec succès.",
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Sales Team force deleted',
-                    'body'  => 'The sales Team has been force deleted successfully.',
+                    'title' => "Équipe de vente supprimée définitivement",
+                    'body'  => "L'équipe de vente a été supprimée définitivement avec succès.",
                 ],
             ],
         ],
@@ -86,22 +86,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Sales Teams restored',
-                    'body'  => 'The sales Teams has been restored successfully.',
+                    'title' => "Équipes de vente restaurées",
+                    'body'  => "Les équipes de vente ont été restaurées avec succès.",
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Sales Teams deleted',
-                    'body'  => 'The sales Teams has been deleted successfully.',
+                    'title' => "Équipes de vente supprimées",
+                    'body'  => "Les équipes de vente ont été supprimées avec succès.",
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Sales Teams force deleted',
-                    'body'  => 'The sales Teams has been force deleted successfully.',
+                    'title' => "Équipes de vente supprimées définitivement",
+                    'body'  => "Les équipes de vente ont été supprimées définitivement avec succès.",
                 ],
             ],
         ],
@@ -109,8 +109,8 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Sales Teams created',
-                    'body'  => 'The sales Teams has been created successfully.',
+                    'title' => "Équipe de vente créée",
+                    'body'  => "L'équipe de vente a été créée avec succès.",
                 ],
             ],
         ],
@@ -118,19 +118,21 @@ return [
 
     'infolist' => [
         'sections' => [
-            'entries' => [
-                'name'     => 'Sales Team',
-                'status'   => 'Status',
-                'fieldset' => [
-                    'team-details' => [
-                        'title'   => 'Team Details',
-                        'entries' => [
-                            'team-leader'            => 'Team Leader',
-                            'company'                => 'Company',
-                            'invoiced-target'        => 'Invoiced Target',
-                            'invoiced-target-suffix' => '/ Month',
-                            'color'                  => 'Color',
-                            'members'                => 'Members',
+            'general' => [
+                'entries' => [
+                    'name'     => "Équipe de vente",
+                    'status'   => "Statut",
+                    'fieldset' => [
+                        'team-details' => [
+                            'title'   => "Détails de l'équipe",
+                            'entries' => [
+                                'team-leader'            => "Chef d'équipe",
+                                'company'                => "Entreprise",
+                                'invoiced-target'        => "Objectif facturé",
+                                'invoiced-target-suffix' => "/ Mois",
+                                'color'                  => "Couleur",
+                                'members'                => "Membres",
+                            ],
                         ],
                     ],
                 ],

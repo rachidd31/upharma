@@ -2,57 +2,57 @@
 
 return [
     'navigation' => [
-        'title' => 'Task Stages',
+        'title' => 'Étapes des Tâches',
     ],
 
     'form' => [
-        'name'    => 'Name',
-        'project' => 'Project',
+        'name'    => 'Nom',
+        'project' => 'Projet',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'project'    => 'Project',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'project'    => 'Projet',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'groups' => [
-            'project'    => 'Project',
-            'created-at' => 'Created At',
+            'project'    => 'Projet',
+            'created-at' => 'Créé le',
         ],
 
         'filters' => [
-            'project' => 'Project',
+            'project' => 'Projet',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Task stage updated',
-                    'body'  => 'The task stage has been updated successfully.',
+                    'title' => 'Étape de tâche mise à jour',
+                    'body'  => 'L\'étape de tâche a été mise à jour avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Task stage restored',
-                    'body'  => 'The task stage has been restored successfully.',
+                    'title' => 'Étape de tâche restaurée',
+                    'body'  => 'L\'étape de tâche a été restaurée avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Task stage deleted',
-                    'body'  => 'The task stage has been deleted successfully.',
+                    'title' => 'Étape de tâche supprimée',
+                    'body'  => 'L\'étape de tâche a été supprimée avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Task stage force deleted',
-                    'body'  => 'The task stage has been force deleted successfully.',
+                    'title' => 'Étape de tâche supprimée définitivement',
+                    'body'  => 'L\'étape de tâche a été supprimée définitivement avec succès.',
                 ],
             ],
         ],
@@ -60,22 +60,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Task stages restored',
-                    'body'  => 'The task stages has been restored successfully.',
+                    'title' => 'Étapes de tâches restaurées',
+                    'body'  => 'Les étapes de tâches ont été restaurées avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Task stages deleted',
-                    'body'  => 'The task stages has been deleted successfully.',
+                    'title' => 'Étapes de tâches supprimées',
+                    'body'  => 'Les étapes de tâches ont été supprimées avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Task stages force deleted',
-                    'body'  => 'The task stages has been force deleted successfully.',
+                    'title' => 'Étapes de tâches supprimées définitivement',
+                    'body'  => 'Les étapes de tâches ont été supprimées définitivement avec succès.',
                 ],
             ],
         ],

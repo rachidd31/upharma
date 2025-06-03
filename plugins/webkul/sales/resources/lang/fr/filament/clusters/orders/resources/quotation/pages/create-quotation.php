@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Quotation created',
-        'body'  => 'The quotation has been created successfully.',
+        'title' => 'Devis créé',
+        'body'  => 'Le devis a été créé avec succès.',
     ],
 ];

@@ -1,47 +1,47 @@
 <?php
 
 return [
-    'title' => 'Stages',
+    'title' => 'Étapes',
 
     'navigation' => [
-        'title' => 'Stages',
-        'group' => 'Job Positions',
+        'title' => 'Étapes',
+        'group' => 'Postes',
     ],
 
     'form' => [
         'sections' => [
             'general-information' => [
-                'title' => 'General Information',
+                'title' => 'Informations générales',
 
                 'fields' => [
-                    'stage-name'   => 'Stage Name',
-                    'sort'         => 'Sequence Order',
-                    'requirements' => 'Requirements',
+                    'stage-name'   => 'Nom de l\'étape',
+                    'sort'         => 'Ordre de séquence',
+                    'requirements' => 'Exigences',
                 ],
             ],
 
             'tooltips' => [
-                'title'       => 'Tooltips',
-                'description' => 'Define the custom label for application status.',
+                'title'       => 'Infobulles',
+                'description' => 'Définir l\'étiquette personnalisée pour le statut de la candidature.',
 
                 'fields' => [
-                    'gray-label'          => 'Gray Label',
-                    'gray-label-tooltip'  => 'The label for the gray status.',
-                    'red-label'           => 'Red Label',
-                    'red-label-tooltip'   => 'The label for the red status.',
-                    'green-label'         => 'Green Label',
-                    'green-label-tooltip' => 'The label for the green status.',
+                    'gray-label'        => 'Libellé gris',
+                    'gray-label-tooltip' => 'Le libellé pour le statut gris.',
+                    'red-label'         => 'Libellé rouge',
+                    'red-label-tooltip'  => 'Le libellé pour le statut rouge.',
+                    'green-label'       => 'Libellé vert',
+                    'green-label-tooltip' => 'Le libellé pour le statut vert.',
                 ],
             ],
 
             'additional-information' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations supplémentaires',
 
                 'fields' => [
-                    'job-positions' => 'Job Positions',
-                    'folded'        => 'Folded',
-                    'hired-stage'   => 'Hired Stage',
-                    'default-stage' => 'Default Stage',
+                    'job-positions' => 'Postes',
+                    'folded'        => 'Plié',
+                    'hired-stage'   => 'Étape d\'embauche',
+                    'default-stage' => 'Étape par défaut',
                 ],
             ],
         ],
@@ -49,46 +49,46 @@ return [
 
     'table' => [
         'columns' => [
-            'id'                 => 'ID',
-            'name'               => 'Stage Name',
-            'hired-stage'        => 'Hired Stage',
-            'default-stage'      => 'Default Stage',
-            'folded'             => 'Folded',
-            'job-positions'      => 'Job Positions',
-            'created-by'         => 'Created By',
-            'created-at'         => 'Created At',
-            'updated-at'         => 'Updated At',
+            'id'            => 'ID',
+            'name'          => 'Nom de l\'étape',
+            'hired-stage'   => 'Étape d\'embauche',
+            'default-stage' => 'Étape par défaut',
+            'folded'        => 'Plié',
+            'job-positions' => 'Postes',
+            'created-by'    => 'Créé par',
+            'created-at'    => 'Créé le',
+            'updated-at'    => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'         => 'Stage Name',
-            'job-position' => 'Job Position',
-            'folded'       => 'Folded',
-            'gray-label'   => 'Gray Label',
-            'red-label'    => 'Red Label',
-            'green-label'  => 'Green Label',
-            'created-by'   => 'Created By',
-            'created-at'   => 'Created At',
-            'updated-at'   => 'Updated At',
+            'name'         => 'Nom de l\'étape',
+            'job-position' => 'Poste',
+            'folded'       => 'Plié',
+            'gray-label'   => 'Libellé gris',
+            'red-label'    => 'Libellé rouge',
+            'green-label'  => 'Libellé vert',
+            'created-by'   => 'Créé par',
+            'created-at'   => 'Créé le',
+            'updated-at'   => 'Mis à jour le',
         ],
 
         'groups' => [
-            'job-position' => 'Job Position',
-            'stage-name'   => 'Stage Name',
-            'folded'       => 'Folded',
-            'gray-label'   => 'Gray Label',
-            'red-label'    => 'Red Label',
-            'green-label'  => 'Green Label',
-            'created-by'   => 'Created By',
-            'created-at'   => 'Created At',
-            'updated-at'   => 'Updated At',
+            'job-position' => 'Poste',
+            'stage-name'   => 'Nom de l\'étape',
+            'folded'       => 'Plié',
+            'gray-label'   => 'Libellé gris',
+            'red-label'    => 'Libellé rouge',
+            'green-label'  => 'Libellé vert',
+            'created-by'   => 'Créé par',
+            'created-at'   => 'Créé le',
+            'updated-at'   => 'Mis à jour le',
         ],
 
         'actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Stage deleted',
-                    'body'  => 'The Stage has been deleted successfully.',
+                    'title' => 'Étape supprimée',
+                    'body'  => 'L\'étape a été supprimée avec succès.',
                 ],
             ],
         ],
@@ -96,15 +96,15 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Stages deleted',
-                    'body'  => 'The Stages has been deleted successfully.',
+                    'title' => 'Étapes supprimées',
+                    'body'  => 'Les étapes ont été supprimées avec succès.',
                 ],
             ],
         ],
 
         'empty-state-actions' => [
             'create' => [
-                'label' => 'New Stage',
+                'label' => 'Nouvelle étape',
             ],
         ],
     ],
@@ -112,37 +112,37 @@ return [
     'infolist' => [
         'sections' => [
             'general-information' => [
-                'title' => 'General Information',
+                'title' => 'Informations générales',
 
                 'entries' => [
-                    'stage-name'   => 'Stage Name',
-                    'sort'         => 'Sequence Order',
-                    'requirements' => 'Requirements',
+                    'stage-name'   => 'Nom de l\'étape',
+                    'sort'         => 'Ordre de séquence',
+                    'requirements' => 'Exigences',
                 ],
             ],
 
             'tooltips' => [
-                'title'       => 'Tooltips',
-                'description' => 'Define the custom label for application status.',
+                'title'       => 'Infobulles',
+                'description' => 'Définir l\'étiquette personnalisée pour le statut de la candidature.',
 
                 'entries' => [
-                    'gray-label'          => 'Gray Label',
-                    'gray-label-tooltip'  => 'The label for the gray status.',
-                    'red-label'           => 'Red Label',
-                    'red-label-tooltip'   => 'The label for the red status.',
-                    'green-label'         => 'Green Label',
-                    'green-label-tooltip' => 'The label for the green status.',
+                    'gray-label'        => 'Libellé gris',
+                    'gray-label-tooltip' => 'Le libellé pour le statut gris.',
+                    'red-label'         => 'Libellé rouge',
+                    'red-label-tooltip'  => 'Le libellé pour le statut rouge.',
+                    'green-label'       => 'Libellé vert',
+                    'green-label-tooltip' => 'Le libellé pour le statut vert.',
                 ],
             ],
 
             'additional-information' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations supplémentaires',
 
                 'entries' => [
-                    'job-positions'      => 'Job Position',
-                    'folded'             => 'Folded',
-                    'hired-stage'        => 'Hired Stage',
-                    'default-stage'      => 'Default Stage',
+                    'job-positions' => 'Poste',
+                    'folded'        => 'Plié',
+                    'hired-stage'   => 'Étape d\'embauche',
+                    'default-stage' => 'Étape par défaut',
                 ],
             ],
         ],

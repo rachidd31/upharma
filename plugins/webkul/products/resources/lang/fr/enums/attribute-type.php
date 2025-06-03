@@ -2,6 +2,6 @@
 
 return [
     'radio'  => 'Radio',
-    'select' => 'Select',
-    'color'  => 'Color',
+    'select' => 'Sélectionner',
+    'color'  => 'Couleur',
 ];

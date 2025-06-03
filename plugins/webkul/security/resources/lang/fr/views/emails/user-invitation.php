@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'body'           => 'You have been invited to join :app </br></br>To accept the invitation - click on the button below and create an account:',
-    'create-account' => 'Create Account',
-    'discard-email'  => 'If you did not expect to receive an invitation to this team, you may discard this email.',
+    'body'           => 'Vous avez été invité à rejoindre :app </br></br>Pour accepter l\'invitation, cliquez sur le bouton ci-dessous et créez un compte:',
+    'create-account' => 'Créer un compte',
+    'discard-email'  => 'Si vous ne vous attendiez pas à recevoir une invitation pour cette équipe, vous pouvez ignorer cet e-mail.',
 ];

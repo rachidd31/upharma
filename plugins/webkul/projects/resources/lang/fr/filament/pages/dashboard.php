@@ -2,15 +2,15 @@
 
 return [
     'navigation' => [
-        'title' => 'Project',
+        'title' => 'Projet',
     ],
 
     'filters-form' => [
-        'project'    => 'Project',
-        'assignees'  => 'Assignees',
+        'project'    => 'Projet',
+        'assignees'  => 'Attribués à',
         'tags'       => 'Tags',
-        'customer'   => 'Customer',
-        'start-date' => 'Start Date',
-        'end-date'   => 'End Date',
+        'customer'   => 'Client',
+        'start-date' => 'Date de Début',
+        'end-date'   => 'Date de Fin',
     ],
 ];

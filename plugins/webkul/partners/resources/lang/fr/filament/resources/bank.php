@@ -4,27 +4,27 @@ return [
     'form' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'fields' => [
-                    'name'  => 'Name',
-                    'code'  => 'Bank Identifier Code',
+                    'name'  => 'Nom',
+                    'code'  => 'Code Identifiant Bancaire',
                     'email' => 'Email',
-                    'phone' => 'Phone',
+                    'phone' => 'Téléphone',
                 ],
             ],
 
             'address' => [
-                'title' => 'Address',
+                'title' => 'Adresse',
 
                 'fields' => [
-                    'address' => 'Address',
-                    'city'    => 'City',
-                    'street1' => 'Street 1',
-                    'street2' => 'Street 2',
-                    'state'   => 'State',
-                    'zip'     => 'Zip',
-                    'country' => 'Country',
+                    'address' => 'Adresse',
+                    'city'    => 'Ville',
+                    'street1' => 'Rue 1',
+                    'street2' => 'Rue 2',
+                    'state'   => 'État/Province',
+                    'zip'     => 'Code Postal',
+                    'country' => 'Pays',
                 ],
             ],
         ],
@@ -32,45 +32,45 @@ return [
 
     'table' => [
         'columns' => [
-            'name'           => 'Name',
-            'code'           => 'Bank Identifier Code',
-            'country'        => 'Country',
-            'created-at'     => 'Created At',
-            'updated-at'     => 'Updated At',
-            'deleted-at'     => 'Deleted At',
+            'name'       => 'Nom',
+            'code'       => 'Code Identifiant Bancaire',
+            'country'    => 'Pays',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
+            'deleted-at' => 'Supprimé le',
         ],
 
         'groups' => [
-            'country'               => 'Country',
-            'created-at'            => 'Created At',
+            'country'    => 'Pays',
+            'created-at' => 'Créé le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Bank updated',
-                    'body'  => 'The bank has been updated successfully.',
+                    'title' => 'Banque mise à jour',
+                    'body'  => 'La banque a été mise à jour avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Bank restored',
-                    'body'  => 'The bank has been restored successfully.',
+                    'title' => 'Banque restaurée',
+                    'body'  => 'La banque a été restaurée avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Bank deleted',
-                    'body'  => 'The bank has been deleted successfully.',
+                    'title' => 'Banque supprimée',
+                    'body'  => 'La banque a été supprimée avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Bank force deleted',
-                    'body'  => 'The bank has been force deleted successfully.',
+                    'title' => 'Banque supprimée définitivement',
+                    'body'  => 'La banque a été supprimée définitivement avec succès.',
                 ],
             ],
         ],
@@ -78,22 +78,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Banks restored',
-                    'body'  => 'The banks has been restored successfully.',
+                    'title' => 'Banques restaurées',
+                    'body'  => 'Les banques ont été restaurées avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Banks deleted',
-                    'body'  => 'The banks has been deleted successfully.',
+                    'title' => 'Banques supprimées',
+                    'body'  => 'Les banques ont été supprimées avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Banks force deleted',
-                    'body'  => 'The banks has been force deleted successfully.',
+                    'title' => 'Banques supprimées définitivement',
+                    'body'  => 'Les banques ont été supprimées définitivement avec succès.',
                 ],
             ],
         ],

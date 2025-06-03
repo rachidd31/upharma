@@ -2,13 +2,13 @@
 
 return [
     'notification' => [
-        'title' => 'Tags created',
-        'body'  => 'The tags has been created successfully.',
+        'title' => 'Tags créés',
+        'body'  => 'Les tags ont été créés avec succès.',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Tag',
+            'label' => 'Nouveau Tag',
         ],
     ],
 ];

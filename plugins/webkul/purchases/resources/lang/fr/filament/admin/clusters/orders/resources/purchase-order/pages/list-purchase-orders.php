@@ -2,23 +2,23 @@
 
 return [
     'navigation' => [
-        'title' => 'Orders',
+        'title' => 'Commandes',
     ],
 
     'tabs' => [
-        'my-orders'      => 'My Orders',
-        'starred'        => 'Starred',
-        'waiting-bills'  => 'Waiting Bills',
-        'received-bills' => 'Bills Received',
+        'my-orders'      => 'Mes Commandes',
+        'starred'        => 'Favoris',
+        'waiting-bills'  => 'Factures en Attente',
+        'received-bills' => 'Factures Reçues',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Order',
+            'label' => 'Nouvelle Commande',
 
             'notification' => [
-                'title' => 'Order created',
-                'body'  => 'The order has been created successfully.',
+                'title' => 'Commande créée',
+                'body'  => 'La commande a été créée avec succès.',
             ],
         ],
     ],

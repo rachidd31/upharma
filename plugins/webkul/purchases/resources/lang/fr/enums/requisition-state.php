@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'draft'     => 'Draft',
-    'confirmed' => 'Confirmed',
-    'closed'    => 'Closed',
-    'canceled'  => 'Canceled',
+    'draft'     => 'Brouillon',
+    'confirmed' => 'Confirmé',
+    'closed'    => 'Fermé',
+    'canceled'  => 'Annulé',
 ];

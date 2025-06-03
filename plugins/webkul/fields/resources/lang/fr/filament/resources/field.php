@@ -292,6 +292,9 @@ return [
                         'min-items'                 => 'Nombre minimal d\'éléments',
                         'no-search-results-message' => 'Aucun résultat de recherche',
                         'searchable'                => 'Recherchable',
+                        'search-debounce'           => 'Délai de recherche',
+                        'searching-message'         => 'Recherche en cours',
+                        'search-prompt'             => 'Invite de recherche',
                     ],
 
                     'datetime' => [

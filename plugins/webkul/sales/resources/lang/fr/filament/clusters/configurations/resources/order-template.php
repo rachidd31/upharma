@@ -1,66 +1,65 @@
 <?php
 
 return [
-    'title' => 'Order Template Products',
+    'title' => 'Produits du modèle de commande',
 
     'navigation' => [
-        'title' => 'Order Template Products',
-        'group' => 'Sales Orders',
+        'title' => 'Produits du modèle de commande',
+        'group' => 'Commandes de vente',
     ],
 
     'global-search' => [
-        'name'    => 'Name',
+        'name'    => 'Nom',
     ],
 
     'form' => [
         'fields' => [
-            'sort'           => 'Sort',
-            'order-template' => 'Order Template',
-            'company'        => 'Company',
-            'product'        => 'Product',
-            'product-uom'    => 'Product UOM',
-            'creator'        => 'Creator',
-            'display-type'   => 'Display Type',
-            'name'           => 'Name',
-            'quantity'       => 'Quantity',
+            'sort'           => 'Ordre',
+            'order-template' => 'Modèle de commande',
+            'company'        => 'Entreprise',
+            'product'        => 'Produit',
+            'product-uom'    => 'Unité de mesure du produit',
+            'creator'        => 'Créateur',
+            'display-type'   => 'Type d\'affichage',
+            'name'           => 'Nom',
+            'quantity'       => 'Quantité',
         ],
     ],
 
     'table' => [
         'columns' => [
-            'sort'           => 'Sort',
-            'order-template' => 'Order Template',
-            'company'        => 'Company',
-            'product'        => 'Product',
-            'product-uom'    => 'Product UOM',
-            'created-by'     => 'Created By',
-            'display-type'   => 'Display Type',
-            'name'           => 'Name',
-            'quantity'       => 'Quantity',
-            'created-at'     => 'Created At',
-            'updated-at'     => 'Updated At',
-
+            'sort'           => 'Ordre',
+            'order-template' => 'Modèle de commande',
+            'company'        => 'Entreprise',
+            'product'        => 'Produit',
+            'product-uom'    => 'Unité de mesure du produit',
+            'created-by'     => 'Créé par',
+            'display-type'   => 'Type d\'affichage',
+            'name'           => 'Nom',
+            'quantity'       => 'Quantité',
+            'created-at'     => 'Créé le',
+            'updated-at'     => 'Mis à jour le',
         ],
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Order Template Products updated',
-                    'body'  => 'The order template products has been updated successfully.',
+                    'title' => 'Produits du modèle de commande mis à jour',
+                    'body'  => 'Les produits du modèle de commande ont été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Order Template Products deleted',
-                    'body'  => 'The order template products has been deleted successfully.',
+                    'title' => 'Produits du modèle de commande supprimés',
+                    'body'  => 'Les produits du modèle de commande ont été supprimés avec succès.',
                 ],
             ],
         ],
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Order Template Products deleted',
-                    'body'  => 'The order template products has been deleted successfully.',
+                    'title' => 'Produits du modèle de commande supprimés',
+                    'body'  => 'Les produits du modèle de commande ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -68,14 +67,14 @@ return [
 
     'infolist' => [
         'entries' => [
-            'sort'           => 'Sort Order',
-            'order-template' => 'Order Template',
-            'company'        => 'Company',
-            'product'        => 'Product',
-            'product-uom'    => 'Product UOM',
-            'display-type'   => 'Display Type',
-            'name'           => 'Name',
-            'quantity'       => 'Quantity',
+            'sort'           => 'Ordre',
+            'order-template' => 'Modèle de commande',
+            'company'        => 'Entreprise',
+            'product'        => 'Produit',
+            'product-uom'    => 'Unité de mesure du produit',
+            'display-type'   => 'Type d\'affichage',
+            'name'           => 'Nom',
+            'quantity'       => 'Quantité',
         ],
     ],
 ];

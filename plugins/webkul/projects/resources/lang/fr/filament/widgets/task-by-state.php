@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'heading' => 'Tasks by State',
+    'heading' => 'Tâches par Statut',
 ];

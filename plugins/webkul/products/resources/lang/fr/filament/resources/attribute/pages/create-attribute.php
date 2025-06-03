@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Attribute created',
-        'body'  => 'The attribute has been created successfully.',
+        'title' => 'Attribut créé',
+        'body'  => 'L\'attribut a été créé avec succès.',
     ],
 ];

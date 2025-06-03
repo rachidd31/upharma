@@ -1,19 +1,19 @@
 <?php
 
 return [
-    'title' => 'Skill Types',
+    'title' => 'Types de compétence',
 
     'navigation' => [
-        'title' => 'Skill Types',
-        'group' => 'Employee',
+        'title' => 'Types de compétence',
+        'group' => 'Employé',
     ],
 
     'form' => [
         'sections' => [
             'fields' => [
-                'name'       => 'Name',
-                'color'      => 'Color',
-                'status'     => 'Status',
+                'name'       => 'Nom',
+                'color'      => 'Couleur',
+                'status'     => 'Statut',
             ],
         ],
     ],
@@ -21,46 +21,46 @@ return [
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Skill Type',
-            'status'     => 'Status',
-            'color'      => 'Color',
-            'skills'     => 'Skills',
-            'levels'     => 'Levels',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Type de compétence',
+            'status'     => 'Statut',
+            'color'      => 'Couleur',
+            'skills'     => 'Compétences',
+            'levels'     => 'Niveaux',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'skill-levels' => 'Skill Levels',
-            'skills'       => 'Skills',
-            'created-by'   => 'Created By',
-            'status'       => 'Status',
-            'updated-at'   => 'Updated At',
-            'created-at'   => 'Created At',
+            'skill-levels' => 'Niveaux de compétence',
+            'skills'       => 'Compétences',
+            'created-by'   => 'Créé par',
+            'status'       => 'Statut',
+            'updated-at'   => 'Mis à jour le',
+            'created-at'   => 'Créé le',
         ],
 
         'groups' => [
-            'name'       => 'Skill Type',
-            'color'      => 'Color',
-            'status'     => 'Status',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Type de compétence',
+            'color'      => 'Couleur',
+            'status'     => 'Statut',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Skill Type restored',
-                    'body'  => 'The Skill Type has been restored successfully.',
+                    'title' => 'Type de compétence restauré',
+                    'body'  => 'Le type de compétence a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Skill Type deleted',
-                    'body'  => 'The Skill Type has been deleted successfully.',
+                    'title' => 'Type de compétence supprimé',
+                    'body'  => 'Le type de compétence a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -68,22 +68,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Skill Types restored',
-                    'body'  => 'The Skill Types has been restored successfully.',
+                    'title' => 'Types de compétence restaurés',
+                    'body'  => 'Les types de compétence ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Skill Types deleted',
-                    'body'  => 'The Skill Types has been deleted successfully.',
+                    'title' => 'Types de compétence supprimés',
+                    'body'  => 'Les types de compétence ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Skill Types force deleted',
-                    'body'  => 'The Skill Types has been force deleted successfully.',
+                    'title' => 'Types de compétence supprimés définitivement',
+                    'body'  => 'Les types de compétence ont été supprimés définitivement avec succès.',
                 ],
             ],
         ],
@@ -91,8 +91,8 @@ return [
         'empty-state-actions' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Skill Types',
-                    'body'  => 'The Skill Types has been created successfully.',
+                    'title' => 'Types de compétence',
+                    'body'  => 'Les types de compétence ont été créés avec succès.',
                 ],
             ],
         ],
@@ -101,9 +101,9 @@ return [
     'infolist' => [
         'sections' => [
             'entries' => [
-                'name'   => 'Skill Type',
-                'color'  => 'Color',
-                'status' => 'Status',
+                'name'   => 'Type de compétence',
+                'color'  => 'Couleur',
+                'status' => 'Statut',
             ],
         ],
     ],

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'on-demand' => 'Ask at launch',
-    'other'     => 'Default user',
+    'on-demand' => 'Demander au lancement',
+    'other'     => 'Utilisateur par défaut',
     'coach'     => 'Coach',
     'manager'   => 'Manager',
-    'employee'  => 'Employee',
+    'employee'  => 'Employé',
 ];

@@ -2,16 +2,16 @@
 
 return [
     'navigation' => [
-        'title' => 'Vendor Price Lists',
+        'title' => 'Listes de Prix Fournisseur',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Vendor Price',
+            'label' => 'Nouveau Prix Fournisseur',
 
             'notification' => [
-                'title' => 'Vendor Price created',
-                'body'  => 'The vendor price has been created successfully.',
+                'title' => 'Prix fournisseur créé',
+                'body'  => 'Le prix fournisseur a été créé avec succès.',
             ],
         ],
     ],

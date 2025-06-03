@@ -1,44 +1,44 @@
 <?php
 
 return [
-    'title' => 'Attributes',
+    'title' => 'Attributs',
 
     'form' => [
-        'attribute' => 'Attribute',
-        'values'    => 'Values',
+        'attribute' => 'Attribut',
+        'values'    => 'Valeurs',
     ],
 
     'table' => [
-        'description' => 'Warning: adding or deleting attributes will delete and recreate existing variants and lead to the loss of their possible customizations.',
+        'description' => 'Attention : l\'ajout ou la suppression d\'attributs entraînera la suppression et la recréation des variantes existantes, ce qui pourrait entraîner la perte de leurs personnalisations éventuelles.',
 
         'header-actions' => [
             'create' => [
-                'label' => 'Add Attribute',
+                'label' => 'Ajouter un Attribut',
 
                 'notification' => [
-                    'title' => 'Attribute created',
-                    'body'  => 'The attribute has been created successfully.',
+                    'title' => 'Attribut créé',
+                    'body'  => 'L\'attribut a été créé avec succès.',
                 ],
             ],
         ],
 
         'columns' => [
-            'attribute' => 'Attribute',
-            'values'    => 'Values',
+            'attribute' => 'Attribut',
+            'values'    => 'Valeurs',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Attribute updated',
-                    'body'  => 'The attribute has been updated successfully.',
+                    'title' => 'Attribut mis à jour',
+                    'body'  => 'L\'attribut a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Attribute deleted',
-                    'body'  => 'The attribute has been deleted successfully.',
+                    'title' => 'Attribut supprimé',
+                    'body'  => 'L\'attribut a été supprimé avec succès.',
                 ],
             ],
         ],

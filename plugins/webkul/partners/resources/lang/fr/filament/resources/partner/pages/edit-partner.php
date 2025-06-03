@@ -1,18 +1,18 @@
 <?php
 
 return [
-    'title' => 'Edit Contact',
+    'title' => 'Modifier le Contact',
 
     'notification' => [
-        'title' => 'Contact updated',
-        'body'  => 'The contact has been updated successfully.',
+        'title' => 'Contact mis à jour',
+        'body'  => 'Le contact a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Contact deleted',
-                'body'  => 'The contact has been deleted successfully.',
+                'title' => 'Contact supprimé',
+                'body'  => 'Le contact a été supprimé avec succès.',
             ],
         ],
     ],

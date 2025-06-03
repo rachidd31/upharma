@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'Orders To Invoice',
+    'title' => 'Commandes à facturer',
 
     'navigation' => [
-        'title' => 'Orders To Invoice',
+        'title' => 'Commandes à facturer',
     ],
 ];

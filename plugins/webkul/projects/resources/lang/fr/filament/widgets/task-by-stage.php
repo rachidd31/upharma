@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'heading' => 'Tasks by Stage',
+    'heading' => 'Tâches par Étape',
 
     'datasets' => [
-        'label' => 'Tasks created',
+        'label' => 'Tâches créées',
     ],
 ];

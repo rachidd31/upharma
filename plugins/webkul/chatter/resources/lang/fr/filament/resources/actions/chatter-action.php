@@ -2,5 +2,5 @@
 
 return [
     'title'       => 'Chatter',
-    'description' => 'Add messages, notes, activities, file attachments, and more.',
+    'description' => 'Ajoutez des messages, des notes, des activités, des pièces jointes et plus encore.',
 ];

@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Stage deleted',
-                'body'  => 'The stage has been deleted successfully.',
+                'title' => 'Étape supprimée',
+                'body'  => 'L\'étape a été supprimée avec succès.',
             ],
         ],
     ],

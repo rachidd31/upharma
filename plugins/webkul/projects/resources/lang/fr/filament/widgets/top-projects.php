@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'heading' => 'Top Projects',
+    'heading' => 'Meilleurs Projets',
 
     'table-columns' => [
-        'project-name' => 'Project',
-        'hours-spent'  => 'Hours Spent',
-        'tasks'        => 'Tasks',
+        'project-name' => 'Projet',
+        'hours-spent'  => 'Heures Passées',
+        'tasks'        => 'Tâches',
     ],
 ];

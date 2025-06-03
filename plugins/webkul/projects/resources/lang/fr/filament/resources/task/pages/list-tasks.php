@@ -2,19 +2,19 @@
 
 return [
     'tabs' => [
-        'open-tasks'       => 'Open Tasks',
-        'my-tasks'         => 'My Tasks',
-        'unassigned-tasks' => 'Unassigned Tasks',
-        'private-tasks'    => 'Private Tasks',
-        'followed-tasks'   => 'Followed Tasks',
-        'closed-tasks'     => 'Closed Tasks',
-        'starred-tasks'    => 'Starred Tasks',
-        'archived-tasks'   => 'Archived Tasks',
+        'open-tasks'     => 'Tâches Ouvertes',
+        'my-tasks'       => 'Mes Tâches',
+        'unassigned-tasks' => 'Tâches Non Assignées',
+        'private-tasks'  => 'Tâches Privées',
+        'followed-tasks' => 'Tâches Suivies',
+        'closed-tasks'   => 'Tâches Clôturées',
+        'starred-tasks'  => 'Tâches Épinglées',
+        'archived-tasks' => 'Tâches Archivées',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Task',
+            'label' => 'Nouvelle Tâche',
         ],
     ],
 ];

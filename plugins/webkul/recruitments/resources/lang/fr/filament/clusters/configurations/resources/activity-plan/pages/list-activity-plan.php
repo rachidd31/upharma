@@ -2,7 +2,7 @@
 
 return [
     'tabs' => [
-        'all'      => 'All',
-        'archived' => 'Archived',
+        'all'      => 'Tout',
+        'archived' => 'Archivé',
     ],
 ];

@@ -1,21 +1,21 @@
 <?php
 
 return [
-    'title' => 'Manage Quotation & Order',
+    'title' => 'Gérer les devis et les commandes',
 
-    'breadcrumb' => 'Manage Quotation & Order',
+    'breadcrumb' => 'Gérer les devis et les commandes',
 
     'navigation' => [
-        'title' => 'Manage Quotation & Order',
+        'title' => 'Gérer les devis et les commandes',
     ],
 
     'form' => [
         'fields' => [
-            'validity-suffix'         => 'days',
-            'validity'                => 'Default Quotation Validity',
-            'validity-help'           => 'The default number of days a quotation is valid for.',
-            'lock-confirm-sales'      => 'Lock Confirm Sales',
-            'lock-confirm-sales-help' => 'If enabled, the sales order will be locked after confirmation.',
+            'validity-suffix'         => 'jours',
+            'validity'                => 'Validité par défaut du devis',
+            'validity-help'           => 'Le nombre de jours par défaut pendant lequel un devis est valide.',
+            'lock-confirm-sales'      => 'Verrouiller la confirmation des ventes',
+            'lock-confirm-sales-help' => 'Si activé, la commande client sera verrouillée après confirmation.',
         ],
     ],
 ];

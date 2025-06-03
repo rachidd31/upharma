@@ -1,50 +1,48 @@
 <?php
 
 return [
-    'title' => 'Quotation Template',
+    'title' => 'Modèle de devis',
 
     'navigation' => [
-        'title'  => 'Quotation Template',
-        'group'  => 'Sales Orders',
+        'title' => 'Modèle de devis',
+        'group' => 'Commandes de vente',
     ],
 
     'form' => [
         'tabs' => [
             'products' => [
-                'title'  => 'Products',
+                'title'  => 'Produits',
                 'fields' => [
-                    'products'     => 'Products',
-                    'name'         => 'Name',
-                    'quantity'     => 'Quantity',
+                    'products' => 'Produits',
+                    'name'     => 'Nom',
+                    'quantity' => 'Quantité',
                 ],
             ],
 
             'terms-and-conditions' => [
-                'title'  => 'Terms & Conditions',
+                'title'  => 'Conditions générales',
                 'fields' => [
-                    'note-placeholder' => 'Write your terms and conditions for the quotations.',
+                    'note-placeholder' => 'Rédigez vos conditions générales pour les devis.',
                 ],
             ],
         ],
 
         'sections' => [
             'general' => [
-                'title' => 'General Information',
-
+                'title' => 'Informations générales',
                 'fields' => [
-                    'name'               => 'Name',
-                    'quotation-validity' => 'Quotation Validity',
-                    'sale-journal'       => 'Sale Journal',
+                    'name'               => 'Nom',
+                    'quotation-validity' => 'Validité du devis',
+                    'sale-journal'       => 'Journal de vente',
                 ],
             ],
 
             'signature-and-payment' => [
-                'title' => 'Signature & Payments',
-
+                'title' => 'Signature & Paiements',
                 'fields' => [
-                    'online-signature'      => 'Online Signature',
-                    'online-payment'        => 'Online Payment',
-                    'prepayment-percentage' => 'Prepayment Percentage',
+                    'online-signature'      => 'Signature en ligne',
+                    'online-payment'        => 'Paiement en ligne',
+                    'prepayment-percentage' => 'Pourcentage d\'acompte',
                 ],
             ],
         ],
@@ -52,41 +50,40 @@ return [
 
     'table' => [
         'columns' => [
-            'created-by'            => 'Created by',
-            'company'               => 'Company',
-            'name'                  => 'Name',
-            'number-of-days'        => 'Number of days',
-            'journal'               => 'Sale Journal',
-            'signature-required'    => 'Signature Required',
-            'payment-required'      => 'Payment Required',
-            'prepayment-percentage' => 'Prepayment Percentage',
+            'created-by'            => 'Créé par',
+            'company'               => 'Entreprise',
+            'name'                  => 'Nom',
+            'number-of-days'        => 'Nombre de jours',
+            'journal'               => 'Journal de vente',
+            'signature-required'    => 'Signature requise',
+            'payment-required'      => 'Paiement requis',
+            'prepayment-percentage' => 'Pourcentage d\'acompte',
         ],
         'groups'  => [
-            'company' => 'Company',
-            'name'    => 'Name',
+            'company' => 'Entreprise',
+            'name'    => 'Nom',
             'journal' => 'Journal',
         ],
         'filters' => [
-            'created-by' => 'Created By',
-            'company'    => 'Company',
-            'name'       => 'Name',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'created-by' => 'Créé par',
+            'company'    => 'Entreprise',
+            'name'       => 'Nom',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
         'actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Quotation template deleted',
-                    'body'  => 'The quotation template has been deleted successfully.',
+                    'title' => 'Modèle de devis supprimé',
+                    'body'  => 'Le modèle de devis a été supprimé avec succès.',
                 ],
             ],
-
         ],
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Quotation template deleted',
-                    'body'  => 'The quotation template has been deleted successfully.',
+                    'title' => 'Modèles de devis supprimés',
+                    'body'  => 'Les modèles de devis ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -95,33 +92,33 @@ return [
     'infolist' => [
         'tabs' => [
             'products' => [
-                'title' => 'Products',
+                'title' => 'Produits',
             ],
             'terms-and-conditions' => [
-                'title' => 'Terms & Conditions',
+                'title' => 'Conditions générales',
             ],
         ],
         'sections' => [
             'general' => [
-                'title' => 'General Information',
+                'title' => 'Informations générales',
             ],
             'signature_and_payment' => [
-                'title' => 'Signature & Payment',
+                'title' => 'Signature & Paiement',
             ],
         ],
         'entries' => [
-            'product'               => 'Product',
+            'product'               => 'Produit',
             'description'           => 'Description',
-            'quantity'              => 'Quantity',
-            'unit-price'            => 'Unit Price',
-            'section-name'          => 'Section Name',
-            'note-title'            => 'Note Title',
-            'name'                  => 'Template Name',
-            'quotation-validity'    => 'Quotation Validity',
-            'sale-journal'          => 'Sale Journal',
-            'online-signature'      => 'Online Signature',
-            'online-payment'        => 'Online Payment',
-            'prepayment-percentage' => 'Prepayment Percentage',
+            'quantity'              => 'Quantité',
+            'unit-price'            => 'Prix unitaire',
+            'section-name'          => 'Nom de la section',
+            'note-title'            => 'Titre de la note',
+            'name'                  => 'Nom du modèle',
+            'quotation-validity'    => 'Validité du devis',
+            'sale-journal'          => 'Journal de vente',
+            'online-signature'      => 'Signature en ligne',
+            'online-payment'        => 'Paiement en ligne',
+            'prepayment-percentage' => 'Pourcentage d\'acompte',
         ],
     ],
 ];

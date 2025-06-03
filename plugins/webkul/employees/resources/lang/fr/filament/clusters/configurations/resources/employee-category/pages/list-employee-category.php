@@ -3,11 +3,11 @@
 return [
     'header-actions' => [
         'create' => [
-            'label' => 'New Tag',
+            'label' => 'Nouveau Tag',
 
             'notification' => [
-                'title' => 'Tag created',
-                'body'  => 'The tag has been created successfully.',
+                'title' => 'Tag créé',
+                'body'  => 'Le tag a été créé avec succès.',
             ],
         ],
     ],

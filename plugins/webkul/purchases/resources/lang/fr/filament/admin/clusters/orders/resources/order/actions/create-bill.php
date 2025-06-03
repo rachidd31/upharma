@@ -1,18 +1,18 @@
 <?php
 
 return [
-    'label' => 'Create Bill',
+    'label' => 'Créer une Facture',
 
     'action' => [
         'notification' => [
             'warning' => [
-                'title' => 'No invoiceable lines',
-                'body'  => 'There is no invoiceable line, please make sure that a quantity has been received.',
+                'title' => 'Aucune ligne facturable',
+                'body'  => 'Il n\'y a aucune ligne facturable, veuillez vous assurer qu\'une quantité a été reçue.',
             ],
 
             'success' => [
-                'title' => 'Bill created',
-                'body'  => 'The bill has been created successfully.',
+                'title' => 'Facture créée',
+                'body'  => 'La facture a été créée avec succès.',
             ],
         ],
     ],

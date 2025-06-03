@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Quotation created',
-        'body'  => 'The quotation has been created successfully.',
+        'title' => 'Devis créé',
+        'body'  => 'Le devis a été créé avec succès.',
     ],
 
     'header-actions' => [
         'notification' => [
             'delete' => [
-                'title' => 'Delete Quotation',
-                'body'  => 'Quotation has been deleted successfully.',
+                'title' => 'Suppression du devis',
+                'body'  => 'Le devis a été supprimé avec succès.',
             ],
         ],
     ],

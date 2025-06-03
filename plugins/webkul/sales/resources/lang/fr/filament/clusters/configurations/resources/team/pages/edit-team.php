@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Sales team updated',
-        'body'  => 'The sales team has been updated successfully.',
+        'title' => 'Équipe commerciale mise à jour',
+        'body'  => 'L\'équipe commerciale a été mise à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Sales team deleted',
-                'body'  => 'The sales team has been deleted successfully.',
+                'title' => 'Équipe commerciale supprimée',
+                'body'  => 'L\'équipe commerciale a été supprimée avec succès.',
             ],
         ],
     ],

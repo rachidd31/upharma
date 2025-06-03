@@ -2,46 +2,46 @@
 
 return [
     'modal' => [
-        'title' => 'Working Hours',
+        'title' => 'Heures de travail',
     ],
 
     'form' => [
         'sections' => [
             'general' => [
-                'title'  => 'General Information',
+                'title'  => 'Informations générales',
                 'fields' => [
-                    'attendance-name' => 'Attendance Name',
-                    'attendance-name' => 'Attendance Name',
-                    'day-of-week'     => 'Day of Week',
+                    'attendance-name' => 'Nom de présence',
+                    'attendance-name' => 'Nom de présence',
+                    'day-of-week'     => 'Jour de la semaine',
                 ],
             ],
 
             'timing-information' => [
-                'title' => 'Timing Information',
+                'title' => 'Informations sur l\'heure',
 
                 'fields' => [
-                    'day-period' => 'Day Periods',
-                    'week-type'  => 'Week Type',
-                    'work-from'  => 'Work From',
-                    'work-to'    => 'Work To',
+                    'day-period' => 'Périodes de la journée',
+                    'week-type'  => 'Type de semaine',
+                    'work-from'  => 'Travailler de',
+                    'work-to'    => 'Travailler à',
                 ],
             ],
 
             'date-information' => [
-                'title' => 'Date Information',
+                'title' => 'Informations sur la date',
 
                 'fields' => [
-                    'starting-date' => 'Starting Date',
-                    'ending-date'   => 'Ending Date',
+                    'starting-date' => 'Date de début',
+                    'ending-date'   => 'Date de fin',
                 ],
             ],
 
             'additional-information' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations supplémentaires',
 
                 'fields' => [
-                    'durations-days' => 'Duration (Days)',
-                    'display-type'   => 'Display Type',
+                    'durations-days' => 'Durée (Jours)',
+                    'display-type'   => 'Type d\'affichage',
                 ],
             ],
         ],
@@ -49,62 +49,62 @@ return [
 
     'table' => [
         'columns' => [
-            'name'          => 'Attendance Name',
-            'day-of-week'   => 'Day of Week',
-            'day-period'    => 'Day Periods',
-            'work-from'     => 'Work From',
-            'work-to'       => 'Work To',
-            'starting-date' => 'Starting Date',
-            'ending-date'   => 'Ending Date',
-            'display-type'  => 'Display Type',
-            'created-by'    => 'Created By',
-            'created-at'    => 'Created At',
-            'updated-at'    => 'Updated At',
+            'name'          => 'Nom de présence',
+            'day-of-week'   => 'Jour de la semaine',
+            'day-period'    => 'Périodes de la journée',
+            'work-from'     => 'Travailler de',
+            'work-to'       => 'Travailler à',
+            'starting-date' => 'Date de début',
+            'ending-date'   => 'Date de fin',
+            'display-type'  => 'Type d\'affichage',
+            'created-by'    => 'Créé par',
+            'created-at'    => 'Créé le',
+            'updated-at'    => 'Mis à jour le',
         ],
 
         'groups' => [
-            'activity-type' => 'Activity Type',
-            'assignment'    => 'Assignment',
-            'assigned-to'   => 'Assigned To',
-            'interval'      => 'Interval',
-            'delay-unit'    => 'Delay Unit',
-            'delay-from'    => 'Delay From',
-            'created-by'    => 'Created By',
-            'created-at'    => 'Created At',
-            'updated-at'    => 'Updated At',
+            'activity-type' => 'Type d\'activité',
+            'assignment'    => 'Affectation',
+            'assigned-to'   => 'Assigné à',
+            'interval'      => 'Intervalle',
+            'delay-unit'    => 'Unité de délai',
+            'delay-from'    => 'Délai à partir de',
+            'created-by'    => 'Créé par',
+            'created-at'    => 'Créé le',
+            'updated-at'    => 'Mis à jour le',
         ],
 
         'filters' => [
-            'display-type' => 'Display Type',
-            'day-of-week'  => 'Day of Week',
+            'display-type' => 'Type d\'affichage',
+            'day-of-week'  => 'Jour de la semaine',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Working Hours updated',
-                    'body'  => 'The working hours has been updated successfully.',
+                    'title' => 'Heures de travail mises à jour',
+                    'body'  => 'Les heures de travail ont été mises à jour avec succès.',
                 ],
             ],
 
             'create' => [
                 'notification' => [
-                    'title' => 'Working Hours created',
-                    'body'  => 'The working hours has been created successfully.',
+                    'title' => 'Heures de travail créées',
+                    'body'  => 'Les heures de travail ont été créées avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Working Hours deleted',
-                    'body'  => 'The working hours has been deleted successfully.',
+                    'title' => 'Heures de travail supprimées',
+                    'body'  => 'Les heures de travail ont été supprimées avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Working Hours restored',
-                    'body'  => 'The working hours has been restored successfully.',
+                    'title' => 'Heures de travail restaurées',
+                    'body'  => 'Les heures de travail ont été restaurées avec succès.',
                 ],
             ],
         ],
@@ -112,22 +112,22 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Working Hours deleted',
-                    'body'  => 'The working hours has been deleted successfully.',
+                    'title' => 'Heures de travail supprimées',
+                    'body'  => 'Les heures de travail ont été supprimées avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Working Hours deleted',
-                    'body'  => 'The working hours has been deleted successfully.',
+                    'title' => 'Heures de travail restaurées',
+                    'body'  => 'Les heures de travail ont été restaurées avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Working Hours deleted',
-                    'body'  => 'The working hours has been deleted successfully.',
+                    'title' => 'Heures de travail supprimées définitivement',
+                    'body'  => 'Les heures de travail ont été supprimées définitivement avec succès.',
                 ],
             ],
         ],
@@ -136,40 +136,40 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General Information',
+                'title' => 'Informations générales',
 
                 'entries' => [
-                    'name'        => 'Attendance Name',
-                    'day-of-week' => 'Day of Week',
+                    'name'        => 'Nom de présence',
+                    'day-of-week' => 'Jour de la semaine',
                 ],
             ],
 
             'timing-information' => [
-                'title' => 'Timing Information',
+                'title' => 'Informations sur l\'heure',
 
                 'entries' => [
-                    'day-period' => 'Day Periods',
-                    'week-type'  => 'Week Type',
-                    'work-from'  => 'Work From',
-                    'work-to'    => 'Work To',
+                    'day-period' => 'Périodes de la journée',
+                    'week-type'  => 'Type de semaine',
+                    'work-from'  => 'Travailler de',
+                    'work-to'    => 'Travailler à',
                 ],
             ],
 
             'date-information' => [
-                'title' => 'Date Information',
+                'title' => 'Informations sur la date',
 
                 'entries' => [
-                    'starting-date' => 'Starting Date',
-                    'ending-date'   => 'Ending Date',
+                    'starting-date' => 'Date de début',
+                    'ending-date'   => 'Date de fin',
                 ],
             ],
 
             'additional-information' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations supplémentaires',
 
                 'entries' => [
-                    'durations-days' => 'Duration (Days)',
-                    'display-type'   => 'Display Type',
+                    'durations-days' => 'Durée (Jours)',
+                    'display-type'   => 'Type d\'affichage',
                 ],
             ],
         ],

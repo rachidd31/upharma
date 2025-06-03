@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'title' => 'Milestones',
+    'title' => 'Jalons',
 
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Project Milestone',
+                'label' => 'Ajouter un Jalon de Projet',
 
                 'notification' => [
-                    'title' => 'Milestone created',
-                    'body'  => 'The milestone has been created successfully.',
+                    'title' => 'Jalon créé',
+                    'body'  => 'Le jalon a été créé avec succès.',
                 ],
             ],
         ],

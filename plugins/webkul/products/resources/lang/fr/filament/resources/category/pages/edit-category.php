@@ -2,21 +2,21 @@
 
 return [
     'notification' => [
-        'title' => 'Category updated',
-        'body'  => 'The category has been updated successfully.',
+        'title' => 'Catégorie mise à jour',
+        'body'  => 'La catégorie a été mise à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
                 'success' => [
-                    'title' => 'Category deleted',
-                    'body'  => 'The category has been deleted successfully.',
+                    'title' => 'Catégorie supprimée',
+                    'body'  => 'La catégorie a été supprimée avec succès.',
                 ],
 
                 'error' => [
-                    'title' => 'Category could not be deleted',
-                    'body'  => 'The category cannot be deleted because it is currently in use.',
+                    'title' => 'La catégorie n\'a pas pu être supprimée',
+                    'body'  => 'La catégorie ne peut pas être supprimée car elle est actuellement utilisée.',
                 ],
             ],
         ],
@@ -25,7 +25,7 @@ return [
     'save' => [
         'notification' => [
             'error' => [
-                'title' => 'Category updated failed',
+                'title' => 'Échec de la mise à jour de la catégorie',
             ],
         ],
     ],

@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'notification' => [
             'delete' => [
-                'title' => 'Delete Quotation',
-                'body'  => 'Quotation has been deleted successfully.',
+                'title' => 'Devis supprimé',
+                'body'  => 'Le devis a été supprimé avec succès.',
             ],
         ],
     ],

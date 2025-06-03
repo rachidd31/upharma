@@ -2,34 +2,34 @@
 
 return [
     'form' => [
-        'name'       => 'Name',
-        'short-name' => 'Short Name',
+        'name'       => 'Nom',
+        'short-name' => 'Nom Abrégé',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'short-name' => 'Short Name',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'short-name' => 'Nom Abrégé',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'creator' => 'Creator',
+            'creator' => 'Créateur',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Title updated',
-                    'body'  => 'The Title has been updated successfully.',
+                    'title' => 'Titre mis à jour',
+                    'body'  => 'Le titre a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Title deleted',
-                    'body'  => 'The title has been deleted successfully.',
+                    'title' => 'Titre supprimé',
+                    'body'  => 'Le titre a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -37,8 +37,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Titles deleted',
-                    'body'  => 'The titles has been deleted successfully.',
+                    'title' => 'Titres supprimés',
+                    'body'  => 'Les titres ont été supprimés avec succès.',
                 ],
             ],
         ],

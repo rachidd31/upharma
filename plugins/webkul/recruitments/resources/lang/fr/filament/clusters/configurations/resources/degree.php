@@ -1,56 +1,56 @@
 <?php
 
 return [
-    'title' => 'Degrees',
+    'title' => 'Diplômes',
 
     'navigation' => [
-        'title' => 'Degrees',
-        'group' => 'Applications',
+        'title' => 'Diplômes',
+        'group' => 'Candidatures',
     ],
 
     'groups' => [
-        'status'     => 'Status',
-        'created-by' => 'Created By',
-        'created-at' => 'Created At',
-        'updated-at' => 'Updated At',
+        'status'     => 'Statut',
+        'created-by' => 'Créé par',
+        'created-at' => 'Créé le',
+        'updated-at' => 'Mis à jour le',
     ],
 
     'form' => [
         'fields' => [
-            'name'             => 'Name',
-            'name-placeholder' => 'Enter the name of the degree',
+            'name'             => 'Nom',
+            'name-placeholder' => 'Saisir le nom du diplôme',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Name',
-            'employee'   => 'Employee',
-            'created-by' => 'Created By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Nom',
+            'employee'   => 'Employé',
+            'created-by' => 'Créé par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Degree updated',
-                    'body'  => 'The degree has been updated successfully.',
+                    'title' => 'Diplôme mis à jour',
+                    'body'  => 'Le diplôme a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Degree deleted',
-                    'body'  => 'The degree has been deleted successfully.',
+                    'title' => 'Diplôme supprimé',
+                    'body'  => 'Le diplôme a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -58,8 +58,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Degrees deleted',
-                    'body'  => 'The degrees has been deleted successfully.',
+                    'title' => 'Diplômes supprimés',
+                    'body'  => 'Les diplômes ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -67,14 +67,14 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Degree created',
-                    'body'  => 'The degree has been created successfully.',
+                    'title' => 'Diplôme créé',
+                    'body'  => 'Le diplôme a été créé avec succès.',
                 ],
             ],
         ],
     ],
 
     'infolist' => [
-        'name' => 'Name',
+        'name' => 'Nom',
     ],
 ];

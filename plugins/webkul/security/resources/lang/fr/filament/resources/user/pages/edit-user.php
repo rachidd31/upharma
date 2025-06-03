@@ -2,29 +2,29 @@
 
 return [
     'notification' => [
-        'title' => 'User updated',
-        'body'  => 'The user has been updated successfully.',
+        'title' => 'Utilisateur mis à jour',
+        'body'  => "L'utilisateur a été mis à jour avec succès.",
     ],
 
     'header-actions' => [
         'change-password' => [
-            'label' => 'Change Password',
+            'label' => 'Changer le mot de passe',
 
             'notification' => [
-                'title' => 'Password changed',
-                'body'  => 'The password has been changed successfully.',
+                'title' => 'Mot de passe changé',
+                'body'  => 'Le mot de passe a été changé avec succès.',
             ],
 
             'form' => [
-                'new-password'         => 'New Password',
-                'confirm-new-password' => 'Confirm New Password',
+                'new-password'         => 'Nouveau mot de passe',
+                'confirm-new-password' => 'Confirmer le nouveau mot de passe',
             ],
         ],
 
         'delete' => [
             'notification' => [
-                'title' => 'User deleted',
-                'body'  => 'The user has been deleted successfully.',
+                'title' => 'Utilisateur supprimé',
+                'body'  => "L'utilisateur a été supprimé avec succès.",
             ],
         ],
     ],

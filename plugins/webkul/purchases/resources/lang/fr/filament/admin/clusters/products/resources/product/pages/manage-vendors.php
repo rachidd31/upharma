@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'title' => 'Vendors',
+    'title' => 'Fournisseurs',
 
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Vendor Price',
+                'label' => 'Ajouter un Prix Fournisseur',
 
                 'notification' => [
-                    'title' => 'Vendor Price created',
-                    'body'  => 'The vendor price has been created successfully.',
+                    'title' => 'Prix fournisseur créé',
+                    'body'  => 'Le prix fournisseur a été créé avec succès.',
                 ],
             ],
         ],

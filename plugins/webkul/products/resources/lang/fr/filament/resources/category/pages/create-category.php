@@ -2,14 +2,14 @@
 
 return [
     'notification' => [
-        'title' => 'Category created',
-        'body'  => 'The category has been created successfully.',
+        'title' => 'Catégorie créée',
+        'body'  => 'La catégorie a été créée avec succès.',
     ],
 
     'create' => [
         'notification' => [
             'error' => [
-                'title' => 'Category updated failed',
+                'title' => 'Échec de la mise à jour de la catégorie',
             ],
         ],
     ],

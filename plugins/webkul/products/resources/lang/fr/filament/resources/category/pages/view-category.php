@@ -5,13 +5,13 @@ return [
         'delete' => [
             'notification' => [
                 'success' => [
-                    'title' => 'Category deleted',
-                    'body'  => 'The category has been deleted successfully.',
+                    'title' => 'Catégorie supprimée',
+                    'body'  => 'La catégorie a été supprimée avec succès.',
                 ],
 
                 'error' => [
-                    'title' => 'Category could not be deleted',
-                    'body'  => 'The category cannot be deleted because it is currently in use.',
+                    'title' => 'La catégorie n\'a pas pu être supprimée',
+                    'body'  => 'La catégorie ne peut pas être supprimée car elle est actuellement utilisée.',
                 ],
             ],
         ],

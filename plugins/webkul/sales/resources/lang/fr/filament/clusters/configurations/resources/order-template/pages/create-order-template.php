@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Order Template Product created',
-        'body'  => 'The Order Template Product has been created successfully',
+        'title' => 'Modèle de commande produit créé',
+        'body'  => 'Le modèle de commande produit a été créé avec succès',
     ],
 ];

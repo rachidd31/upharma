@@ -2,47 +2,47 @@
 
 return [
     'form' => [
-        'date'                   => 'Date',
-        'employee'               => 'Employee',
-        'description'            => 'Description',
-        'time-spent'             => 'Time Spent',
-        'time-spent-helper-text' => 'Time spent in hours (Eg. 1.5 hours means 1 hour 30 minutes)',
+        'date'               => 'Date',
+        'employee'           => 'Employé',
+        'description'        => 'Description',
+        'time-spent'         => 'Temps Passé',
+        'time-spent-helper-text' => 'Temps passé en heures (Ex: 1.5 heures signifie 1 heure 30 minutes)',
     ],
 
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Timesheet',
+                'label' => 'Ajouter une Feuille de Temps',
 
                 'notification' => [
-                    'title' => 'Timesheet created',
-                    'body'  => 'The timesheet has been created successfully.',
+                    'title' => 'Feuille de temps créée',
+                    'body'  => 'La feuille de temps a été créée avec succès.',
                 ],
             ],
         ],
 
         'columns' => [
-            'date'                   => 'Date',
-            'employee'               => 'Employee',
-            'description'            => 'Description',
-            'time-spent'             => 'Time Spent',
-            'time-spent-on-subtasks' => 'Time Spent on Subtasks',
-            'total-time-spent'       => 'Total Time Spent',
-            'remaining-time'         => 'Remaining Time',
+            'date'               => 'Date',
+            'employee'           => 'Employé',
+            'description'        => 'Description',
+            'time-spent'         => 'Temps Passé',
+            'time-spent-on-subtasks' => 'Temps Passé sur les Sous-tâches',
+            'total-time-spent'   => 'Temps Total Passé',
+            'remaining-time'     => 'Temps Restant',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Timesheet updated',
-                    'body'  => 'The timesheet has been updated successfully.',
+                    'title' => 'Feuille de temps mise à jour',
+                    'body'  => 'La feuille de temps a été mise à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Timesheet deleted',
-                    'body'  => 'The timesheet has been deleted successfully.',
+                    'title' => 'Feuille de temps supprimée',
+                    'body'  => 'La feuille de temps a été supprimée avec succès.',
                 ],
             ],
         ],

@@ -4,57 +4,57 @@ return [
     'form' => [
         'sections' => [
             'fields' => [
-                'skill-type'  => 'Skill Type',
-                'skill'       => 'Skill',
-                'skill-level' => 'Skill Level',
+                'skill-type'  => 'Type de compétence',
+                'skill'       => 'Compétence',
+                'skill-level' => 'Niveau de compétence',
             ],
         ],
     ],
 
     'table' => [
         'columns' => [
-            'skill-type'    => 'Skill Type',
-            'skill'         => 'Skill',
-            'skill-level'   => 'Skill Level',
-            'level-percent' => 'Level Percent',
-            'created-by'    => 'Created By',
-            'user'          => 'User',
-            'created-at'    => 'Created At',
+            'skill-type'    => 'Type de compétence',
+            'skill'         => 'Compétence',
+            'skill-level'   => 'Niveau de compétence',
+            'level-percent' => 'Pourcentage du niveau',
+            'created-by'    => 'Créé par',
+            'user'          => 'Utilisateur',
+            'created-at'    => 'Créé le',
         ],
 
         'groups' => [
-            'skill-type' => 'Skill Type',
+            'skill-type' => 'Type de compétence',
         ],
 
         'header-actions' => [
-            'add-skill' => 'Add Skill',
+            'add-skill' => 'Ajouter une compétence',
         ],
 
         'filters' => [
-            'activity-type'   => 'Activity Type',
-            'activity-status' => 'Activity Status',
-            'has-delay'       => 'Has Delay',
+            'activity-type'   => 'Type d\'activité',
+            'activity-status' => 'Statut de l\'activité',
+            'has-delay'       => 'Avec délai',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Skill updated',
-                    'body'  => 'The skill has been updated successfully.',
+                    'title' => 'Compétence mise à jour',
+                    'body'  => 'La compétence a été mise à jour avec succès.',
                 ],
             ],
 
             'create' => [
                 'notification' => [
-                    'title' => 'Skill created',
-                    'body'  => 'The skill has been created successfully.',
+                    'title' => 'Compétence créée',
+                    'body'  => 'La compétence a été créée avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Skill deleted',
-                    'body'  => 'The skill has been deleted successfully.',
+                    'title' => 'Compétence supprimée',
+                    'body'  => 'La compétence a été supprimée avec succès.',
                 ],
             ],
         ],
@@ -62,8 +62,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Skills deleted',
-                    'body'  => 'The skills has been deleted successfully.',
+                    'title' => 'Compétences supprimées',
+                    'body'  => 'Les compétences ont été supprimées avec succès.',
                 ],
             ],
         ],
@@ -71,10 +71,10 @@ return [
 
     'infolist' => [
         'entries' => [
-            'skill-type'    => 'Skill Type',
-            'skill'         => 'Skill',
-            'skill-level'   => 'Skill Level',
-            'level-percent' => 'Level Percent',
+            'skill-type'    => 'Type de compétence',
+            'skill'         => 'Compétence',
+            'skill-level'   => 'Niveau de compétence',
+            'level-percent' => 'Pourcentage du niveau',
         ],
     ],
 ];

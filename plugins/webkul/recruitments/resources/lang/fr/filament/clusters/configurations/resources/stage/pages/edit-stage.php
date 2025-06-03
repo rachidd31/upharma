@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Stage updated',
-        'body'  => 'The stage has been updated successfully.',
+        'title' => 'Étape mise à jour',
+        'body'  => 'L\'étape a été mise à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Stage deleted',
-                'body'  => 'The stage has been deleted successfully.',
+                'title' => 'Étape supprimée',
+                'body'  => 'L\'étape a été supprimée avec succès.',
             ],
         ],
     ],

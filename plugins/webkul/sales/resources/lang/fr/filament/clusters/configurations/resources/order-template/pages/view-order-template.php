@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'notification' => [
             'delete' => [
-                'title' => 'Order Template Product deleted',
-                'body'  => 'Order Template Product has been deleted successfully',
+                'title' => 'Modèle de commande produit supprimé',
+                'body'  => 'Le modèle de commande produit a été supprimé avec succès',
             ],
         ],
     ],

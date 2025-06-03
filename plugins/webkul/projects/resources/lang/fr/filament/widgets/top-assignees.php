@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'heading' => 'Top Assignees',
+    'heading' => 'Principaux Attribués',
 
     'table-columns' => [
-        'user'        => 'User',
-        'hours-spent' => 'Hours Spent',
-        'tasks'       => 'Tasks',
+        'user'        => 'Utilisateur',
+        'hours-spent' => 'Heures Passées',
+        'tasks'       => 'Tâches',
     ],
 ];

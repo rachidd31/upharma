@@ -2,13 +2,13 @@
 
 return [
     'tabs' => [
-        'all'      => 'All',
-        'archived' => 'Archived',
+        'all'      => 'Tous',
+        'archived' => 'Archivés',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Activity Type',
+            'label' => 'Nouveau type d’activité',
         ],
     ],
 ];

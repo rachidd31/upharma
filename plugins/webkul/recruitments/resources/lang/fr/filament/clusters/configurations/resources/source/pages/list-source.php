@@ -3,11 +3,11 @@
 return [
     'header-actions' => [
         'create' => [
-            'label' => 'New Source',
+            'label' => 'Nouvelle Source',
 
             'notification' => [
-                'title' => 'Source created',
-                'body'  => 'The source has been created successfully.',
+                'title' => 'Source créée',
+                'body'  => 'La source a été créée avec succès.',
             ],
         ],
     ],

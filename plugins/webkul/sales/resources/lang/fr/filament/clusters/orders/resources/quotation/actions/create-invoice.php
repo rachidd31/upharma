@@ -1,27 +1,27 @@
 <?php
 
 return [
-    'title' => 'Create Invoice',
+    'title' => 'Créer une facture',
 
     'modal' => [
-        'heading' => 'Create Invoice',
+        'heading' => 'Créer une facture',
     ],
 
     'notification' => [
         'invoice-created' => [
-            'title' => 'Invoice created',
-            'body'  => 'Invoice has been created successfully.',
+            'title' => 'Facture créée',
+            'body'  => 'La facture a été créée avec succès.',
         ],
 
         'no-invoiceable-lines' => [
-            'title' => 'No invoiceable lines',
-            'body'  => 'There is no invoiceable line, please make sure that a quantity has been received.',
+            'title' => 'Aucune ligne facturable',
+            'body'  => "Il n'y a aucune ligne facturable, veuillez vous assurer qu'une quantité a été reçue.",
         ],
     ],
 
     'form' => [
         'fields' => [
-            'create-invoice' => 'Create Invoice',
+            'create-invoice' => 'Créer la facture',
         ],
     ],
 ];

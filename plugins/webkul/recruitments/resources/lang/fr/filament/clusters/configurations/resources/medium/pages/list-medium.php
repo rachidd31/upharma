@@ -3,11 +3,11 @@
 return [
     'header-actions' => [
         'create' => [
-            'label' => 'New Medium',
+            'label' => 'Nouveau Média',
 
             'notification' => [
-                'title' => 'Medium created',
-                'body'  => 'The medium has been created successfully.',
+                'title' => 'Média créé',
+                'body'  => 'Le média a été créé avec succès.',
             ],
         ],
     ],

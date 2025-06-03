@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Company updated',
-        'body'  => 'The company has been updated successfully.',
+        'title' => 'Entreprise mise à jour',
+        'body'  => 'L’entreprise a été mise à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Company deleted',
-                'body'  => 'The company has been deleted successfully.',
+                'title' => 'Entreprise supprimée',
+                'body'  => 'L’entreprise a été supprimée avec succès.',
             ],
         ],
     ],

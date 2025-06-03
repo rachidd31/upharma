@@ -2,7 +2,7 @@
 
 return [
     'navigation' => [
-        'title' => 'Applications',
-        'group' => 'Recruitments',
+        'title' => 'Candidatures',
+        'group' => 'Recrutements',
     ],
 ];

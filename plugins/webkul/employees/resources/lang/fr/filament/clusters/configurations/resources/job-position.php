@@ -1,60 +1,60 @@
 <?php
 
 return [
-    'title' => 'Job Positions',
+    'title' => 'Postes',
 
     'navigation' => [
-        'title' => 'Job Positions',
-        'group' => 'Recruitment',
+        'title' => 'Postes',
+        'group' => 'Recrutement',
     ],
 
     'form' => [
         'sections' => [
             'employment-information' => [
-                'title' => 'Employment Information',
+                'title' => 'Informations sur l\'emploi',
 
                 'fields' => [
-                    'job-position-title'         => 'Job Position Title',
-                    'job-position-title-tooltip' => 'Enter the official job position title',
-                    'department'                 => 'Department',
-                    'department-modal-title'     => 'Create Department',
-                    'company-modal-title'        => 'Create Company',
-                    'job-location'               => 'Job Location',
-                    'industry'                   => 'Industry',
-                    'company'                    => 'Company',
-                    'employment-type'            => 'Employment Type',
-                    'recruiter'                  => 'Recruiter',
-                    'interviewer'                => 'Interviewer',
+                    'job-position-title'         => 'Titre du poste',
+                    'job-position-title-tooltip' => 'Saisir le titre officiel du poste',
+                    'department'                 => 'Département',
+                    'department-modal-title'     => 'Créer un département',
+                    'company-modal-title'        => 'Créer une entreprise',
+                    'job-location'               => 'Lieu de travail',
+                    'industry'                   => 'Industrie',
+                    'company'                    => 'Entreprise',
+                    'employment-type'            => 'Type d\'emploi',
+                    'recruiter'                  => 'Recruteur',
+                    'interviewer'                => 'Intervieweur',
                 ],
             ],
 
             'job-description' => [
-                'title' => 'Job Description',
+                'title' => 'Description du poste',
 
                 'fields' => [
-                    'job-description'  => 'Job Description',
-                    'job-requirements' => 'Job Requirements',
+                    'job-description'  => 'Description du poste',
+                    'job-requirements' => 'Exigences du poste',
                 ],
             ],
 
             'workforce-planning' => [
-                'title' => 'Workforce Planning',
+                'title' => 'Planification des effectifs',
 
                 'fields' => [
-                    'recruitment-target'         => 'Recruitment Target',
-                    'date-from'                  => 'Date From',
-                    'date-to'                    => 'Date To',
-                    'expected-skills'            => 'Expected Skills',
-                    'employment-type'            => 'Employment Type',
-                    'status'                     => 'Status',
+                    'recruitment-target'         => 'Objectif de recrutement',
+                    'date-from'                  => 'Date de début',
+                    'date-to'                    => 'Date de fin',
+                    'expected-skills'            => 'Compétences attendues',
+                    'employment-type'            => 'Type d\'emploi',
+                    'status'                     => 'Statut',
                 ],
             ],
 
             'position-status' => [
-                'title' => 'Position Status',
+                'title' => 'Statut du poste',
 
                 'fields' => [
-                    'status' => 'Status',
+                    'status' => 'Statut',
                 ],
             ],
         ],
@@ -63,51 +63,51 @@ return [
     'table' => [
         'columns' => [
             'id'                 => 'ID',
-            'name'               => 'Job Position',
-            'department'         => 'Department',
-            'job-position'       => 'Job Position',
-            'company'            => 'Company',
-            'expected-employees' => 'Expected Employees',
-            'current-employees'  => 'Current Employees',
-            'status'             => 'Status',
-            'created-by'         => 'Created By',
-            'created-at'         => 'Created At',
-            'updated-at'         => 'Updated At',
+            'name'               => 'Poste',
+            'department'         => 'Département',
+            'job-position'       => 'Poste',
+            'company'            => 'Entreprise',
+            'expected-employees' => 'Employés attendus',
+            'current-employees'  => 'Employés actuels',
+            'status'             => 'Statut',
+            'created-by'         => 'Créé par',
+            'created-at'         => 'Créé le',
+            'updated-at'         => 'Mis à jour le',
         ],
 
         'filters' => [
-            'department'      => 'Department',
-            'employment-type' => 'Employment Type',
-            'job-position'    => 'Job Position',
-            'company'         => 'Company',
-            'status'          => 'Status',
-            'created-by'      => 'Created By',
-            'updated-at'      => 'Updated At',
-            'created-at'      => 'Created At',
+            'department'      => 'Département',
+            'employment-type' => 'Type d\'emploi',
+            'job-position'    => 'Poste',
+            'company'         => 'Entreprise',
+            'status'          => 'Statut',
+            'created-by'      => 'Créé par',
+            'updated-at'      => 'Mis à jour le',
+            'created-at'      => 'Créé le',
         ],
 
         'groups' => [
-            'job-position'    => 'Job Position',
-            'company'         => 'Company',
-            'department'      => 'Department',
-            'employment-type' => 'Employment Type',
-            'created-by'      => 'Created By',
-            'created-at'      => 'Created At',
-            'updated-at'      => 'Updated At',
+            'job-position'    => 'Poste',
+            'company'         => 'Entreprise',
+            'department'      => 'Département',
+            'employment-type' => 'Type d\'emploi',
+            'created-by'      => 'Créé par',
+            'created-at'      => 'Créé le',
+            'updated-at'      => 'Mis à jour le',
         ],
 
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Job Position restored',
-                    'body'  => 'The Job Position has been restored successfully.',
+                    'title' => 'Poste restauré',
+                    'body'  => 'Le poste a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Job Position deleted',
-                    'body'  => 'The Job Position has been deleted successfully.',
+                    'title' => 'Poste supprimé',
+                    'body'  => 'Le poste a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -115,22 +115,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Job Positions restored',
-                    'body'  => 'The Job Positions has been restored successfully.',
+                    'title' => 'Postes restaurés',
+                    'body'  => 'Les postes ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Job Positions deleted',
-                    'body'  => 'The Job Positions has been deleted successfully.',
+                    'title' => 'Postes supprimés',
+                    'body'  => 'Les postes ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Job Positions force deleted',
-                    'body'  => 'The Job Positions has been force deleted successfully.',
+                    'title' => 'Postes supprimés définitivement',
+                    'body'  => 'Les postes ont été supprimés définitivement avec succès.',
                 ],
             ],
         ],
@@ -138,8 +138,8 @@ return [
         'empty-state-actions' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Job Positions',
-                    'body'  => 'The Job Positions has been created successfully.',
+                    'title' => 'Postes',
+                    'body'  => 'Les postes ont été créés avec succès.',
                 ],
             ],
         ],
@@ -148,41 +148,41 @@ return [
     'infolist' => [
         'sections' => [
             'employment-information' => [
-                'title' => 'Employment Information',
+                'title' => 'Informations sur l\'emploi',
 
                 'entries' => [
-                    'job-position-title' => 'Job Position Title',
-                    'department'         => 'Department',
-                    'company'            => 'Company',
-                    'employment-type'    => 'Employment Type',
-                    'job-location'       => 'Job Location',
-                    'industry'           => 'Industry',
+                    'job-position-title' => 'Titre du poste',
+                    'department'         => 'Département',
+                    'company'            => 'Entreprise',
+                    'employment-type'    => 'Type d\'emploi',
+                    'job-location'       => 'Lieu de travail',
+                    'industry'           => 'Industrie',
                 ],
             ],
             'job-description' => [
-                'title' => 'Job Description',
+                'title' => 'Description du poste',
 
                 'entries' => [
-                    'job-description'  => 'Job Description',
-                    'job-requirements' => 'Job Requirements',
+                    'job-description'  => 'Description du poste',
+                    'job-requirements' => 'Exigences du poste',
                 ],
             ],
             'work-planning' => [
-                'title' => 'Workforce Planning',
+                'title' => 'Planification des effectifs',
 
                 'entries' => [
-                    'expected-employees' => 'Expected Employees',
-                    'current-employees'  => 'Current Employees',
-                    'date-from'          => 'Date From',
-                    'date-to'            => 'Date To',
-                    'recruitment-target' => 'Recruitment Target',
+                    'expected-employees' => 'Employés attendus',
+                    'current-employees'  => 'Employés actuels',
+                    'date-from'          => 'Date de début',
+                    'date-to'            => 'Date de fin',
+                    'recruitment-target' => 'Objectif de recrutement',
                 ],
             ],
             'position-status' => [
-                'title' => 'Position Status',
+                'title' => 'Statut du poste',
 
                 'entries' => [
-                    'status' => 'Status',
+                    'status' => 'Statut',
                 ],
             ],
         ],

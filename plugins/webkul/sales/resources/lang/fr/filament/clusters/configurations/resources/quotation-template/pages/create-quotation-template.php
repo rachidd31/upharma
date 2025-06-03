@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Quotation Template Created',
-        'body'  => 'Quotation Template has been created successfully.',
+        'title' => 'Modèle de devis créé',
+        'body'  => 'Le modèle de devis a été créé avec succès.',
     ],
 ];

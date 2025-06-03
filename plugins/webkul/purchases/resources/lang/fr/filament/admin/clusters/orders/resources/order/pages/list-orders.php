@@ -2,26 +2,26 @@
 
 return [
     'navigation' => [
-        'title' => 'Orders',
+        'title' => 'Commandes',
     ],
 
     'tabs' => [
-        'my-purchases'    => 'My Purchases',
-        'starred'         => 'Starred',
-        'purchase-orders' => 'Purchase Orders',
-        'orders'          => 'RFQs',
-        'draft-orders'    => 'Draft RFQs',
-        'waiting-orders'  => 'Waiting RFQs',
-        'late-orders'     => 'Late RFQs',
+        'my-purchases'    => 'Mes Achats',
+        'starred'         => 'Favoris',
+        'purchase-orders' => 'Bons de Commande',
+        'orders'          => 'D.D.F.',
+        'draft-orders'    => 'D.D.F. Brouillons',
+        'waiting-orders'  => 'D.D.F. en Attente',
+        'late-orders'     => 'D.D.F. en Retard',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Order',
+            'label' => 'Nouvelle Commande',
 
             'notification' => [
-                'title' => 'Order created',
-                'body'  => 'The order has been created successfully.',
+                'title' => 'Commande créée',
+                'body'  => 'La commande a été créée avec succès.',
             ],
         ],
     ],

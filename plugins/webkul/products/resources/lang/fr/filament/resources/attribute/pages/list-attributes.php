@@ -2,17 +2,17 @@
 
 return [
     'tabs' => [
-        'all'      => 'All',
-        'archived' => 'Archived',
+        'all'      => 'Tout',
+        'archived' => 'Archivé',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Attribute',
+            'label' => 'Nouvel Attribut',
 
             'notification' => [
-                'title' => 'Attribute created',
-                'body'  => 'The attribute has been created successfully.',
+                'title' => 'Attribut créé',
+                'body'  => 'L\'attribut a été créé avec succès.',
             ],
         ],
     ],

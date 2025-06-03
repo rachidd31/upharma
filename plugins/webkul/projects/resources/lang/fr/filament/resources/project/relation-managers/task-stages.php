@@ -4,11 +4,11 @@ return [
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Task Stage',
+                'label' => 'Ajouter une Étape de Tâche',
 
                 'notification' => [
-                    'title' => 'Task Stage created',
-                    'body'  => 'The task Stage has been created successfully.',
+                    'title' => 'Étape de tâche créée',
+                    'body'  => 'L\'étape de tâche a été créée avec succès.',
                 ],
             ],
         ],

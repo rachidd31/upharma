@@ -1,25 +1,25 @@
 <?php
 
 return [
-    'label' => 'Cancel',
+    'label' => 'Annuler',
 
     'action' => [
         'notification' => [
             'warning' => [
                 'receipts' => [
-                    'title' => 'Cannot cancel order',
-                    'body'  => 'The order cannot be canceled since they have receipts that are already done.',
+                    'title' => 'Impossible d\'annuler la commande',
+                    'body'  => 'La commande ne peut pas être annulée car des réceptions sont déjà effectuées.',
                 ],
 
                 'bills' => [
-                    'title' => 'Cannot cancel order',
-                    'body'  => 'The order cannot be canceled. You must first cancel their related vendor bills.',
+                    'title' => 'Impossible d\'annuler la commande',
+                    'body'  => 'La commande ne peut pas être annulée. Vous devez d\'abord annuler les factures fournisseurs associées.',
                 ],
             ],
 
             'success' => [
-                'title' => 'Order canceled',
-                'body'  => 'The order has been canceled successfully.',
+                'title' => 'Commande annulée',
+                'body'  => 'La commande a été annulée avec succès.',
             ],
         ],
     ],

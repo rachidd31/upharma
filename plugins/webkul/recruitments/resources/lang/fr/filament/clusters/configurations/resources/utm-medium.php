@@ -1,48 +1,48 @@
 <?php
 
 return [
-    'title' => 'Mediums',
+    'title' => 'Médias',
 
     'navigation' => [
-        'title' => 'Mediums',
+        'title' => 'Médias',
         'group' => 'UTMs',
     ],
 
     'form' => [
         'fields' => [
-            'name'             => 'Name',
-            'name-placeholder' => 'Enter the name of the medium',
+            'name'             => 'Nom',
+            'name-placeholder' => 'Saisir le nom du média',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Medium updated',
-                    'body'  => 'The medium has been updated successfully.',
+                    'title' => 'Média mis à jour',
+                    'body'  => 'Le média a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Medium deleted',
-                    'body'  => 'The medium has been deleted successfully.',
+                    'title' => 'Média supprimé',
+                    'body'  => 'Le média a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -50,8 +50,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Mediums deleted',
-                    'body'  => 'The Mediums has been deleted successfully.',
+                    'title' => 'Médias supprimés',
+                    'body'  => 'Les médias ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -59,14 +59,14 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Medium created',
-                    'body'  => 'The medium has been created successfully.',
+                    'title' => 'Média créé',
+                    'body'  => 'Le média a été créé avec succès.',
                 ],
             ],
         ],
     ],
 
     'infolist' => [
-        'name' => 'Name',
+        'name' => 'Nom',
     ],
 ];

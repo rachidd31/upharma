@@ -58,7 +58,7 @@ return [
         ],
 
         'footer-actions' => [
-            'label' => 'Terminé & Planifier le suivant',
+            'label' => 'Terminé & Planifier le Suivant',
 
             'actions' => [
                 'notification' => [

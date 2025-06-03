@@ -2,31 +2,31 @@
 
 return [
     'notification' => [
-        'title' => 'Purchase Agreement updated',
-        'body'  => 'The purchase agreement has been updated successfully.',
+        'title' => 'Accord d\'achat mis à jour',
+        'body'  => 'L\'accord d\'achat a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'confirm' => [
-            'label' => 'Confirm',
+            'label' => 'Confirmer',
         ],
 
         'close' => [
-            'label' => 'Close',
+            'label' => 'Fermer',
         ],
 
         'cancel' => [
-            'label' => 'Cancel',
+            'label' => 'Annuler',
         ],
 
         'print' => [
-            'label' => 'Print',
+            'label' => 'Imprimer',
         ],
 
         'delete' => [
             'notification' => [
-                'title' => 'Purchase Agreement deleted',
-                'body'  => 'The purchase agreement has been deleted successfully.',
+                'title' => 'Accord d\'achat supprimé',
+                'body'  => 'L\'accord d\'achat a été supprimé avec succès.',
             ],
         ],
     ],

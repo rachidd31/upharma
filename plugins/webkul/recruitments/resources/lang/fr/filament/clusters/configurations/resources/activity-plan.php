@@ -2,69 +2,69 @@
 
 return [
     'navigation' => [
-        'title' => 'Activity Plans',
-        'group' => 'Activities',
+        'title' => 'Plans d\'Activité',
+        'group' => 'Activités',
     ],
 
     'global-search' => [
-        'name'         => 'Department',
-        'department'   => 'Department',
+        'name'         => 'Département',
+        'department'   => 'Département',
         'manager'      => 'Manager',
-        'company'      => 'Company',
+        'company'      => 'Entreprise',
         'plugin'       => 'Plugin',
-        'creator-name' => 'Created By',
+        'creator-name' => 'Créé par',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'status'     => 'Status',
-            'department' => 'Department',
-            'company'    => 'Company',
+            'name'       => 'Nom',
+            'status'     => 'Statut',
+            'department' => 'Département',
+            'company'    => 'Entreprise',
             'manager'    => 'Manager',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'           => 'Name',
+            'name'           => 'Nom',
             'plugin'         => 'Plugin',
-            'activity-types' => 'Activity Types',
-            'company'        => 'Company',
-            'department'     => 'Department',
-            'is-active'      => 'Status',
-            'updated-at'     => 'Updated At',
-            'created-at'     => 'Created At',
+            'activity-types' => 'Types d\'activité',
+            'company'        => 'Entreprise',
+            'department'     => 'Département',
+            'is-active'      => 'Statut',
+            'updated-at'     => 'Mis à jour le',
+            'created-at'     => 'Créé le',
         ],
 
         'groups' => [
-            'status'     => 'Status',
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'status'     => 'Statut',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Activity Plan restored',
-                    'body'  => 'The activity plan has been restored successfully.',
+                    'title' => 'Plan d\'Activité restauré',
+                    'body'  => 'Le plan d\'activité a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Activity Plan deleted',
-                    'body'  => 'The activity plan has been deleted successfully.',
+                    'title' => 'Plan d\'Activité supprimé',
+                    'body'  => 'Le plan d\'activité a été supprimé avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Activity Plan force deleted',
-                    'body'  => 'The activity plan has been force deleted successfully.',
+                    'title' => 'Plan d\'Activité supprimé définitivement',
+                    'body'  => 'Le plan d\'activité a été supprimé définitivement avec succès.',
                 ],
             ],
         ],
@@ -72,22 +72,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Activity Plans restored',
-                    'body'  => 'The activity plans has been restored successfully.',
+                    'title' => 'Plans d\'Activité restaurés',
+                    'body'  => 'Les plans d\'activité ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Activity Plans deleted',
-                    'body'  => 'The activity plans has been deleted successfully.',
+                    'title' => 'Plans d\'Activité supprimés',
+                    'body'  => 'Les plans d\'activité ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Activity Plans force deleted',
-                    'body'  => 'The activity plans has been force deleted successfully.',
+                    'title' => 'Plans d\'Activité supprimés définitivement',
+                    'body'  => 'Les plans d\'activité ont été supprimés définitivement avec succès.',
                 ],
             ],
         ],
@@ -95,8 +95,8 @@ return [
         'empty-state' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Activity Plan created',
-                    'body'  => 'The activity plan has been created successfully.',
+                    'title' => 'Plan d\'Activité créé',
+                    'body'  => 'Le plan d\'activité a été créé avec succès.',
                 ],
             ],
         ],

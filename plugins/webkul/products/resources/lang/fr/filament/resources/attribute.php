@@ -4,10 +4,10 @@ return [
     'form' => [
         'sections' => [
             'general' => [
-                'title'  => 'General',
+                'title'  => 'Général',
 
                 'fields' => [
-                    'name' => 'Name',
+                    'name' => 'Nom',
                     'type' => 'Type',
                 ],
             ],
@@ -16,9 +16,9 @@ return [
                 'title'  => 'Options',
 
                 'fields' => [
-                    'name'        => 'Name',
-                    'color'       => 'Color',
-                    'extra-price' => 'Extra Price',
+                    'name'        => 'Nom',
+                    'color'       => 'Couleur',
+                    'extra-price' => 'Prix Supplémentaire',
                 ],
             ],
         ],
@@ -26,17 +26,17 @@ return [
 
     'table' => [
         'columns' => [
-            'name'        => 'Name',
-            'type'        => 'Type',
-            'deleted-at'  => 'Deleted At',
-            'created-at'  => 'Created At',
-            'updated-at'  => 'Updated At',
+            'name'       => 'Nom',
+            'type'       => 'Type',
+            'deleted-at' => 'Supprimé le',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'groups' => [
             'type'       => 'Type',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
@@ -46,28 +46,28 @@ return [
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Attribute restored',
-                    'body'  => 'The attribute has been restored successfully.',
+                    'title' => 'Attribut restauré',
+                    'body'  => 'L\'attribut a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Attribute deleted',
-                    'body'  => 'The attribute has been deleted successfully.',
+                    'title' => 'Attribut supprimé',
+                    'body'  => 'L\'attribut a été supprimé avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Attribute force deleted',
-                        'body'  => 'The attribute has been force deleted successfully.',
+                        'title' => 'Attribut supprimé définitivement',
+                        'body'  => 'L\'attribut a été supprimé définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Attribute could not be deleted',
-                        'body'  => 'The attribute cannot be deleted because it is currently in use.',
+                        'title' => 'L\'attribut n\'a pas pu être supprimé',
+                        'body'  => 'L\'attribut ne peut pas être supprimé car il est actuellement utilisé.',
                     ],
                 ],
             ],
@@ -76,28 +76,28 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Attributes restored',
-                    'body'  => 'The attributes has been restored successfully.',
+                    'title' => 'Attributs restaurés',
+                    'body'  => 'Les attributs ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Attributes deleted',
-                    'body'  => 'The attributes has been deleted successfully.',
+                    'title' => 'Attributs supprimés',
+                    'body'  => 'Les attributs ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Attributes force deleted',
-                        'body'  => 'The attributes has been force deleted successfully.',
+                        'title' => 'Attributs supprimés définitivement',
+                        'body'  => 'Les attributs ont été supprimés définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Attributes could not be deleted',
-                        'body'  => 'The attributes cannot be deleted because they are currently in use.',
+                        'title' => 'Les attributs n\'ont pas pu être supprimés',
+                        'body'  => 'Les attributs ne peuvent pas être supprimés car ils sont actuellement utilisés.',
                     ],
                 ],
             ],
@@ -107,21 +107,21 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General Information',
+                'title' => 'Informations Générales',
 
                 'entries' => [
-                    'name' => 'Name',
+                    'name' => 'Nom',
                     'type' => 'Type',
                 ],
             ],
 
             'record-information' => [
-                'title' => 'Record Information',
+                'title' => 'Informations d\'Enregistrement',
 
                 'entries' => [
-                    'creator'    => 'Created By',
-                    'created_at' => 'Created At',
-                    'updated_at' => 'Last Updated At',
+                    'creator'    => 'Créé par',
+                    'created_at' => 'Créé le',
+                    'updated_at' => 'Dernière mise à jour le',
                 ],
             ],
         ],

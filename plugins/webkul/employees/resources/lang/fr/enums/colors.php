@@ -2,8 +2,8 @@
 
 return [
     'danger'  => 'Danger',
-    'gray'    => 'Gray',
+    'gray'    => 'Gris',
     'info'    => 'Info',
-    'success' => 'Success',
-    'warning' => 'Warning',
+    'success' => 'Succès',
+    'warning' => 'Avertissement',
 ];

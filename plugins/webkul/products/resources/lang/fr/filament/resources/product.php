@@ -4,11 +4,11 @@ return [
     'form' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'fields' => [
-                    'name'             => 'Name',
-                    'name-placeholder' => 'eg. T-shirt',
+                    'name'             => 'Nom',
+                    'name-placeholder' => 'ex. T-shirt',
                     'description'      => 'Description',
                     'tags'             => 'Tags',
                 ],
@@ -19,16 +19,16 @@ return [
             ],
 
             'inventory' => [
-                'title' => 'Inventory',
+                'title' => 'Inventaire',
 
                 'fields' => [],
 
                 'fieldsets' => [
                     'logistics' => [
-                        'title' => 'Logistics',
+                        'title' => 'Logistique',
 
                         'fields' => [
-                            'weight' => 'Weight',
+                            'weight' => 'Poids',
                             'volume' => 'Volume',
                         ],
                     ],
@@ -36,102 +36,102 @@ return [
             ],
 
             'settings' => [
-                'title' => 'Settings',
+                'title' => 'Paramètres',
 
                 'fields' => [
                     'type'      => 'Type',
-                    'reference' => 'Reference',
-                    'barcode'   => 'Barcode',
-                    'category'  => 'Category',
-                    'company'   => 'Company',
+                    'reference' => 'Référence',
+                    'barcode'   => 'Code-barres',
+                    'category'  => 'Catégorie',
+                    'company'   => 'Entreprise',
                 ],
             ],
 
             'pricing' => [
-                'title' => 'Pricing',
+                'title' => 'Tarification',
 
                 'fields' => [
-                    'price' => 'Price',
-                    'cost'  => 'Cost',
+                    'price' => 'Prix',
+                    'cost'  => 'Coût',
                 ],
             ],
 
             'additional' => [
-                'title' => 'Additional',
+                'title' => 'Additionnel',
             ],
         ],
     ],
 
     'table' => [
         'columns' => [
-            'name'        => 'Name',
-            'variants'    => 'Variants',
+            'name'        => 'Nom',
+            'variants'    => 'Variantes',
             'images'      => 'Images',
             'type'        => 'Type',
-            'reference'   => 'Reference',
-            'responsible' => 'Responsible',
-            'barcode'     => 'Barcode',
-            'category'    => 'Category',
-            'company'     => 'Company',
-            'price'       => 'Price',
-            'cost'        => 'Cost',
-            'on-hand'     => 'On Hand',
+            'reference'   => 'Référence',
+            'responsible' => 'Responsable',
+            'barcode'     => 'Code-barres',
+            'category'    => 'Catégorie',
+            'company'     => 'Entreprise',
+            'price'       => 'Prix',
+            'cost'        => 'Coût',
+            'on-hand'     => 'En stock',
             'tags'        => 'Tags',
-            'deleted-at'  => 'Deleted At',
-            'created-at'  => 'Created At',
-            'updated-at'  => 'Updated At',
+            'deleted-at'  => 'Supprimé le',
+            'created-at'  => 'Créé le',
+            'updated-at'  => 'Mis à jour le',
         ],
 
         'groups' => [
             'type'       => 'Type',
-            'category'   => 'Category',
-            'created-at' => 'Created At',
+            'category'   => 'Catégorie',
+            'created-at' => 'Créé le',
         ],
 
         'filters' => [
-            'name'        => 'Name',
+            'name'        => 'Nom',
             'type'        => 'Type',
-            'reference'   => 'Reference',
-            'barcode'     => 'Barcode',
-            'category'    => 'Category',
-            'company'     => 'Company',
-            'price'       => 'Price',
-            'cost'        => 'Cost',
-            'is-favorite' => 'Is Favorite',
-            'weight'      => 'Weight',
+            'reference'   => 'Référence',
+            'barcode'     => 'Code-barres',
+            'category'    => 'Catégorie',
+            'company'     => 'Entreprise',
+            'price'       => 'Prix',
+            'cost'        => 'Coût',
+            'is-favorite' => 'Est Favori',
+            'weight'      => 'Poids',
             'volume'      => 'Volume',
             'tags'        => 'Tags',
-            'responsible' => 'Responsible',
-            'created-at'  => 'Created At',
-            'updated-at'  => 'Updated At',
-            'creator'     => 'Creator',
+            'responsible' => 'Responsable',
+            'created-at'  => 'Créé le',
+            'updated-at'  => 'Mis à jour le',
+            'creator'     => 'Créateur',
         ],
 
         'actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Product restored',
-                    'body'  => 'The product has been restored successfully.',
+                    'title' => 'Produit restauré',
+                    'body'  => 'Le produit a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Product deleted',
-                    'body'  => 'The product has been deleted successfully.',
+                    'title' => 'Produit supprimé',
+                    'body'  => 'Le produit a été supprimé avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Product force deleted',
-                        'body'  => 'The product has been force deleted successfully.',
+                        'title' => 'Produit supprimé définitivement',
+                        'body'  => 'Le produit a été supprimé définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Product could not be deleted',
-                        'body'  => 'The product cannot be deleted because it is currently in use.',
+                        'title' => 'Le produit n\'a pas pu être supprimé',
+                        'body'  => 'Le produit ne peut pas être supprimé car il est actuellement utilisé.',
                     ],
                 ],
             ],
@@ -139,19 +139,19 @@ return [
 
         'bulk-actions' => [
             'print' => [
-                'label' => 'Print Labels',
+                'label' => 'Imprimer les étiquettes',
 
                 'form' => [
                     'fields' => [
-                        'quantity' => 'Number of Labels',
+                        'quantity' => 'Nombre d\'étiquettes',
                         'format'   => 'Format',
 
                         'format-options' => [
                             'dymo'       => 'Dymo',
-                            '2x7_price'  => '2x7 with price',
-                            '4x7_price'  => '4x7 with price',
+                            '2x7_price'  => '2x7 avec prix',
+                            '4x7_price'  => '4x7 avec prix',
                             '4x12'       => '4x12',
-                            '4x12_price' => '4x12 with price',
+                            '4x12_price' => '4x12 avec prix',
                         ],
                     ],
                 ],
@@ -159,28 +159,28 @@ return [
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Products restored',
-                    'body'  => 'The products has been restored successfully.',
+                    'title' => 'Produits restaurés',
+                    'body'  => 'Les produits ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Products deleted',
-                    'body'  => 'The products has been deleted successfully.',
+                    'title' => 'Produits supprimés',
+                    'body'  => 'Les produits ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Products force deleted',
-                        'body'  => 'The products has been force deleted successfully.',
+                        'title' => 'Produits supprimés définitivement',
+                        'body'  => 'Les produits ont été supprimés définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Products could not be deleted',
-                        'body'  => 'The products cannot be deleted because they are currently in use.',
+                        'title' => 'Les produits n\'ont pas pu être supprimés',
+                        'body'  => 'Les produits ne peuvent pas être supprimés car ils sont actuellement utilisés.',
                     ],
                 ],
             ],
@@ -190,11 +190,11 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'entries' => [
-                    'name'             => 'Name',
-                    'name-placeholder' => 'eg. T-shirt',
+                    'name'             => 'Nom',
+                    'name-placeholder' => 'ex. T-shirt',
                     'description'      => 'Description',
                     'tags'             => 'Tags',
                 ],
@@ -207,35 +207,35 @@ return [
             ],
 
             'settings' => [
-                'title' => 'Settings',
+                'title' => 'Paramètres',
 
                 'entries' => [
                     'type'      => 'Type',
-                    'reference' => 'Reference',
-                    'barcode'   => 'Barcode',
-                    'category'  => 'Category',
-                    'company'   => 'Company',
+                    'reference' => 'Référence',
+                    'barcode'   => 'Code-barres',
+                    'category'  => 'Catégorie',
+                    'company'   => 'Entreprise',
                 ],
             ],
 
             'pricing' => [
-                'title' => 'Pricing',
+                'title' => 'Tarification',
 
                 'entries' => [
-                    'price' => 'Price',
-                    'cost'  => 'Cost',
+                    'price' => 'Prix',
+                    'cost'  => 'Coût',
                 ],
             ],
 
             'inventory' => [
-                'title' => 'Inventory',
+                'title' => 'Inventaire',
 
                 'fieldsets' => [
                     'logistics' => [
-                        'title' => 'Logistics',
+                        'title' => 'Logistique',
 
                         'entries' => [
-                            'weight' => 'Weight',
+                            'weight' => 'Poids',
                             'volume' => 'Volume',
                         ],
                     ],
@@ -243,12 +243,12 @@ return [
             ],
 
             'record-information' => [
-                'title' => 'Record Information',
+                'title' => 'Informations d\'enregistrement',
 
                 'entries' => [
-                    'created-at' => 'Created At',
-                    'created-by' => 'Created By',
-                    'updated-at' => 'Updated At',
+                    'created-at' => 'Créé le',
+                    'created-by' => 'Créé par',
+                    'updated-at' => 'Mis à jour le',
                 ],
             ],
         ],

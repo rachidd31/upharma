@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'label' => 'Lock',
+    'label' => 'Verrouiller',
 
     'action' => [
         'notification' => [
             'success' => [
-                'title' => 'Order locked',
-                'body'  => 'The order has been locked successfully.',
+                'title' => 'Commande verrouillée',
+                'body'  => 'La commande a été verrouillée avec succès.',
             ],
         ],
     ],

@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Journal updated',
-        'body'  => 'The journal has been updated successfully.',
+        'title' => 'Journal mis à jour',
+        'body'  => 'Le journal a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Journal deleted',
-                'body'  => 'The journal has been deleted successfully.',
+                'title' => 'Journal supprimé',
+                'body'  => 'Le journal a été supprimé avec succès.',
             ],
         ],
     ],

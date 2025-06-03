@@ -1,37 +1,37 @@
 <?php
 
 return [
-    'title' => 'Users',
+    'title' => 'Utilisateurs',
 
     'navigation' => [
-        'title' => 'Users',
-        'group' => 'Settings',
+        'title' => 'Utilisateurs',
+        'group' => 'Paramètres',
     ],
 
     'global-search' => [
-        'name'  => 'Name',
+        'name'  => 'Nom',
         'email' => 'Email',
     ],
 
     'form' => [
         'sections' => [
             'general-information' => [
-                'title'  => 'General Information',
+                'title'  => 'Informations générales',
                 'fields' => [
-                    'name'                  => 'Name',
+                    'name'                  => 'Nom',
                     'email'                 => 'Email',
-                    'password'              => 'Password',
-                    'password-confirmation' => 'Password Confirmation',
+                    'password'              => 'Mot de passe',
+                    'password-confirmation' => 'Confirmation du mot de passe',
                 ],
             ],
 
             'permissions' => [
                 'title'  => 'Permissions',
                 'fields' => [
-                    'roles'               => 'Roles',
+                    'roles'               => 'Rôles',
                     'permissions'         => 'Permissions',
-                    'resource-permission' => 'Resource Permission',
-                    'teams'               => 'Teams',
+                    'resource-permission' => 'Permission ressource',
+                    'teams'               => 'Équipes',
                 ],
             ],
 
@@ -40,17 +40,17 @@ return [
             ],
 
             'lang-and-status' => [
-                'title'  => 'Language & Status',
+                'title'  => 'Langue & Statut',
                 'fields' => [
-                    'language' => 'Preferred Language',
-                    'status'   => 'Status',
+                    'language' => 'Langue préférée',
+                    'status'   => 'Statut',
                 ],
             ],
 
             'multi-company' => [
-                'title'             => 'Multi Company',
-                'allowed-companies' => 'Allowed Companies',
-                'default-company'   => 'Default Company',
+                'title'             => 'Multi-entreprise',
+                'allowed-companies' => 'Entreprises autorisées',
+                'default-company'   => 'Entreprise par défaut',
             ],
         ],
     ],
@@ -58,44 +58,44 @@ return [
     'table' => [
         'columns' => [
             'avatar'              => 'Avatar',
-            'name'                => 'Name',
+            'name'                => 'Nom',
             'email'               => 'Email',
-            'teams'               => 'Teams',
-            'role'                => 'Role',
-            'resource-permission' => 'Resource Permission',
-            'default-company'     => 'Default Company',
-            'allowed-company'     => 'Allowed Company',
-            'created-at'          => 'Created At',
-            'updated-at'          => 'Updated At',
+            'teams'               => 'Équipes',
+            'role'                => 'Rôle',
+            'resource-permission' => 'Permission ressource',
+            'default-company'     => 'Entreprise par défaut',
+            'allowed-company'     => 'Entreprise autorisée',
+            'created-at'          => 'Créé le',
+            'updated-at'          => 'Mis à jour le',
         ],
 
         'filters' => [
-            'resource-permission' => 'Resource Permission',
-            'teams'               => 'Teams',
-            'roles'               => 'Roles',
-            'default-company'     => 'Default Company',
-            'allowed-companies'   => 'Allowed Companies',
+            'resource-permission' => 'Permission ressource',
+            'teams'               => 'Équipes',
+            'roles'               => 'Rôles',
+            'default-company'     => 'Entreprise par défaut',
+            'allowed-companies'   => 'Entreprises autorisées',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'User edited',
-                    'body'  => 'The user has been edited successfully.',
+                    'title' => 'Utilisateur modifié',
+                    'body'  => 'L\'utilisateur a été modifié avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'User deleted',
-                    'body'  => 'The user has been deleted successfully.',
+                    'title' => 'Utilisateur supprimé',
+                    'body'  => 'L\'utilisateur a été supprimé avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'User restored',
-                    'body'  => 'The user has been restored successfully.',
+                    'title' => 'Utilisateur restauré',
+                    'body'  => 'L\'utilisateur a été restauré avec succès.',
                 ],
             ],
         ],
@@ -103,22 +103,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Users restored',
-                    'body'  => 'The users has been restored successfully.',
+                    'title' => 'Utilisateurs restaurés',
+                    'body'  => 'Les utilisateurs ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Users deleted',
-                    'body'  => 'The users has been deleted successfully.',
+                    'title' => 'Utilisateurs supprimés',
+                    'body'  => 'Les utilisateurs ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Users force deleted',
-                    'body'  => 'The users has been force deleted successfully.',
+                    'title' => 'Utilisateurs supprimés définitivement',
+                    'body'  => 'Les utilisateurs ont été supprimés définitivement avec succès.',
                 ],
             ],
         ],
@@ -126,8 +126,8 @@ return [
         'empty-state-actions' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Users created',
-                    'body'  => 'The users has been created successfully.',
+                    'title' => 'Utilisateurs créés',
+                    'body'  => 'Les utilisateurs ont été créés avec succès.',
                 ],
             ],
         ],
@@ -136,22 +136,22 @@ return [
     'infolist' => [
         'sections' => [
             'general-information' => [
-                'title'   => 'General Information',
+                'title'   => 'Informations générales',
                 'entries' => [
-                    'name'                  => 'Name',
+                    'name'                  => 'Nom',
                     'email'                 => 'Email',
-                    'password'              => 'Password',
-                    'password-confirmation' => 'Password Confirmation',
+                    'password'              => 'Mot de passe',
+                    'password-confirmation' => 'Confirmation du mot de passe',
                 ],
             ],
 
             'permissions' => [
                 'title'   => 'Permissions',
                 'entries' => [
-                    'roles'               => 'Roles',
+                    'roles'               => 'Rôles',
                     'permissions'         => 'Permissions',
-                    'resource-permission' => 'Resource Permission',
-                    'teams'               => 'Teams',
+                    'resource-permission' => 'Permission ressource',
+                    'teams'               => 'Équipes',
                 ],
             ],
 
@@ -160,17 +160,17 @@ return [
             ],
 
             'lang-and-status' => [
-                'title'   => 'Language & Status',
+                'title'   => 'Langue & Statut',
                 'entries' => [
-                    'language' => 'Preferred Language',
-                    'status'   => 'Status',
+                    'language' => 'Langue préférée',
+                    'status'   => 'Statut',
                 ],
             ],
 
             'multi-company' => [
-                'title'             => 'Multi Company',
-                'allowed-companies' => 'Allowed Companies',
-                'default-company'   => 'Default Company',
+                'title'             => 'Multi-entreprise',
+                'allowed-companies' => 'Entreprises autorisées',
+                'default-company'   => 'Entreprise par défaut',
             ],
         ],
     ],

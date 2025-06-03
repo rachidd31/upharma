@@ -2,17 +2,17 @@
 
 return [
     'tabs' => [
-        'all'      => 'All',
-        'archived' => 'Archived',
+        'all'      => 'Tous',
+        'archived' => 'Archivés',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Skill Type',
+            'label' => 'Nouveau type de compétence',
 
             'notification' => [
-                'title' => 'Skill Type created',
-                'body'  => 'The skill type has been created successfully.',
+                'title' => 'Type de compétence créé',
+                'body'  => 'Le type de compétence a été créé avec succès.',
             ],
         ],
     ],

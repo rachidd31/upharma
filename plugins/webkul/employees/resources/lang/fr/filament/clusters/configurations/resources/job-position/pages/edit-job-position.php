@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Job Position updated',
-        'body'  => 'The job position has been updated successfully.',
+        'title' => 'Poste mis à jour',
+        'body'  => 'Le poste a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Job Position deleted',
-                'body'  => 'The job position has been deleted successfully.',
+                'title' => 'Poste supprimé',
+                'body'  => 'Le poste a été supprimé avec succès.',
             ],
         ],
     ],

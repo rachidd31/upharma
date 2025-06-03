@@ -2,9 +2,9 @@
 
 return [
     'tabs' => [
-        'my-quotations' => 'My Quotations',
-        'quotations'    => 'Quotations',
-        'sales-orders'  => 'Sales Orders',
-        'archived'      => 'Archived',
+        'my-quotations' => 'Mes devis',
+        'quotations'    => 'Devis',
+        'sales-orders'  => 'Commandes de vente',
+        'archived'      => 'Archivés',
     ],
 ];

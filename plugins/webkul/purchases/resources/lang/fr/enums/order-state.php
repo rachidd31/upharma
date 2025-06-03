@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'draft'    => 'RFQ',
-    'sent'     => 'RFQ Sent',
-    'purchase' => 'Purchase Order',
-    'done'     => 'Locked',
-    'canceled' => 'Canceled',
+    'draft'    => 'Demande de prix',
+    'sent'     => 'Demande de prix envoyée',
+    'purchase' => 'Commande fournisseur',
+    'done'     => 'Verrouillée',
+    'canceled' => 'Annulée',
 ];

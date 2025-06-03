@@ -2,25 +2,25 @@
 
 return [
     'navigation' => [
-        'title' => 'Purchase Agreements',
+        'title' => 'Accords d\'Achat',
     ],
 
     'tabs' => [
-        'my-agreements'      => 'My Agreements',
-        'blanket-orders'     => 'Blanket Orders',
-        'purchase-templates' => 'Purchase Templates',
-        'draft'              => 'Draft',
-        'done'               => 'Done',
-        'archived'           => 'Archived',
+        'my-agreements'    => 'Mes Accords',
+        'blanket-orders'   => 'Commandes Cadres',
+        'purchase-templates' => 'Modèles d\'Achat',
+        'draft'            => 'Brouillon',
+        'done'             => 'Terminé',
+        'archived'         => 'Archivé',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Purchase Agreement',
+            'label' => 'Nouvel Accord d\'Achat',
 
             'notification' => [
-                'title' => 'Purchase Agreement created',
-                'body'  => 'The purchase agreement has been created successfully.',
+                'title' => 'Accord d\'achat créé',
+                'body'  => 'L\'accord d\'achat a été créé avec succès.',
             ],
         ],
     ],

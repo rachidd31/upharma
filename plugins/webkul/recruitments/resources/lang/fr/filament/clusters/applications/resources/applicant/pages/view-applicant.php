@@ -4,36 +4,36 @@ return [
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Applicant deleted',
-                'body'  => 'The applicant has been deleted successfully.',
+                'title' => 'Candidat supprimé',
+                'body'  => 'Le candidat a été supprimé avec succès.',
             ],
         ],
 
         'refuse' => [
             'notification' => [
-                'title' => 'Applicant refused',
-                'body'  => 'The applicant has been refused successfully.',
+                'title' => 'Candidat refusé',
+                'body'  => 'Le candidat a été refusé avec succès.',
             ],
         ],
 
         'reopen' => [
             'notification' => [
-                'title' => 'Applicant reopened',
-                'body'  => 'The applicant has been reopened successfully.',
+                'title' => 'Candidat rouvert',
+                'body'  => 'Le candidat a été rouvert avec succès.',
             ],
         ],
 
         'state' => [
             'notification' => [
-                'title' => 'Applicant state updated',
-                'body'  => 'The applicant state has been updated successfully.',
+                'title' => 'État du candidat mis à jour',
+                'body'  => 'L\'état du candidat a été mis à jour avec succès.',
             ],
         ],
     ],
 
     'mail' => [
         'application-refused' => [
-            'subject' => 'Your Job Application: :application',
+            'subject' => 'Votre candidature : :application',
         ],
     ],
 ];

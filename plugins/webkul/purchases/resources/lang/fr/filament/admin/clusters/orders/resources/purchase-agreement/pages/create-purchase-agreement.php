@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'title' => 'Create Purchase Agreement',
+    'title' => 'Créer un Accord d\'Achat',
 
     'notification' => [
-        'title' => 'Purchase Agreement created',
-        'body'  => 'The purchase agreement has been created successfully.',
+        'title' => 'Accord d\'achat créé',
+        'body'  => 'L\'accord d\'achat a été créé avec succès.',
     ],
 ];

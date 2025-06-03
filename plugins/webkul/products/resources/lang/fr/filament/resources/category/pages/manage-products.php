@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'title' => 'Products',
+    'title' => 'Produits',
 
     'table' => [
         'header-actions' => [
             'create' => [
-                'label' => 'Add Product',
+                'label' => 'Ajouter un Produit',
 
                 'notification' => [
-                    'title' => 'Product created',
-                    'body'  => 'The product has been created successfully.',
+                    'title' => 'Produit créé',
+                    'body'  => 'Le produit a été créé avec succès.',
                 ],
             ],
         ],

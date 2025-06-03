@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'manual'     => 'Manual',
-    'stock-move' => 'Stock Move',
+    'manual'     => 'Manuel',
+    'stock-move' => 'Mouvement de stock',
 ];

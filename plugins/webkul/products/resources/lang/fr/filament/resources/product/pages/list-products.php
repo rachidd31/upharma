@@ -2,19 +2,19 @@
 
 return [
     'tabs' => [
-        'goods'     => 'Goods',
+        'goods'     => 'Biens',
         'services'  => 'Services',
-        'favorites' => 'Favorites',
-        'archived'  => 'Archived',
+        'favorites' => 'Favoris',
+        'archived'  => 'Archivés',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Product',
+            'label' => 'Nouveau Produit',
 
             'notification' => [
-                'title' => 'Product created',
-                'body'  => 'The product has been created successfully.',
+                'title' => 'Produit créé',
+                'body'  => 'Le produit a été créé avec succès.',
             ],
         ],
     ],

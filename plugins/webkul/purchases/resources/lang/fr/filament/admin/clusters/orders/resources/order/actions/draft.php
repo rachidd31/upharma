@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'label' => 'Set to Draft',
+    'label' => 'Mettre au brouillon',
 
     'action' => [
         'notification' => [
             'success' => [
-                'title' => 'Order marked as draft',
-                'body'  => 'The order has been marked as draft successfully.',
+                'title' => 'Commande marquée comme brouillon',
+                'body'  => 'La commande a été marquée comme brouillon avec succès.',
             ],
         ],
     ],

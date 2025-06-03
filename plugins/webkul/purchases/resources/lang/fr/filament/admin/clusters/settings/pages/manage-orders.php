@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'title' => 'Manage Orders',
+    'title' => 'Gérer les Commandes',
 
     'form' => [
-        'enable-order-approval'                    => 'Purchase Order Approval',
-        'enable-order-approval-helper-text'        => 'Request managers to approve orders above a minimum amount',
-        'min-amount'                               => 'Minimum Amount',
-        'enable-lock-confirmed-orders'             => 'Lock Confirmed Orders',
-        'enable-lock-confirmed-orders-helper-text' => 'Automatically lock confirmed orders to prevent editing',
-        'enable-purchase-agreements'               => 'Purchase Agreements',
-        'enable-purchase-agreements-helper-text'   => 'Manage blanket orders and purchase templates',
+        'enable-order-approval'              => 'Approbation des Bons de Commande',
+        'enable-order-approval-helper-text'  => 'Demander aux responsables d\'approuver les commandes dépassant un montant minimum',
+        'min-amount'                         => 'Montant Minimum',
+        'enable-lock-confirmed-orders'       => 'Verrouiller les Commandes Confirmées',
+        'enable-lock-confirmed-orders-helper-text' => 'Verrouiller automatiquement les commandes confirmées pour empêcher toute modification',
+        'enable-purchase-agreements'         => 'Accords d\'Achat',
+        'enable-purchase-agreements-helper-text' => 'Gérer les commandes cadres et les modèles d\'achat',
     ],
 ];

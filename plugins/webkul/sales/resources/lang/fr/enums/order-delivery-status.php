@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'no'      => 'No',
-    'pending' => 'Pending',
-    'partial' => 'Partial',
-    'full'    => 'Full',
+    'no'      => 'Non',
+    'pending' => 'En attente',
+    'partial' => 'Partiel',
+    'full'    => 'Complet',
 ];

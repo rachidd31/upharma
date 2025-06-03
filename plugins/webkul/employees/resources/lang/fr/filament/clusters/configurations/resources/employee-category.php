@@ -5,62 +5,62 @@ return [
 
     'navigation' => [
         'title' => 'Tags',
-        'group' => 'Employee',
+        'group' => 'Employé',
     ],
 
     'groups' => [
-        'status'     => 'Status',
-        'created-by' => 'Created By',
-        'created-at' => 'Created At',
-        'updated-at' => 'Updated At',
+        'status'     => 'Statut',
+        'created-by' => 'Créé par',
+        'created-at' => 'Créé le',
+        'updated-at' => 'Mis à jour le',
     ],
 
     'form' => [
         'fields' => [
-            'name'  => 'Name',
-            'color' => 'Color',
+            'name'  => 'Nom',
+            'color' => 'Couleur',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Name',
-            'color'      => 'Color',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'color'      => 'Couleur',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'updated-by' => 'Updated By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'updated-by' => 'Mis à jour par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'groups' => [
-            'name'         => 'Name',
-            'job-position' => 'Job Position',
-            'color'        => 'Color',
-            'created-by'   => 'Created By',
-            'created-at'   => 'Created At',
-            'updated-at'   => 'Updated At',
+            'name'         => 'Nom',
+            'job-position' => 'Poste',
+            'color'        => 'Couleur',
+            'created-by'   => 'Créé par',
+            'created-at'   => 'Créé le',
+            'updated-at'   => 'Mis à jour le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Tag updated',
-                    'body'  => 'The tag has been updated successfully.',
+                    'title' => 'Tag mis à jour',
+                    'body'  => 'Le tag a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Tag deleted',
-                    'body'  => 'The tag has been deleted successfully.',
+                    'title' => 'Tag supprimé',
+                    'body'  => 'Le tag a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -68,8 +68,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Tags deleted',
-                    'body'  => 'The tags has been deleted successfully.',
+                    'title' => 'Tags supprimés',
+                    'body'  => 'Les tags ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -77,15 +77,15 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Tag created',
-                    'body'  => 'The tag has been created successfully.',
+                    'title' => 'Tag créé',
+                    'body'  => 'Le tag a été créé avec succès.',
                 ],
             ],
         ],
     ],
 
     'infolist' => [
-        'name'  => 'Name',
-        'color' => 'Color',
+        'name'  => 'Nom',
+        'color' => 'Couleur',
     ],
 ];

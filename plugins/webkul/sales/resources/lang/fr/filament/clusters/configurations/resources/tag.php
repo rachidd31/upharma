@@ -1,46 +1,46 @@
 <?php
 
 return [
-    'title' => 'Tag',
+    'title' => 'Étiquette',
 
     'navigation' => [
-        'title' => 'Tag',
-        'group' => 'Sales Orders',
+        'title' => 'Étiquettes',
+        'group' => 'Commandes de vente',
     ],
 
     'form' => [
         'fields' => [
-            'name'  => 'Name',
-            'color' => 'Color',
+            'name'  => 'Nom',
+            'color' => 'Couleur',
         ],
     ],
 
     'table' => [
         'columns' => [
-            'created-by' => 'Created by',
-            'name'       => 'Name',
-            'color'      => 'Color',
+            'created-by' => 'Créé par',
+            'name'       => 'Nom',
+            'color'      => 'Couleur',
         ],
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Product Tag updated',
-                    'body'  => 'The product Tag has been updated successfully.',
+                    'title' => 'Étiquette produit mise à jour',
+                    'body'  => 'L\'étiquette produit a été mise à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Product Tag deleted',
-                    'body'  => 'The product Tag has been deleted successfully.',
+                    'title' => 'Étiquette produit supprimée',
+                    'body'  => 'L\'étiquette produit a été supprimée avec succès.',
                 ],
             ],
         ],
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Product Tag deleted',
-                    'body'  => 'The product Tag has been deleted successfully.',
+                    'title' => 'Étiquettes produit supprimées',
+                    'body'  => 'Les étiquettes produit ont été supprimées avec succès.',
                 ],
             ],
         ],
@@ -48,8 +48,8 @@ return [
 
     'infolist' => [
         'entries' => [
-            'name'  => 'Name',
-            'color' => 'Color',
+            'name'  => 'Nom',
+            'color' => 'Couleur',
         ],
     ],
 ];

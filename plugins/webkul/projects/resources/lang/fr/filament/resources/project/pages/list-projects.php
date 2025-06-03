@@ -2,15 +2,15 @@
 
 return [
     'tabs' => [
-        'my-projects'          => 'My Projects',
-        'my-favorite-projects' => 'My Favorites',
-        'unassigned-projects'  => 'Unassigned Projects',
-        'archived-projects'    => 'Archived Projects',
+        'my-projects'        => 'Mes Projets',
+        'my-favorite-projects' => 'Mes Favoris',
+        'unassigned-projects'  => 'Projets Non Assignés',
+        'archived-projects'  => 'Projets Archivés',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Project',
+            'label' => 'Nouveau Projet',
         ],
     ],
 ];

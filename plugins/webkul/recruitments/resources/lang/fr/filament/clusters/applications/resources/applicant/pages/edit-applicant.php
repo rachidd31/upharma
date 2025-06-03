@@ -1,62 +1,62 @@
 <?php
 
 return [
-    'create-employee' => 'Create Employee',
-    'goto-employee'   => 'Go to Employee',
+    'create-employee' => 'Créer un employé',
+    'goto-employee'   => 'Aller à l’employé',
 
     'notification' => [
-        'title' => 'Applicant updated',
-        'body'  => 'The applicant has been updated successfully.',
+        'title' => 'Candidat mis à jour',
+        'body'  => 'Le candidat a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Applicant deleted',
-                'body'  => 'The applicant has been deleted successfully.',
+                'title' => 'Candidat supprimé',
+                'body'  => 'Le candidat a été supprimé avec succès.',
             ],
         ],
         'force-delete' => [
             'notification' => [
-                'title' => 'Applicant deleted',
-                'body'  => 'The applicant has been force deleted successfully.',
+                'title' => 'Candidat supprimé définitivement',
+                'body'  => 'Le candidat a été supprimé définitivement avec succès.',
             ],
         ],
 
         'refuse' => [
-            'title'        => 'Refuse Reason',
+            'title'        => 'Motif de refus',
             'notification' => [
-                'title' => 'Applicant refused',
-                'body'  => 'The applicant has been refused successfully.',
+                'title' => 'Candidat refusé',
+                'body'  => 'Le candidat a été refusé avec succès.',
             ],
         ],
 
         'reopen' => [
-            'title'        => 'Reopen Applicant',
+            'title'        => 'Réouvrir le candidat',
             'notification' => [
-                'title' => 'Applicant reopened',
-                'body'  => 'The applicant has been reopened successfully.',
+                'title' => 'Candidat réouvert',
+                'body'  => 'Le candidat a été réouvert avec succès.',
             ],
         ],
 
         'state' => [
             'notification' => [
-                'title' => 'Applicant state updated',
-                'body'  => 'The applicant state has been updated successfully.',
+                'title' => 'État du candidat mis à jour',
+                'body'  => 'L’état du candidat a été mis à jour avec succès.',
             ],
         ],
     ],
 
     'mail' => [
         'application-refused' => [
-            'subject' => 'Your Job Application: :application',
+            'subject' => 'Votre candidature : :application',
         ],
 
         'application-confirm' => [
-            'subject' => 'Your Job Application: :job_position',
+            'subject' => 'Votre candidature pour le poste : :job_position',
         ],
         'interviewer-assigned' => [
-            'subject' => 'You have been assigned to the Applicant :applicant.',
+            'subject' => 'Vous avez été assigné au candidat : :applicant.',
         ],
     ],
 ];

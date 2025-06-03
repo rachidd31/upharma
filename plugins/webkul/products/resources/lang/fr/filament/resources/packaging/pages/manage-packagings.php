@@ -3,11 +3,11 @@
 return [
     'header-actions' => [
         'create' => [
-            'label' => 'New Packaging',
+            'label' => 'Nouveau Conditionnement',
 
             'notification' => [
-                'title' => 'Packaging created',
-                'body'  => 'The packaging has been created successfully.',
+                'title' => 'Conditionnement créé',
+                'body'  => 'Le conditionnement a été créé avec succès.',
             ],
         ],
     ],

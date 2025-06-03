@@ -1,51 +1,51 @@
 <?php
 
 return [
-    'title' => 'Candidate',
+    'title' => 'Candidat',
 
     'navigation' => [
-        'group' => 'Applications',
-        'title' => 'Candidates',
+        'group' => 'Candidatures',
+        'title' => 'Candidats',
     ],
 
     'form' => [
         'sections' => [
             'basic-information' => [
-                'title' => 'Basic Information',
+                'title' => 'Informations de base',
 
                 'fields' => [
-                    'full-name' => 'Full Name',
-                    'email'     => 'Email Address',
-                    'phone'     => 'Phone Number',
-                    'linkedin'  => 'LinkedIn Profile',
+                    'full-name' => 'Nom Complet',
+                    'email'     => 'Adresse E-mail',
+                    'phone'     => 'Numéro de Téléphone',
+                    'linkedin'  => 'Profil LinkedIn',
                     'contact'   => 'Contact',
                 ],
             ],
 
             'additional-details' => [
-                'title' => 'Additional Details',
+                'title' => 'Détails Supplémentaires',
 
                 'fields' => [
-                    'company'           => 'Company',
-                    'degree'            => 'Degree',
+                    'company'           => 'Entreprise',
+                    'degree'            => 'Diplôme',
                     'tags'              => 'Tags',
                     'manager'           => 'Manager',
-                    'availability-date' => 'Availability Date',
+                    'availability-date' => 'Date de Disponibilité',
 
                     'priority-options' => [
-                        'low'    => 'Low',
-                        'medium' => 'Medium',
-                        'high'   => 'High',
+                        'low'    => 'Faible',
+                        'medium' => 'Moyenne',
+                        'high'   => 'Élevée',
                     ],
                 ],
             ],
 
             'status-and-evaluation' => [
-                'title' => 'Status',
+                'title' => 'Statut',
 
                 'fields' => [
-                    'active'     => 'Active',
-                    'evaluation' => 'Evaluation',
+                    'active'     => 'Actif',
+                    'evaluation' => 'Évaluation',
                 ],
             ],
 
@@ -53,8 +53,8 @@ return [
                 'title' => 'Communication',
 
                 'fields' => [
-                    'cc-email'      => 'CC Email',
-                    'email-bounced' => 'Email Bounced',
+                    'cc-email'      => 'E-mail CC',
+                    'email-bounced' => 'E-mail Rebondi',
                 ],
             ],
         ],
@@ -62,15 +62,15 @@ return [
 
     'table' => [
         'columns' => [
-            'name'       => 'Full Name',
+            'name'       => 'Nom Complet',
             'tags'       => 'Tags',
-            'evaluation' => 'Evaluation',
+            'evaluation' => 'Évaluation',
         ],
 
         'filters' => [
-            'company'      => 'Company',
+            'company'      => 'Entreprise',
             'partner-name' => 'Contact',
-            'degree'       => 'Degree',
+            'degree'       => 'Diplôme',
             'manager-name' => 'Manager',
         ],
 
@@ -81,16 +81,16 @@ return [
         'actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Candidate Deleted',
-                    'body'  => 'The candidate was successfully deleted.',
+                    'title' => 'Candidat Supprimé',
+                    'body'  => 'Le candidat a été supprimé avec succès.',
                 ],
             ],
 
             'empty-state-actions' => [
                 'create' => [
                     'notification' => [
-                        'title' => 'Candidate Created',
-                        'body'  => 'The candidate was successfully created.',
+                        'title' => 'Candidat Créé',
+                        'body'  => 'Le candidat a été créé avec succès.',
                     ],
                 ],
             ],
@@ -100,41 +100,41 @@ return [
     'infolist' => [
         'sections' => [
             'basic-information' => [
-                'title' => 'Basic Information',
+                'title' => 'Informations de base',
 
                 'entries' => [
-                    'full-name' => 'Full Name',
-                    'email'     => 'Email Address',
-                    'phone'     => 'Phone Number',
-                    'linkedin'  => 'LinkedIn Profile',
+                    'full-name' => 'Nom Complet',
+                    'email'     => 'Adresse E-mail',
+                    'phone'     => 'Numéro de Téléphone',
+                    'linkedin'  => 'Profil LinkedIn',
                     'contact'   => 'Contact',
                 ],
             ],
 
             'additional-details' => [
-                'title' => 'Additional Details',
+                'title' => 'Détails Supplémentaires',
 
                 'entries' => [
-                    'company'           => 'Company',
-                    'degree'            => 'Degree',
+                    'company'           => 'Entreprise',
+                    'degree'            => 'Diplôme',
                     'tags'              => 'Tags',
                     'manager'           => 'Manager',
-                    'availability-date' => 'Availability Date',
+                    'availability-date' => 'Date de Disponibilité',
 
                     'priority-options' => [
-                        'low'    => 'Low',
-                        'medium' => 'Medium',
-                        'high'   => 'High',
+                        'low'    => 'Faible',
+                        'medium' => 'Moyenne',
+                        'high'   => 'Élevée',
                     ],
                 ],
             ],
 
             'status-and-evaluation' => [
-                'title' => 'Status',
+                'title' => 'Statut',
 
                 'entries' => [
-                    'active'     => 'Active',
-                    'evaluation' => 'Evaluation',
+                    'active'     => 'Actif',
+                    'evaluation' => 'Évaluation',
                 ],
             ],
 
@@ -142,8 +142,8 @@ return [
                 'title' => 'Communication',
 
                 'entries' => [
-                    'cc-email'      => 'CC Email',
-                    'email-bounced' => 'Email Bounced',
+                    'cc-email'      => 'E-mail CC',
+                    'email-bounced' => 'E-mail Rebondi',
                 ],
             ],
         ],

@@ -1,23 +1,23 @@
 <?php
 
 return [
-    'breadcrumb' => 'Manage Activities',
-    'title'      => 'Manage Activities',
-    'group'      => 'General',
+    'breadcrumb' => 'Gérer les activités',
+    'title'      => 'Gérer les activités',
+    'group'      => 'Général',
 
     'navigation' => [
-        'label' => 'Manage Activities',
+        'label' => 'Gérer les activités',
     ],
 
     'form' => [
         'activity-description' => [
-            'label'   => 'Activities',
-            'content' => 'Configure your activity types.',
+            'label'   => 'Activités',
+            'content' => 'Configurez vos types d’activité.',
         ],
 
         'actions' => [
             'manage-activity-types' => [
-                'label' => 'Activity Types',
+                'label' => 'Types d’activité',
             ],
         ],
     ],

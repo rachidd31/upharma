@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'label' => 'Print RFQ',
+    'label' => 'Imprimer le D.D.F.',
 ];

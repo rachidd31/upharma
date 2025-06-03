@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'create' => [
             'notification' => [
-                'title' => 'Team created',
-                'body'  => 'The team has been created successfully.',
+                'title' => 'Équipe créée',
+                'body'  => "L'équipe a été créée avec succès.",
             ],
         ],
     ],

@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Activity Type created',
-        'body'  => 'The activity type has been created successfully.',
+        'title' => 'Type d’activité créé',
+        'body'  => 'Le type d’activité a été créé avec succès.',
     ],
 ];

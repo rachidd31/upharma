@@ -2,9 +2,9 @@
 
 return [
     'tabs' => [
-        'my-orders'  => 'My Orders',
-        'to-invoice' => 'To Invoice',
-        'up-selling' => 'Up Selling',
-        'archived'   => 'Archived',
+        'my-orders'  => 'Mes commandes',
+        'to-invoice' => 'À facturer',
+        'up-selling' => 'Vente additionnelle',
+        'archived'   => 'Archivé',
     ],
 ];

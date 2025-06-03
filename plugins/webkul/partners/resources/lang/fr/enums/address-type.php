@@ -2,8 +2,8 @@
 
 return [
     'permanent' => 'Permanent',
-    'present'   => 'Present',
-    'invoice'   => 'Invoice',
-    'delivery'  => 'Delivery',
-    'other'     => 'Other',
+    'present'   => 'Présent',
+    'invoice'   => 'Facture',
+    'delivery'  => 'Livraison',
+    'other'     => 'Autre',
 ];

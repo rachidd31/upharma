@@ -1,25 +1,25 @@
 <?php
 
 return [
-    'title' => 'Send By Email',
+    'title' => 'Envoyer par email',
 
     'modal' => [
-        'heading' => 'Send Quotation By Email',
+        'heading' => 'Envoyer le devis par email',
     ],
 
     'form' => [
         'fields' => [
-            'partners'    => 'Partners',
-            'subject'     => 'Subject',
+            'partners'    => 'Partenaires',
+            'subject'     => 'Sujet',
             'description' => 'Description',
-            'attachment'  => 'Attachment',
+            'attachment'  => 'Pièce jointe',
         ],
     ],
 
     'actions' => [
         'notification' => [
-            'title' => 'Quotation sent',
-            'body'  => 'Quotation has been sent successfully.',
+            'title' => 'Devis envoyé',
+            'body'  => 'Le devis a été envoyé avec succès.',
         ],
     ],
 ];

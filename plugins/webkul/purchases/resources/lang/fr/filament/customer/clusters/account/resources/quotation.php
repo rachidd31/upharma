@@ -2,6 +2,6 @@
 
 return [
     'navigation' => [
-        'title' => 'Quotations',
+        'title' => 'D.D.F.',
     ],
 ];

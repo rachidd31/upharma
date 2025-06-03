@@ -5,14 +5,14 @@ return [
 
     'header-actions' => [
         'create' => [
-            'label' => 'Create Contact',
+            'label' => 'Créer un Contact',
         ],
     ],
 
     'tabs' => [
-        'individuals' => 'Individuals',
-        'companies'   => 'Companies',
-        'employees'   => 'Employees',
-        'archived'    => 'Archived',
+        'individuals' => 'Particuliers',
+        'companies'   => 'Entreprises',
+        'employees'   => 'Employés',
+        'archived'    => 'Archivés',
     ],
 ];

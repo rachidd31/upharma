@@ -2,15 +2,15 @@
 
 return [
     'notification' => [
-        'title' => 'Quotation Template Updated',
-        'body'  => 'Quotation Template has been updated successfully.',
+        'title' => 'Modèle de devis mis à jour',
+        'body'  => 'Le modèle de devis a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'notification' => [
             'delete' => [
-                'title' => 'Delete Quotation Template',
-                'body'  => 'Quotation template has been deleted successfully.',
+                'title' => 'Modèle de devis supprimé',
+                'body'  => 'Le modèle de devis a été supprimé avec succès.',
             ],
         ],
     ],

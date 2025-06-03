@@ -2,7 +2,7 @@
 
 return [
     'notification' => [
-        'title' => 'Sales Team created',
-        'body'  => 'The sales team has been created successfully.',
+        'title' => 'Équipe commerciale créée',
+        'body'  => 'L\'équipe commerciale a été créée avec succès.',
     ],
 ];

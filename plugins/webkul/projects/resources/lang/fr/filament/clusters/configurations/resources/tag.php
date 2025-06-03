@@ -6,44 +6,44 @@ return [
     ],
 
     'form' => [
-        'name'  => 'Name',
-        'color' => 'Color',
+        'name'  => 'Nom',
+        'color' => 'Couleur',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'color'      => 'Color',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'color'      => 'Couleur',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Tag updated',
-                    'body'  => 'The tag has been updated successfully.',
+                    'title' => 'Tag mis à jour',
+                    'body'  => 'Le tag a été mis à jour avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Tag restored',
-                    'body'  => 'The tag has been restored successfully.',
+                    'title' => 'Tag restauré',
+                    'body'  => 'Le tag a été restauré avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Tag deleted',
-                    'body'  => 'The tag has been deleted successfully.',
+                    'title' => 'Tag supprimé',
+                    'body'  => 'Le tag a été supprimé avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Tag force deleted',
-                    'body'  => 'The tag has been force deleted successfully.',
+                    'title' => 'Tag supprimé définitivement',
+                    'body'  => 'Le tag a été supprimé définitivement avec succès.',
                 ],
             ],
         ],
@@ -51,22 +51,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Tags restored',
-                    'body'  => 'The tags has been restored successfully.',
+                    'title' => 'Tags restaurés',
+                    'body'  => 'Les tags ont été restaurés avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Tags deleted',
-                    'body'  => 'The tags has been deleted successfully.',
+                    'title' => 'Tags supprimés',
+                    'body'  => 'Les tags ont été supprimés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Tags force deleted',
-                    'body'  => 'The tags has been force deleted successfully.',
+                    'title' => 'Tags supprimés définitivement',
+                    'body'  => 'Les tags ont été supprimés définitivement avec succès.',
                 ],
             ],
         ],

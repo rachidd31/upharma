@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Sales team deleted',
-                'body'  => 'The sales team has been deleted successfully.',
+                'title' => 'Équipe commerciale supprimée',
+                'body'  => 'L\'équipe commerciale a été supprimée avec succès.',
             ],
         ],
     ],

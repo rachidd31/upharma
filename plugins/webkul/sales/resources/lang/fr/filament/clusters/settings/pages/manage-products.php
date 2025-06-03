@@ -1,24 +1,24 @@
 <?php
 
 return [
-    'title' => 'Manage Products',
+    'title' => 'Gérer les produits',
 
-    'breadcrumb' => 'Manage Products',
+    'breadcrumb' => 'Gérer les produits',
 
     'navigation' => [
-        'title' => 'Manage Products',
+        'title' => 'Gérer les produits',
     ],
 
     'form' => [
         'fields' => [
-            'variants'                      => 'Variants',
-            'variants-help'                 => 'Allow products to have multiple variants',
-            'uom'                           => 'Unit of Measure',
-            'uom-help'                      => 'Allow products to have a unit of measure',
-            'packagings'                    => 'Packagings',
-            'packagings-help'               => 'Allow products to have multiple packagings',
-            'deliver-content-by-email'      => 'Deliver Content by Email',
-            'deliver-content-by-email-help' => 'Allow products to deliver content by email',
+            'variants'                      => 'Variantes',
+            'variants-help'                 => 'Permettre aux produits d\'avoir plusieurs variantes',
+            'uom'                           => 'Unité de mesure',
+            'uom-help'                      => 'Permettre aux produits d\'avoir une unité de mesure',
+            'packagings'                    => 'Emballages',
+            'packagings-help'               => 'Permettre aux produits d\'avoir plusieurs emballages',
+            'deliver-content-by-email'      => 'Livrer le contenu par e-mail',
+            'deliver-content-by-email-help' => 'Permettre aux produits de livrer le contenu par e-mail',
         ],
     ],
 ];

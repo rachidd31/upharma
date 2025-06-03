@@ -3,7 +3,7 @@
 return [
     'header' => [
         'sub-heading' => [
-            'accept-invitation' => 'Accept Invitation',
+            'accept-invitation' => 'Accepter l\'invitation',
         ],
     ],
 ];

@@ -5,47 +5,47 @@ return [
 
     'navigation' => [
         'title' => 'Tags',
-        'group' => 'Applications',
+        'group' => 'Candidatures',
     ],
 
     'form' => [
         'fields' => [
-            'name'             => 'Name',
-            'name-placeholder' => 'Enter the name of the tags',
-            'color'            => 'Color',
+            'name'             => 'Nom',
+            'name-placeholder' => 'Saisir le nom des tags',
+            'color'            => 'Couleur',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Name',
-            'color'      => 'Color',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'color'      => 'Couleur',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Name',
-            'employee'   => 'Employee',
-            'created-by' => 'Created By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Nom',
+            'employee'   => 'Employé',
+            'created-by' => 'Créé par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Tags updated',
-                    'body'  => 'The tags has been updated successfully.',
+                    'title' => 'Tags mis à jour',
+                    'body'  => 'Les tags ont été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Tags deleted',
-                    'body'  => 'The tags has been deleted successfully.',
+                    'title' => 'Tags supprimés',
+                    'body'  => 'Les tags ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -53,8 +53,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Applicant Categories deleted',
-                    'body'  => 'The applicant Categories has been deleted successfully.',
+                    'title' => 'Catégories de Candidats supprimées',
+                    'body'  => 'Les catégories de candidats ont été supprimées avec succès.',
                 ],
             ],
         ],
@@ -62,15 +62,15 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Tags created',
-                    'body'  => 'The tags has been created successfully.',
+                    'title' => 'Tags créés',
+                    'body'  => 'Les tags ont été créés avec succès.',
                 ],
             ],
         ],
     ],
 
     'infolist' => [
-        'name'  => 'Name',
-        'color' => 'Color',
+        'name'  => 'Nom',
+        'color' => 'Couleur',
     ],
 ];

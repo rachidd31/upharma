@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'Customers',
+    'title' => 'Clients',
 
     'navigation' => [
-        'title' => 'Customers',
+        'title' => 'Clients',
     ],
 ];

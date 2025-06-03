@@ -2,25 +2,25 @@
 
 return [
     'notification' => [
-        'title' => 'Product updated',
-        'body'  => 'The product has been updated successfully.',
+        'title' => 'Produit mis à jour',
+        'body'  => 'Le produit a été mis à jour avec succès.',
     ],
 
     'header-actions' => [
         'print' => [
-            'label' => 'Print Labels',
+            'label' => 'Imprimer les Étiquettes',
 
             'form' => [
                 'fields' => [
-                    'quantity' => 'Number of Labels',
+                    'quantity' => 'Nombre d\'Étiquettes',
                     'format'   => 'Format',
 
                     'format-options' => [
                         'dymo'       => 'Dymo',
-                        '2x7_price'  => '2x7 with price',
-                        '4x7_price'  => '4x7 with price',
+                        '2x7_price'  => '2x7 avec prix',
+                        '4x7_price'  => '4x7 avec prix',
                         '4x12'       => '4x12',
-                        '4x12_price' => '4x12 with price',
+                        '4x12_price' => '4x12 avec prix',
                     ],
                 ],
             ],
@@ -28,8 +28,8 @@ return [
 
         'delete' => [
             'notification' => [
-                'title' => 'Product deleted',
-                'body'  => 'The product has been deleted successfully.',
+                'title' => 'Produit supprimé',
+                'body'  => 'Le produit a été supprimé avec succès.',
             ],
         ],
     ],

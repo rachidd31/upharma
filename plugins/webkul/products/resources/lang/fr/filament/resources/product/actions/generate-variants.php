@@ -1,21 +1,21 @@
 <?php
 
 return [
-    'label'        => 'Generate Variants',
+    'label'        => 'Générer les Variantes',
     'notification' => [
         'empty' => [
-            'title' => 'No attributes found',
-            'body'  => 'Please add attributes to generate variants.',
+            'title' => 'Aucun attribut trouvé',
+            'body'  => 'Veuillez ajouter des attributs pour générer des variantes.',
         ],
 
         'success' => [
-            'title' => 'Variants generated successfully',
-            'body'  => 'All product variants have been generated.',
+            'title' => 'Variantes générées avec succès',
+            'body'  => 'Toutes les variantes du produit ont été générées.',
         ],
 
         'error' => [
-            'title' => 'Error generating variants',
-            'body'  => 'An error occurred while generating product variants.',
+            'title' => 'Erreur lors de la génération des variantes',
+            'body'  => 'Une erreur est survenue lors de la génération des variantes du produit.',
         ],
     ],
 ];

@@ -9,49 +9,49 @@ return [
     ],
 
     'groups' => [
-        'status'     => 'Status',
-        'created-by' => 'Created By',
-        'created-at' => 'Created At',
-        'updated-at' => 'Updated At',
+        'status'     => 'Statut',
+        'created-by' => 'Créé par',
+        'created-at' => 'Créé le',
+        'updated-at' => 'Mis à jour le',
     ],
 
     'form' => [
         'fields' => [
-            'name'             => 'Name',
-            'name-placeholder' => 'Enter the name of the source',
-            'status'           => 'Status',
+            'name'             => 'Nom',
+            'name-placeholder' => 'Saisir le nom de la source',
+            'status'           => 'Statut',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Name',
-            'status'     => 'Status',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'status'     => 'Statut',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Name',
-            'created-by' => 'Created By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Nom',
+            'created-by' => 'Créé par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Source updated',
-                    'body'  => 'The source has been updated successfully.',
+                    'title' => 'Source mise à jour',
+                    'body'  => 'La source a été mise à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Source deleted',
-                    'body'  => 'The source has been deleted successfully.',
+                    'title' => 'Source supprimée',
+                    'body'  => 'La source a été supprimée avec succès.',
                 ],
             ],
         ],
@@ -59,8 +59,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Sources deleted',
-                    'body'  => 'The Sources has been deleted successfully.',
+                    'title' => 'Sources supprimées',
+                    'body'  => 'Les sources ont été supprimées avec succès.',
                 ],
             ],
         ],
@@ -68,14 +68,14 @@ return [
         'empty-state-action' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Source created',
-                    'body'  => 'The source has been created successfully.',
+                    'title' => 'Source créée',
+                    'body'  => 'La source a été créée avec succès.',
                 ],
             ],
         ],
     ],
 
     'infolist' => [
-        'name' => 'Name',
+        'name' => 'Nom',
     ],
 ];

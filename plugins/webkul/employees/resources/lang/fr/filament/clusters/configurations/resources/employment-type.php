@@ -1,61 +1,61 @@
 <?php
 
 return [
-    'title' => 'Employment Types',
+    'title' => 'Types d\'emploi',
 
     'navigation' => [
-        'title' => 'Employment Types',
-        'group' => 'Recruitment',
+        'title' => 'Types d\'emploi',
+        'group' => 'Recrutement',
     ],
 
     'form' => [
         'fields' => [
-            'name'    => 'Employment Type',
+            'name'    => 'Type d\'emploi',
             'code'    => 'Code',
-            'country' => 'Country',
+            'country' => 'Pays',
         ],
     ],
 
     'table' => [
         'columns' => [
             'id'         => 'ID',
-            'name'       => 'Employment Type',
+            'name'       => 'Type d\'emploi',
             'code'       => 'Code',
-            'country'    => 'Country',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'country'    => 'Pays',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'name'       => 'Employment Type',
-            'country'    => 'Country',
-            'created-by' => 'Created By',
-            'updated-at' => 'Updated At',
-            'created-at' => 'Created At',
+            'name'       => 'Type d\'emploi',
+            'country'    => 'Pays',
+            'created-by' => 'Créé par',
+            'updated-at' => 'Mis à jour le',
+            'created-at' => 'Créé le',
         ],
 
         'groups' => [
-            'name'       => 'Employment Type',
-            'country'    => 'Country',
+            'name'       => 'Type d\'emploi',
+            'country'    => 'Pays',
             'code'       => 'Code',
-            'created-by' => 'Created By',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'created-by' => 'Créé par',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Employment Type',
-                    'body'  => 'The Employment Type has been edited successfully.',
+                    'title' => 'Type d\'emploi',
+                    'body'  => 'Le type d\'emploi a été modifié avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Employment Type deleted',
-                    'body'  => 'The Employment Type has been deleted successfully.',
+                    'title' => 'Type d\'emploi supprimé',
+                    'body'  => 'Le type d\'emploi a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -63,8 +63,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Employment Types deleted',
-                    'body'  => 'The Employment Types has been deleted successfully.',
+                    'title' => 'Types d\'emploi supprimés',
+                    'body'  => 'Les types d\'emploi ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -72,8 +72,8 @@ return [
         'empty-state-actions' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Employment Types',
-                    'body'  => 'The Employment Types has been created successfully.',
+                    'title' => 'Types d\'emploi',
+                    'body'  => 'Les types d\'emploi ont été créés avec succès.',
                 ],
             ],
         ],
@@ -81,9 +81,9 @@ return [
 
     'infolist' => [
         'entries' => [
-            'name'    => 'Employment Type',
+            'name'    => 'Type d\'emploi',
             'code'    => 'Code',
-            'country' => 'Country',
+            'country' => 'Pays',
         ],
     ],
 ];

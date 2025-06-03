@@ -2,11 +2,11 @@
 
 return [
     'overview' => [
-        'label' => 'Applicant Overview',
+        'label' => 'Aperçu des Candidats',
     ],
 
-    'ongoing'  => 'Ongoing',
-    'hired'    => 'Hired',
-    'refused'  => 'Refused',
-    'archived' => 'Archived',
+    'ongoing'  => 'En cours',
+    'hired'    => 'Embauché',
+    'refused'  => 'Refusé',
+    'archived' => 'Archivé',
 ];

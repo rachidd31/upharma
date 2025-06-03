@@ -3,11 +3,11 @@
 return [
     'header-actions' => [
         'create' => [
-            'label' => 'New Category',
+            'label' => 'Nouvelle Catégorie',
 
             'notification' => [
-                'title' => 'Category created',
-                'body'  => 'The category has been created successfully.',
+                'title' => 'Catégorie créée',
+                'body'  => 'La catégorie a été créée avec succès.',
             ],
         ],
     ],

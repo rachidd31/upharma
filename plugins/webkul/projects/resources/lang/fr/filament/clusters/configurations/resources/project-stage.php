@@ -2,59 +2,59 @@
 
 return [
     'navigation' => [
-        'title' => 'Project Stages',
+        'title' => 'Étapes du Projet',
     ],
 
     'form' => [
-        'name' => 'Name',
+        'name' => 'Nom',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'name'       => 'Nom',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'groups' => [
-            'name'         => 'Name',
-            'is-completed' => 'Is Completed',
-            'project'      => 'Project',
-            'created-at'   => 'Created At',
+            'name'         => 'Nom',
+            'is-completed' => 'Est Terminé',
+            'project'      => 'Projet',
+            'created-at'   => 'Créé le',
         ],
 
         'filters' => [
-            'is-completed' => 'Is Completed',
-            'project'      => 'Project',
-            'creator'      => 'Creator',
+            'is-completed' => 'Est Terminé',
+            'project'      => 'Projet',
+            'creator'      => 'Créateur',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Project stage updated',
-                    'body'  => 'The project stage has been updated successfully.',
+                    'title' => 'Étape du projet mise à jour',
+                    'body'  => 'L\'étape du projet a été mise à jour avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Project stage restored',
-                    'body'  => 'The project stage has been restored successfully.',
+                    'title' => 'Étape du projet restaurée',
+                    'body'  => 'L\'étape du projet a été restaurée avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Project stage deleted',
-                    'body'  => 'The project stage has been deleted successfully.',
+                    'title' => 'Étape du projet supprimée',
+                    'body'  => 'L\'étape du projet a été supprimée avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Project stage force deleted',
-                    'body'  => 'The project stage has been force deleted successfully.',
+                    'title' => 'Étape du projet supprimée définitivement',
+                    'body'  => 'L\'étape du projet a été supprimée définitivement avec succès.',
                 ],
             ],
         ],
@@ -62,22 +62,22 @@ return [
         'bulk-actions' => [
             'restore' => [
                 'notification' => [
-                    'title' => 'Project stages restored',
-                    'body'  => 'The project stages has been restored successfully.',
+                    'title' => 'Étapes du projet restaurées',
+                    'body'  => 'Les étapes du projet ont été restaurées avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Project stages deleted',
-                    'body'  => 'The project stages has been deleted successfully.',
+                    'title' => 'Étapes du projet supprimées',
+                    'body'  => 'Les étapes du projet ont été supprimées avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
-                    'title' => 'Project stages force deleted',
-                    'body'  => 'The project stages has been force deleted successfully.',
+                    'title' => 'Étapes du projet supprimées définitivement',
+                    'body'  => 'Les étapes du projet ont été supprimées définitivement avec succès.',
                 ],
             ],
         ],

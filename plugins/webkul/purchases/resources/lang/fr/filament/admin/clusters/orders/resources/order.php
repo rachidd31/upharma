@@ -4,56 +4,56 @@ return [
     'form' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'fields' => [
-                    'vendor'                   => 'Vendor',
-                    'vendor-reference'         => 'Vendor Reference',
-                    'vendor-reference-tooltip' => 'The reference number of the sales order or bid provided by the vendor. It is used for matching when receiving products, as this reference is typically included in the vendor\'s delivery order.',
-                    'agreement'                => 'Agreement',
-                    'currency'                 => 'Currency',
-                    'confirmation-date'        => 'Confirmation Date',
-                    'order-deadline'           => 'Order Deadline',
-                    'expected-arrival'         => 'Expected Arrival',
-                    'confirmed-by-vendor'      => 'Confirmed by Vendor',
+                    'vendor'                     => 'Fournisseur',
+                    'vendor-reference'           => 'Référence Fournisseur',
+                    'vendor-reference-tooltip'   => 'Le numéro de référence du bon de commande ou de l\'offre fourni par le fournisseur. Il est utilisé pour le rapprochement lors de la réception des produits, car cette référence est généralement incluse dans le bon de livraison du fournisseur.',
+                    'agreement'                  => 'Accord',
+                    'currency'                   => 'Devise',
+                    'confirmation-date'          => 'Date de Confirmation',
+                    'order-deadline'             => 'Date Limite de Commande',
+                    'expected-arrival'           => 'Arrivée Prévue',
+                    'confirmed-by-vendor'        => 'Confirmé par le Fournisseur',
                 ],
             ],
         ],
 
         'tabs' => [
             'products' => [
-                'title' => 'Products',
+                'title' => 'Produits',
 
                 'repeater' => [
                     'products' => [
-                        'title'            => 'Products',
-                        'add-product-line' => 'Add Product',
+                        'title'            => 'Produits',
+                        'add-product-line' => 'Ajouter un Produit',
 
                         'fields' => [
-                            'product'             => 'Product',
-                            'expected-arrival'    => 'Expected Arrival',
-                            'quantity'            => 'Quantity',
-                            'received'            => 'Received',
-                            'billed'              => 'Billed',
-                            'unit'                => 'Unit',
-                            'packaging-qty'       => 'Packaging Qty',
-                            'packaging'           => 'Packaging',
+                            'product'             => 'Produit',
+                            'expected-arrival'    => 'Arrivée Prévue',
+                            'quantity'            => 'Quantité',
+                            'received'            => 'Reçu',
+                            'billed'              => 'Facturé',
+                            'unit'                => 'Unité',
+                            'packaging-qty'       => 'Qté Conditionnement',
+                            'packaging'           => 'Conditionnement',
                             'taxes'               => 'Taxes',
-                            'discount-percentage' => 'Discount (%)',
-                            'unit-price'          => 'Unit Price',
-                            'amount'              => 'Amount',
+                            'discount-percentage' => 'Remise (%)',
+                            'unit-price'          => 'Prix Unitaire',
+                            'amount'              => 'Montant',
                         ],
                     ],
 
                     'section' => [
-                        'title' => 'Add Section',
+                        'title' => 'Ajouter une Section',
 
                         'fields' => [
                         ],
                     ],
 
                     'note' => [
-                        'title' => 'Add Note',
+                        'title' => 'Ajouter une Note',
 
                         'fields' => [
                         ],
@@ -62,80 +62,80 @@ return [
             ],
 
             'additional' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations Complémentaires',
 
                 'fields' => [
-                    'buyer'             => 'Buyer',
-                    'company'           => 'Company',
-                    'source-document'   => 'Source Document',
+                    'buyer'             => 'Acheteur',
+                    'company'           => 'Entreprise',
+                    'source-document'   => 'Document Source',
                     'incoterm'          => 'Incoterm',
-                    'incoterm-tooltip'  => 'International Commercial Terms (Incoterms) are a set of standardized trade terms used in global transactions to define responsibilities between buyers and sellers.',
-                    'incoterm-location' => 'Incoterm Location',
-                    'payment-term'      => 'Payment Term',
-                    'fiscal-position'   => 'Fiscal Position',
+                    'incoterm-tooltip'  => 'Les Incoterms (International Commercial Terms) sont un ensemble de termes commerciaux standardisés utilisés dans les transactions mondiales pour définir les responsabilités entre acheteurs et vendeurs.',
+                    'incoterm-location' => 'Lieu Incoterm',
+                    'payment-term'      => 'Conditions de Paiement',
+                    'fiscal-position'   => 'Position Fiscale',
                 ],
             ],
 
             'terms' => [
-                'title' => 'Terms and Conditions',
+                'title' => 'Termes et Conditions',
             ],
         ],
     ],
 
     'table' => [
         'columns' => [
-            'priority'         => 'Priority',
-            'vendor-reference' => 'Vendor Reference',
-            'reference'        => 'Reference',
-            'vendor'           => 'Vendor',
-            'buyer'            => 'Buyer',
-            'company'          => 'Company',
-            'order-deadline'   => 'Order Deadline',
-            'source-document'  => 'Source Document',
-            'untaxed-amount'   => 'Untaxed Amount',
-            'total-amount'     => 'Total Amount',
-            'status'           => 'Status',
-            'billing-status'   => 'Billing Status',
-            'currency'         => 'Currency',
-            'billing-status'   => 'Billing Status',
+            'priority'         => 'Priorité',
+            'vendor-reference' => 'Référence Fournisseur',
+            'reference'        => 'Référence',
+            'vendor'           => 'Fournisseur',
+            'buyer'            => 'Acheteur',
+            'company'          => 'Entreprise',
+            'order-deadline'   => 'Date Limite de Commande',
+            'source-document'  => 'Document Source',
+            'untaxed-amount'   => 'Montant HT',
+            'total-amount'     => 'Montant Total',
+            'status'           => 'Statut',
+            'billing-status'   => 'Statut de Facturation',
+            'currency'         => 'Devise',
+            'billing-status'   => 'Statut de Facturation',
         ],
 
         'groups' => [
-            'vendor'     => 'Vendor',
-            'buyer'      => 'Buyer',
-            'state'      => 'State',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'vendor'     => 'Fournisseur',
+            'buyer'      => 'Acheteur',
+            'state'      => 'État',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'status'           => 'Status',
-            'vendor-reference' => 'Vendor Reference',
-            'reference'        => 'Reference',
-            'untaxed-amount'   => 'Untaxed Amount',
-            'total-amount'     => 'Total Amount',
-            'order-deadline'   => 'Order Deadline',
-            'vendor'           => 'Vendor',
-            'buyer'            => 'Buyer',
-            'company'          => 'Company',
-            'payment-term'     => 'Payment Term',
+            'status'           => 'Statut',
+            'vendor-reference' => 'Référence Fournisseur',
+            'reference'        => 'Référence',
+            'untaxed-amount'   => 'Montant HT',
+            'total-amount'     => 'Montant Total',
+            'order-deadline'   => 'Date Limite de Commande',
+            'vendor'           => 'Fournisseur',
+            'buyer'            => 'Acheteur',
+            'company'          => 'Entreprise',
+            'payment-term'     => 'Conditions de Paiement',
             'incoterm'         => 'Incoterm',
-            'status'           => 'Status',
-            'created-at'       => 'Created At',
-            'updated-at'       => 'Updated At',
+            'status'           => 'Statut',
+            'created-at'       => 'Créé le',
+            'updated-at'       => 'Mis à jour le',
         ],
 
         'actions' => [
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Order deleted',
-                        'body'  => 'The order has been deleted successfully.',
+                        'title' => 'Commande supprimée',
+                        'body'  => 'La commande a été supprimée avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Order could not be deleted',
-                        'body'  => 'The order cannot be deleted because it is currently in use.',
+                        'title' => 'Impossible de supprimer la commande',
+                        'body'  => 'La commande ne peut pas être supprimée car elle est actuellement utilisée.',
                     ],
                 ],
             ],
@@ -145,13 +145,13 @@ return [
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Orders deleted',
-                        'body'  => 'The orders has been deleted successfully.',
+                        'title' => 'Commandes supprimées',
+                        'body'  => 'Les commandes ont été supprimées avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Orders could not be deleted',
-                        'body'  => 'The orders cannot be deleted because they are currently in use.',
+                        'title' => 'Impossible de supprimer les commandes',
+                        'body'  => 'Les commandes ne peuvent pas être supprimées car elles sont actuellement utilisées.',
                     ],
                 ],
             ],
@@ -161,74 +161,74 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'entries' => [
-                    'vendor'                   => 'Vendor',
-                    'vendor-reference'         => 'Vendor Reference',
-                    'vendor-reference-tooltip' => 'The reference number of the sales order or bid provided by the vendor. It is used for matching when receiving products, as this reference is typically included in the vendor\'s delivery order.',
-                    'agreement'                => 'Agreement',
-                    'currency'                 => 'Currency',
-                    'confirmation-date'        => 'Confirmation Date',
-                    'order-deadline'           => 'Order Deadline',
-                    'expected-arrival'         => 'Expected Arrival',
-                    'confirmed-by-vendor'      => 'Confirmed by Vendor',
+                    'vendor'                     => 'Fournisseur',
+                    'vendor-reference'           => 'Référence Fournisseur',
+                    'vendor-reference-tooltip'   => 'Le numéro de référence du bon de commande ou de l\'offre fourni par le fournisseur. Il est utilisé pour le rapprochement lors de la réception des produits, car cette référence est généralement incluse dans le bon de livraison du fournisseur.',
+                    'agreement'                  => 'Accord',
+                    'currency'                   => 'Devise',
+                    'confirmation-date'          => 'Date de Confirmation',
+                    'order-deadline'             => 'Date Limite de Commande',
+                    'expected-arrival'           => 'Arrivée Prévue',
+                    'confirmed-by-vendor'        => 'Confirmé par le Fournisseur',
                 ],
             ],
         ],
 
         'tabs' => [
             'products' => [
-                'title' => 'Products',
+                'title' => 'Produits',
 
                 'repeater' => [
                     'products' => [
-                        'title'            => 'Products',
-                        'add-product-line' => 'Add Product',
+                        'title'            => 'Produits',
+                        'add-product-line' => 'Ajouter un Produit',
 
                         'entries' => [
-                            'product'             => 'Product',
-                            'expected-arrival'    => 'Expected Arrival',
-                            'quantity'            => 'Quantity',
-                            'received'            => 'Received',
-                            'billed'              => 'Billed',
-                            'unit'                => 'Unit',
-                            'packaging-qty'       => 'Packaging Qty',
-                            'packaging'           => 'Packaging',
+                            'product'             => 'Produit',
+                            'expected-arrival'    => 'Arrivée Prévue',
+                            'quantity'            => 'Quantité',
+                            'received'            => 'Reçu',
+                            'billed'              => 'Facturé',
+                            'unit'                => 'Unité',
+                            'packaging-qty'       => 'Qté Conditionnement',
+                            'packaging'           => 'Conditionnement',
                             'taxes'               => 'Taxes',
-                            'discount-percentage' => 'Discount (%)',
-                            'unit-price'          => 'Unit Price',
-                            'amount'              => 'Amount',
+                            'discount-percentage' => 'Remise (%)',
+                            'unit-price'          => 'Prix Unitaire',
+                            'amount'              => 'Montant',
                         ],
                     ],
 
                     'section' => [
-                        'title' => 'Add Section',
+                        'title' => 'Ajouter une Section',
                     ],
 
                     'note' => [
-                        'title' => 'Add Note',
+                        'title' => 'Ajouter une Note',
                     ],
                 ],
             ],
 
             'additional' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations Complémentaires',
 
                 'entries' => [
-                    'buyer'             => 'Buyer',
-                    'company'           => 'Company',
-                    'source-document'   => 'Source Document',
+                    'buyer'             => 'Acheteur',
+                    'company'           => 'Entreprise',
+                    'source-document'   => 'Document Source',
                     'incoterm'          => 'Incoterm',
-                    'incoterm-tooltip'  => 'International Commercial Terms (Incoterms) are a set of standardized trade terms used in global transactions to define responsibilities between buyers and sellers.',
-                    'incoterm-location' => 'Incoterm Location',
-                    'payment-term'      => 'Payment Term',
-                    'fiscal-position'   => 'Fiscal Position',
+                    'incoterm-tooltip'  => 'Les Incoterms (International Commercial Terms) sont un ensemble de termes commerciaux standardisés utilisés dans les transactions mondiales pour définir les responsabilités entre acheteurs et vendeurs.',
+                    'incoterm-location' => 'Lieu Incoterm',
+                    'payment-term'      => 'Conditions de Paiement',
+                    'fiscal-position'   => 'Position Fiscale',
                 ],
             ],
 
             'terms' => [
-                'title' => 'Terms and Conditions',
+                'title' => 'Termes et Conditions',
             ],
         ],
     ],

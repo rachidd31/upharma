@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'alert' => 'Alert',
-    'error' => 'Error',
+    'alert' => 'Alerte',
+    'error' => 'Erreur',
 ];

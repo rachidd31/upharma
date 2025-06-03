@@ -2,54 +2,54 @@
 
 return [
     'form' => [
-        'name'    => 'Name',
-        'barcode' => 'Barcode',
-        'product' => 'Product',
+        'name'    => 'Nom',
+        'barcode' => 'Code-barres',
+        'product' => 'Produit',
         'routes'  => 'Routes',
-        'qty'     => 'Qty',
-        'company' => 'Company',
+        'qty'     => 'Qté',
+        'company' => 'Entreprise',
     ],
 
     'table' => [
         'columns' => [
-            'name'       => 'Name',
-            'product'    => 'Product',
+            'name'       => 'Nom',
+            'product'    => 'Produit',
             'routes'     => 'Routes',
-            'qty'        => 'Qty',
-            'company'    => 'Company',
-            'barcode'    => 'Barcode',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'qty'        => 'Qté',
+            'company'    => 'Entreprise',
+            'barcode'    => 'Code-barres',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'groups' => [
-            'product'    => 'Product',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'product'    => 'Produit',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
-            'product' => 'Product',
+            'product' => 'Produit',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Packaging update',
-                    'body'  => 'The packaging has been update successfully.',
+                    'title' => 'Mise à jour du conditionnement',
+                    'body'  => 'Le conditionnement a été mis à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Packaging deleted',
-                        'body'  => 'The packaging has been deleted successfully.',
+                        'title' => 'Conditionnement supprimé',
+                        'body'  => 'Le conditionnement a été supprimé avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Packaging could not be deleted',
-                        'body'  => 'The packaging cannot be deleted because it is currently in use.',
+                        'title' => 'Le conditionnement n\'a pas pu être supprimé',
+                        'body'  => 'Le conditionnement ne peut pas être supprimé car il est actuellement utilisé.',
                     ],
                 ],
             ],
@@ -57,19 +57,19 @@ return [
 
         'bulk-actions' => [
             'print' => [
-                'label' => 'Print',
+                'label' => 'Imprimer',
             ],
 
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Packagings deleted',
-                        'body'  => 'The packagings has been deleted successfully.',
+                        'title' => 'Conditionnements supprimés',
+                        'body'  => 'Les conditionnements ont été supprimés avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Packagings could not be deleted',
-                        'body'  => 'The packagings cannot be deleted because they are currently in use.',
+                        'title' => 'Les conditionnements n\'ont pas pu être supprimés',
+                        'body'  => 'Les conditionnements ne peuvent pas être supprimés car ils sont actuellement utilisés.',
                     ],
                 ],
             ],
@@ -77,11 +77,11 @@ return [
 
         'empty-state-actions' => [
             'create' => [
-                'label' => 'New Packaging',
+                'label' => 'Nouveau Conditionnement',
 
                 'notification' => [
-                    'title' => 'Packaging created',
-                    'body'  => 'The packaging has been created successfully.',
+                    'title' => 'Conditionnement créé',
+                    'body'  => 'Le conditionnement a été créé avec succès.',
                 ],
             ],
         ],
@@ -90,24 +90,24 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General Information',
+                'title' => 'Informations Générales',
 
                 'entries' => [
-                    'name'    => 'Package Name',
-                    'barcode' => 'Barcode',
-                    'product' => 'Product',
-                    'qty'     => 'Quantity',
+                    'name'    => 'Nom du Paquet',
+                    'barcode' => 'Code-barres',
+                    'product' => 'Produit',
+                    'qty'     => 'Quantité',
                 ],
             ],
 
             'organization' => [
-                'title' => 'Organization Details',
+                'title' => 'Détails de l\'Organisation',
 
                 'entries' => [
-                    'company'    => 'Company',
-                    'creator'    => 'Created By',
-                    'created_at' => 'Created At',
-                    'updated_at' => 'Last Updated At',
+                    'company'    => 'Entreprise',
+                    'creator'    => 'Créé par',
+                    'created_at' => 'Créé le',
+                    'updated_at' => 'Dernière mise à jour le',
                 ],
             ],
         ],

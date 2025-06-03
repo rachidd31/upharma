@@ -2,17 +2,17 @@
 
 return [
     'tabs' => [
-        'all'      => 'All',
-        'archived' => 'Archived',
+        'all'      => 'Tous',
+        'archived' => 'Archivés',
     ],
 
     'header-actions' => [
         'create' => [
-            'label' => 'New Working Schedule',
+            'label' => 'Nouvel horaire de travail',
 
             'notification' => [
-                'title' => 'Working Schedule created',
-                'body'  => 'The working schedule has been created successfully.',
+                'title' => 'Horaire de travail créé',
+                'body'  => 'L\'horaire de travail a été créé avec succès.',
             ],
         ],
     ],

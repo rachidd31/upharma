@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'breadcrumb'           => 'Your Applicant',
-    'hello'                => 'Hello,',
-    'application_received' => 'We confirm we successfully received your application for the job ":job_position" :company.',
-    'response_soon'        => 'We will come back to you shortly.',
-    'next_step_title'      => 'What is the next step?',
-    'next_step_content'    => 'We usually <strong>answer applications within a few days.</strong>',
-    'contact_us'           => 'Feel free to <strong>contact us if you want faster feedback</strong> or if you don\'t get news from us quickly enough (just reply to this email).',
+    'breadcrumb'           => 'Votre candidature',
+    'hello'                => 'Bonjour,',
+    'application_received' => 'Nous confirmons la bonne réception de votre candidature pour le poste \":job_position\" :company.',
+    'response_soon'        => 'Nous reviendrons vers vous sous peu.',
+    'next_step_title'      => 'Quelle est la prochaine étape ?',
+    'next_step_content'    => 'Nous répondons généralement aux candidatures <strong>dans les prochains jours.</strong>',
+    'contact_us'           => 'N\'hésitez pas à <strong>nous contacter si vous souhaitez une réponse plus rapide</strong> ou si vous n\'avez pas de nos nouvelles assez rapidement (il suffit de répondre à cet e-mail).'
 ];

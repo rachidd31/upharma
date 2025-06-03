@@ -2,7 +2,7 @@
 
 return [
     'navigation' => [
-        'title' => 'Bank Accounts',
-        'group' => 'Bank Accounts',
+        'title' => 'Comptes bancaires',
+        'group' => 'Comptes bancaires',
     ],
 ];

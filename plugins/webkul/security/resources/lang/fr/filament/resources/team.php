@@ -1,36 +1,36 @@
 <?php
 
 return [
-    'title' => 'Teams',
+    'title' => 'Équipes',
 
     'navigation' => [
-        'title' => 'Teams',
-        'group' => 'Settings',
+        'title' => 'Équipes',
+        'group' => 'Paramètres',
     ],
 
     'form' => [
         'fields' => [
-            'name' => 'Name',
+            'name' => 'Nom',
         ],
     ],
 
     'table' => [
         'columns' => [
-            'name'         => 'Name',
+            'name'         => 'Nom',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Team updated',
-                    'body'  => 'The team has been updated successfully.',
+                    'title' => 'Équipe mise à jour',
+                    'body'  => 'L\'équipe a été mise à jour avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Team deleted',
-                    'body'  => 'The team has been deleted successfully.',
+                    'title' => 'Équipe supprimée',
+                    'body'  => 'L\'équipe a été supprimée avec succès.',
                 ],
             ],
         ],
@@ -38,8 +38,8 @@ return [
         'empty-state-actions' => [
             'create' => [
                 'notification' => [
-                    'title' => 'Teams created',
-                    'body'  => 'The teams has been created successfully.',
+                    'title' => 'Équipes créées',
+                    'body'  => 'Les équipes ont été créées avec succès.',
                 ],
             ],
         ],
@@ -48,15 +48,15 @@ return [
     'infolist' => [
         'sections' => [
             'entries' => [
-                'name'          => 'Name',
-                'job-title'     => 'Job Title',
-                'work-email'    => 'Work Email',
-                'work-mobile'   => 'Work Mobile',
-                'work-phone'    => 'Work Phone',
+                'name'          => 'Nom',
+                'job-title'     => 'Intitulé du poste',
+                'work-email'    => 'Email professionnel',
+                'work-mobile'   => 'Mobile professionnel',
+                'work-phone'    => 'Téléphone professionnel',
                 'manager'       => 'Manager',
-                'department'    => 'Department',
-                'job-position'  => 'Job Position',
-                'team-tags'     => 'Team Tags',
+                'department'    => 'Département',
+                'job-position'  => 'Poste',
+                'team-tags'     => 'Tags d\'équipe',
                 'coach'         => 'Coach',
             ],
         ],
@@ -64,7 +64,7 @@ return [
 
     'infolist' => [
         'entries' => [
-            'name' => 'Name',
+            'name' => 'Nom',
         ],
     ],
 ];

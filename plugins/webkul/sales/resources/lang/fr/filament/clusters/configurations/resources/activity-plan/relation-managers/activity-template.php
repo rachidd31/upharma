@@ -4,32 +4,32 @@ return [
     'form' => [
         'sections' => [
             'activity-details' => [
-                'title' => 'Activity Details',
+                'title' => 'Détails de l\'activité',
 
                 'fields' => [
-                    'activity-type' => 'Activity Type',
-                    'summary'       => 'Summary',
-                    'note'          => 'Note',
+                    'activity-type' => 'Type d\'activité',
+                    'summary'       => 'Résumé',
+                    'note'          => 'Remarque',
                 ],
             ],
 
             'assignment' => [
-                'title' => 'Assignment',
+                'title' => 'Affectation',
 
                 'fields' => [
-                    'assignment' => 'Assignment',
-                    'assignee'   => 'Assignee',
+                    'assignment' => 'Affectation',
+                    'assignee'   => 'Attribué à',
                 ],
             ],
 
             'delay-information' => [
-                'title' => 'Delay Information',
+                'title' => 'Informations sur le délai',
 
                 'fields' => [
-                    'delay-count'            => 'Delay Count',
-                    'delay-unit'             => 'Delay Unit',
-                    'delay-from'             => 'Delay From',
-                    'delay-from-helper-text' => 'Source of delay calculation',
+                    'delay-count'            => 'Nombre de délais',
+                    'delay-unit'             => 'Unité de délai',
+                    'delay-from'             => 'Délai à partir de',
+                    'delay-from-helper-text' => 'Source du calcul du délai',
                 ],
             ],
         ],
@@ -37,55 +37,55 @@ return [
 
     'table' => [
         'columns' => [
-            'activity-type' => 'Activity Type',
-            'summary'       => 'Summary',
-            'assignment'    => 'Assignment',
-            'assigned-to'   => 'Assigned To',
-            'interval'      => 'Interval',
-            'delay-unit'    => 'Delay Unit',
-            'delay-from'    => 'Delay From',
-            'created-by'    => 'Created By',
-            'created-at'    => 'Created At',
-            'updated-at'    => 'Updated At',
+            'activity-type' => 'Type d\'activité',
+            'summary'       => 'Résumé',
+            'assignment'    => 'Affectation',
+            'assigned-to'   => 'Attribué à',
+            'interval'      => 'Intervalle',
+            'delay-unit'    => 'Unité de délai',
+            'delay-from'    => 'Délai à partir de',
+            'created-by'    => 'Créé par',
+            'created-at'    => 'Créé le',
+            'updated-at'    => 'Mis à jour le',
         ],
 
         'groups' => [
-            'activity-type' => 'Activity Type',
-            'assignment'    => 'Assignment',
-            'assigned-to'   => 'Assigned To',
-            'interval'      => 'Interval',
-            'delay-unit'    => 'Delay Unit',
-            'delay-from'    => 'Delay From',
-            'created-by'    => 'Created By',
-            'created-at'    => 'Created At',
-            'updated-at'    => 'Updated At',
+            'activity-type' => 'Type d\'activité',
+            'assignment'    => 'Affectation',
+            'assigned-to'   => 'Attribué à',
+            'interval'      => 'Intervalle',
+            'delay-unit'    => 'Unité de délai',
+            'delay-from'    => 'Délai à partir de',
+            'created-by'    => 'Créé par',
+            'created-at'    => 'Créé le',
+            'updated-at'    => 'Mis à jour le',
         ],
 
         'filters' => [
-            'activity-type'   => 'Activity Type',
-            'activity-status' => 'Activity Status',
-            'has-delay'       => 'Has Delay',
+            'activity-type'   => 'Type d\'activité',
+            'activity-status' => 'Statut de l\'activité',
+            'has-delay'       => 'Avec délai',
         ],
 
         'actions' => [
             'edit' => [
                 'notification' => [
-                    'title' => 'Activity template updated',
-                    'body'  => 'The activity template has been updated successfully.',
+                    'title' => 'Modèle d\'activité mis à jour',
+                    'body'  => 'Le modèle d\'activité a été mis à jour avec succès.',
                 ],
             ],
 
             'create' => [
                 'notification' => [
-                    'title' => 'Activity template created',
-                    'body'  => 'The activity template has been created successfully.',
+                    'title' => 'Modèle d\'activité créé',
+                    'body'  => 'Le modèle d\'activité a été créé avec succès.',
                 ],
             ],
 
             'delete' => [
                 'notification' => [
-                    'title' => 'Activity template deleted',
-                    'body'  => 'The activity template has been deleted successfully.',
+                    'title' => 'Modèle d\'activité supprimé',
+                    'body'  => 'Le modèle d\'activité a été supprimé avec succès.',
                 ],
             ],
         ],
@@ -93,8 +93,8 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Activity templates deleted',
-                    'body'  => 'The activity templates has been deleted successfully.',
+                    'title' => 'Modèles d\'activité supprimés',
+                    'body'  => 'Les modèles d\'activité ont été supprimés avec succès.',
                 ],
             ],
         ],
@@ -103,35 +103,35 @@ return [
     'infolist' => [
         'sections' => [
             'activity-details' => [
-                'title' => 'Activity Details',
+                'title' => 'Détails de l\'activité',
 
                 'entries' => [
-                    'activity-type' => 'Activity Type',
-                    'summary'       => 'Summary',
+                    'activity-type' => 'Type d\'activité',
+                    'summary'       => 'Résumé',
                 ],
             ],
 
             'assignment' => [
-                'title' => 'Assignment',
+                'title' => 'Affectation',
 
                 'entries' => [
-                    'assignment' => 'Assignment',
-                    'assignee'   => 'Assignee',
+                    'assignment' => 'Affectation',
+                    'assignee'   => 'Attribué à',
                 ],
             ],
 
             'delay-information' => [
-                'title' => 'Delay Information',
+                'title' => 'Informations sur le délai',
 
                 'entries' => [
-                    'delay-count'            => 'Delay Count',
-                    'delay-unit'             => 'Delay Unit',
-                    'delay-from'             => 'Delay From',
-                    'delay-from-helper-text' => 'Source of delay calculation',
+                    'delay-count'            => 'Nombre de délais',
+                    'delay-unit'             => 'Unité de délai',
+                    'delay-from'             => 'Délai à partir de',
+                    'delay-from-helper-text' => 'Source du calcul du délai',
                 ],
             ],
         ],
 
-        'note' => 'Note',
+        'note' => 'Remarque',
     ],
 ];

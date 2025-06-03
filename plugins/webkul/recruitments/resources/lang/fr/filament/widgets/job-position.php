@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'active-job-applications' => 'Active Job Applications',
-    'total-applications'      => 'Total Applications',
-    'hired-candidate'         => 'Hired Candidates',
+    'active-job-applications' => 'Candidatures actives',
+    'total-applications'      => 'Total des candidatures',
+    'hired-candidate'         => 'Candidats embauchés',
 ];

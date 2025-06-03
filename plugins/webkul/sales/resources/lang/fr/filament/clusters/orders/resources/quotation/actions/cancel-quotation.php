@@ -1,48 +1,48 @@
 <?php
 
 return [
-    'title' => 'Cancel',
+    'title' => 'Annuler',
     'modal' => [
-        'heading'     => 'Cancel Quotation',
-        'description' => 'Are you sure you want to cancel this Quotation?',
+        'heading'     => 'Annuler le devis',
+        'description' => 'Êtes-vous sûr de vouloir annuler ce devis ?',
     ],
 
     'footer-actions' => [
         'send-and-cancel' => [
-            'title' => 'Send & Cancel',
+            'title' => 'Envoyer & Annuler',
 
             'notification' => [
                 'cancelled' => [
-                    'title' => 'Quotation cancelled',
-                    'body'  => 'Quotation has been cancelled and email has been sent successfully.',
+                    'title' => 'Devis annulé',
+                    'body'  => 'Le devis a été annulé et l’email a été envoyé avec succès.',
                 ],
             ],
         ],
 
         'cancel' => [
-            'title' => 'Cancel',
+            'title' => 'Annuler',
 
             'notification' => [
                 'cancelled' => [
-                    'title' => 'Quotation cancelled',
-                    'body'  => 'Quotation has been cancelled successfully.',
+                    'title' => 'Devis annulé',
+                    'body'  => 'Le devis a été annulé avec succès.',
                 ],
             ],
         ],
 
         'close' => [
-            'title' => 'Close',
+            'title' => 'Fermer',
         ],
     ],
 
     'form' => [
         'fields' => [
-            'partner'             => 'Partner',
-            'subject'             => 'Subject',
-            'subject-placeholder' => 'Subject',
-            'subject-default'     => 'Quotation :name has been cancelled for Sales Order #:id',
+            'partner'             => 'Partenaire',
+            'subject'             => 'Sujet',
+            'subject-placeholder' => 'Sujet',
+            'subject-default'     => 'Le devis :name a été annulé pour la commande de vente #:id',
             'description'         => 'Description',
-            'description-default' => 'Dear <b>:partner_name</b>, <br/><br/>We would like to inform you that your Sales Order <b>:name</b> has been cancelled. As a result, no further charges will apply to this order. If a refund is required, it will be processed at the earliest convenience.<br/><br/>Should you have any questions or require further assistance, please feel free to reach out to us.',
+            'description-default' => 'Cher <b>:partner_name</b>, <br/><br/>Nous souhaitons vous informer que votre commande de vente <b>:name</b> a été annulée. Par conséquent, aucun frais supplémentaire ne sera appliqué à cette commande. Si un remboursement est nécessaire, il sera traité dans les plus brefs délais.<br/><br/>Si vous avez des questions ou avez besoin d’assistance, n’hésitez pas à nous contacter.',
         ],
     ],
 ];

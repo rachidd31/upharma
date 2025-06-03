@@ -4,11 +4,11 @@ return [
     'form' => [
         'sections' => [
             'general' => [
-                'title'  => 'General',
+                'title'  => 'Général',
 
                 'fields' => [
-                    'name'             => 'Name',
-                    'name-placeholder' => 'eg. Lamps',
+                    'name'             => 'Nom',
+                    'name-placeholder' => 'ex. Lampes',
                     'parent'           => 'Parent',
                 ],
             ],
@@ -17,39 +17,38 @@ return [
 
     'table' => [
         'columns' => [
-            'name'        => 'Name',
-            'full-name'   => 'Full Name',
-            'parent-path' => 'Parent Path',
+            'name'        => 'Nom',
+            'full-name'   => 'Nom Complet',
+            'parent-path' => 'Chemin Parent',
             'parent'      => 'Parent',
-            'creator'     => 'Creator',
-            'created-at'  => 'Created At',
-            'created-at'  => 'Created At',
-            'updated-at'  => 'Updated At',
+            'creator'     => 'Créateur',
+            'created-at'  => 'Créé le',
+            'updated-at'  => 'Mis à jour le',
         ],
 
         'groups' => [
             'parent'     => 'Parent',
-            'creator'    => 'Creator',
-            'created-at' => 'Created At',
-            'updated-at' => 'Updated At',
+            'creator'    => 'Créateur',
+            'created-at' => 'Créé le',
+            'updated-at' => 'Mis à jour le',
         ],
 
         'filters' => [
             'parent'  => 'Parent',
-            'creator' => 'Creator',
+            'creator' => 'Créateur',
         ],
 
         'actions' => [
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Category deleted',
-                        'body'  => 'The Category has been deleted successfully.',
+                        'title' => 'Catégorie supprimée',
+                        'body'  => 'La catégorie a été supprimée avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Category could not be deleted',
-                        'body'  => 'The category cannot be deleted because it is currently in use.',
+                        'title' => 'La catégorie n\'a pas pu être supprimée',
+                        'body'  => 'La catégorie ne peut pas être supprimée car elle est actuellement utilisée.',
                     ],
                 ],
             ],
@@ -59,13 +58,13 @@ return [
             'delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Categories deleted',
-                        'body'  => 'The categories has been deleted successfully.',
+                        'title' => 'Catégories supprimées',
+                        'body'  => 'Les catégories ont été supprimées avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Categories could not be deleted',
-                        'body'  => 'The categories cannot be deleted because they are currently in use.',
+                        'title' => 'Les catégories n\'ont pas pu être supprimées',
+                        'body'  => 'Les catégories ne peuvent pas être supprimées car elles sont actuellement utilisées.',
                     ],
                 ],
             ],
@@ -75,23 +74,23 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General Information',
+                'title' => 'Informations Générales',
 
                 'entries' => [
-                    'name'        => 'Name',
-                    'parent'      => 'Parent Category',
-                    'full_name'   => 'Full Category Name',
-                    'parent_path' => 'Category Path',
+                    'name'        => 'Nom',
+                    'parent'      => 'Catégorie Parent',
+                    'full_name'   => 'Nom Complet de la Catégorie',
+                    'parent_path' => 'Chemin de la Catégorie',
                 ],
             ],
 
             'record-information' => [
-                'title' => 'Record Information',
+                'title' => 'Informations d\'Enregistrement',
 
                 'entries' => [
-                    'creator'    => 'Created By',
-                    'created_at' => 'Created At',
-                    'updated_at' => 'Last Updated At',
+                    'creator'    => 'Créé par',
+                    'created_at' => 'Créé le',
+                    'updated_at' => 'Dernière mise à jour le',
                 ],
             ],
         ],

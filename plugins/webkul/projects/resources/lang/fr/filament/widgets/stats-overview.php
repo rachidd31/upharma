@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'total-tasks'          => 'Total Tasks',
-    'total-hours-spent'    => 'Total Hours Spent',
-    'total-time-remaining' => 'Total Time Remaining',
+    'total-tasks'        => 'Total des Tâches',
+    'total-hours-spent'  => 'Nombre Total d\'Heures Passées',
+    'total-time-remaining' => 'Temps Total Restant',
 ];

@@ -2,112 +2,112 @@
 
 return [
     'navigation' => [
-        'title' => 'Purchase Agreements',
-        'group' => 'Purchase',
+        'title' => 'Accords d\'Achat',
+        'group' => 'Achat',
     ],
 
     'form' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'fields' => [
-                    'vendor'                => 'Vendor',
-                    'valid-from'            => 'Valid From',
-                    'valid-to'              => 'Valid Until',
-                    'buyer'                 => 'Buyer',
-                    'reference'             => 'Reference',
-                    'reference-placeholder' => 'eg. PO/123',
-                    'agreement-type'        => 'Agreement Type',
-                    'company'               => 'Company',
-                    'currency'              => 'Currency',
+                    'vendor'                => 'Fournisseur',
+                    'valid-from'            => 'Valide du',
+                    'valid-to'              => 'Valide jusqu\'au',
+                    'buyer'                 => 'Acheteur',
+                    'reference'             => 'Référence',
+                    'reference-placeholder' => 'ex. PO/123',
+                    'agreement-type'        => 'Type d\'Accord',
+                    'company'               => 'Entreprise',
+                    'currency'              => 'Devise',
                 ],
             ],
         ],
 
         'tabs' => [
             'products' => [
-                'title' => 'Products',
+                'title' => 'Produits',
 
                 'fields' => [
-                    'product'    => 'Product',
-                    'quantity'   => 'Quantity',
-                    'ordered'    => 'Ordered',
-                    'uom'        => 'Unit of Measure',
-                    'unit-price' => 'Unit Price',
+                    'product'    => 'Produit',
+                    'quantity'   => 'Quantité',
+                    'ordered'    => 'Commandé',
+                    'uom'        => 'Unité de Mesure',
+                    'unit-price' => 'Prix Unitaire',
                 ],
             ],
 
             'additional' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations Complémentaires',
             ],
 
             'terms' => [
-                'title' => 'Terms and Conditions',
+                'title' => 'Termes et Conditions',
             ],
         ],
     ],
 
     'table' => [
         'columns' => [
-            'agreement'      => 'Agreement',
-            'vendor'         => 'Vendor',
-            'agreement-type' => 'Agreement Type',
-            'buyer'          => 'Buyer',
-            'company'        => 'Company',
-            'valid-from'     => 'Valid From',
-            'valid-to'       => 'Valid Until',
-            'reference'      => 'Reference',
-            'status'         => 'Status',
+            'agreement'      => 'Accord',
+            'vendor'         => 'Fournisseur',
+            'agreement-type' => 'Type d\'Accord',
+            'buyer'          => 'Acheteur',
+            'company'        => 'Entreprise',
+            'valid-from'     => 'Valide du',
+            'valid-to'       => 'Valide jusqu\'au',
+            'reference'      => 'Référence',
+            'status'         => 'Statut',
         ],
 
         'groups' => [
-            'agreement-type' => 'Agreement Type',
-            'vendor'         => 'Vendor',
-            'state'          => 'State',
-            'created-at'     => 'Created At',
-            'updated-at'     => 'Updated At',
+            'agreement-type' => 'Type d\'Accord',
+            'vendor'         => 'Fournisseur',
+            'state'          => 'État',
+            'created-at'     => 'Créé le',
+            'updated-at'     => 'Mis à jour le',
         ],
 
         'filters' => [
-            'agreement'      => 'Agreement',
-            'vendor'         => 'Vendor',
-            'agreement-type' => 'Agreement Type',
-            'buyer'          => 'Buyer',
-            'company'        => 'Company',
-            'valid-from'     => 'Valid From',
-            'valid-to'       => 'Valid Until',
-            'reference'      => 'Reference',
-            'status'         => 'Status',
-            'created-at'     => 'Created At',
-            'updated-at'     => 'Updated At',
+            'agreement'      => 'Accord',
+            'vendor'         => 'Fournisseur',
+            'agreement-type' => 'Type d\'Accord',
+            'buyer'          => 'Acheteur',
+            'company'        => 'Entreprise',
+            'valid-from'     => 'Valide du',
+            'valid-to'       => 'Valide jusqu\'au',
+            'reference'      => 'Référence',
+            'status'         => 'Statut',
+            'created-at'     => 'Créé le',
+            'updated-at'     => 'Mis à jour le',
         ],
 
         'actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Purchase Agreement deleted',
-                    'body'  => 'The purchase agreement has been deleted successfully.',
+                    'title' => 'Accord d\'achat supprimé',
+                    'body'  => 'L\'accord d\'achat a été supprimé avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Purchase Agreement restored',
-                    'body'  => 'The purchase agreement has been restored successfully.',
+                    'title' => 'Accord d\'achat restauré',
+                    'body'  => 'L\'accord d\'achat a été restauré avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Purchase Agreement permanently deleted',
-                        'body'  => 'The purchase agreement has been permanently deleted successfully.',
+                        'title' => 'Accord d\'achat supprimé définitivement',
+                        'body'  => 'L\'accord d\'achat a été supprimé définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Purchase Agreement could not be deleted',
-                        'body'  => 'The The purchase agreement cannot be deleted because it is currently in use.',
+                        'title' => 'Impossible de supprimer l\'accord d\'achat',
+                        'body'  => 'L\'accord d\'achat ne peut pas être supprimé car il est actuellement utilisé.',
                     ],
                 ],
             ],
@@ -116,28 +116,28 @@ return [
         'bulk-actions' => [
             'delete' => [
                 'notification' => [
-                    'title' => 'Purchase Agreements deleted',
-                    'body'  => 'The purchase agreements has been deleted successfully.',
+                    'title' => 'Accords d\'achat supprimés',
+                    'body'  => 'Les accords d\'achat ont été supprimés avec succès.',
                 ],
             ],
 
             'restore' => [
                 'notification' => [
-                    'title' => 'Purchase Agreements restored',
-                    'body'  => 'The purchase agreements has been restored successfully.',
+                    'title' => 'Accords d\'achat restaurés',
+                    'body'  => 'Les accords d\'achat ont été restaurés avec succès.',
                 ],
             ],
 
             'force-delete' => [
                 'notification' => [
                     'success' => [
-                        'title' => 'Purchase Agreements permanently deleted',
-                        'body'  => 'The purchase agreements has been permanently deleted successfully.',
+                        'title' => 'Accords d\'achat supprimés définitivement',
+                        'body'  => 'Les accords d\'achat ont été supprimés définitivement avec succès.',
                     ],
 
                     'error' => [
-                        'title' => 'Purchase Agreements could not be deleted',
-                        'body'  => 'The purchase agreements cannot be deleted because they are currently in use.',
+                        'title' => 'Impossible de supprimer les accords d\'achat',
+                        'body'  => 'Les accords d\'achat ne peuvent pas être supprimés car ils sont actuellement utilisés.',
                     ],
                 ],
             ],
@@ -147,51 +147,51 @@ return [
     'infolist' => [
         'sections' => [
             'general' => [
-                'title' => 'General',
+                'title' => 'Général',
 
                 'entries' => [
-                    'vendor'                => 'Vendor',
-                    'valid-from'            => 'Valid From',
-                    'valid-to'              => 'Valid Until',
-                    'buyer'                 => 'Buyer',
-                    'reference'             => 'Reference',
-                    'reference-placeholder' => 'eg. PO/123',
-                    'agreement-type'        => 'Agreement Type',
-                    'company'               => 'Company',
-                    'currency'              => 'Currency',
+                    'vendor'                => 'Fournisseur',
+                    'valid-from'            => 'Valide du',
+                    'valid-to'              => 'Valide jusqu\'au',
+                    'buyer'                 => 'Acheteur',
+                    'reference'             => 'Référence',
+                    'reference-placeholder' => 'ex. PO/123',
+                    'agreement-type'        => 'Type d\'Accord',
+                    'company'               => 'Entreprise',
+                    'currency'              => 'Devise',
                 ],
             ],
 
             'metadata' => [
-                'title' => 'Metadata',
+                'title' => 'Métadonnées',
 
                 'entries' => [
-                    'created-at' => 'Created At',
-                    'created-by' => 'Created By',
-                    'updated-at' => 'Updated At',
+                    'created-at' => 'Créé le',
+                    'created-by' => 'Créé par',
+                    'updated-at' => 'Mis à jour le',
                 ],
             ],
         ],
 
         'tabs' => [
             'products' => [
-                'title' => 'Products',
+                'title' => 'Produits',
 
                 'entries' => [
-                    'product'    => 'Product',
-                    'quantity'   => 'Quantity',
-                    'ordered'    => 'Ordered',
-                    'uom'        => 'Unit of Measure',
-                    'unit-price' => 'Unit Price',
+                    'product'    => 'Produit',
+                    'quantity'   => 'Quantité',
+                    'ordered'    => 'Commandé',
+                    'uom'        => 'Unité de Mesure',
+                    'unit-price' => 'Prix Unitaire',
                 ],
             ],
 
             'additional' => [
-                'title' => 'Additional Information',
+                'title' => 'Informations Complémentaires',
             ],
 
             'terms' => [
-                'title' => 'Terms and Conditions',
+                'title' => 'Termes et Conditions',
             ],
         ],
     ],

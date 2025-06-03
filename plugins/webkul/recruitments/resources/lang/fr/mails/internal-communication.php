@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'breadcrumb'             => 'Internal Communication: You have been assigned to the Applicant :applicant.',
-    'greeting'               => 'Dear :interviewer,',
-    'assignment_message'     => 'You have been assigned to the Applicant',
-    'internal_communication' => 'Internal communication:',
-    'internal_note'          => 'Replying will post an internal note. Followers won’t receive any email notification.',
-    'view_applicant'         => 'View Applicant',
+    'breadcrumb'             => 'Communication Interne : Vous avez été assigné au candidat :applicant.',
+    'greeting'               => 'Cher :interviewer,',
+    'assignment_message'     => 'Vous avez été assigné au candidat',
+    'internal_communication' => 'Communication interne:',
+    'internal_note'          => 'Répondre ajoutera une note interne. Les abonnés ne recevront aucune notification par e-mail.',
+    'view_applicant'         => 'Voir le candidat',
 ];

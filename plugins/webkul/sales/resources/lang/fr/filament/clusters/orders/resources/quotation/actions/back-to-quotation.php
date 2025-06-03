@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'title' => 'Set as Quotation',
+    'title' => 'Définir comme devis',
 
     'notification' => [
         'back-to-quotation' => [
-            'title' => 'Sale order set as Quotation',
-            'body'  => 'Sale order has been set as Quotation successfully.',
+            'title' => 'Commande de vente définie comme devis',
+            'body'  => 'La commande de vente a été définie comme devis avec succès.',
         ],
     ],
 ];

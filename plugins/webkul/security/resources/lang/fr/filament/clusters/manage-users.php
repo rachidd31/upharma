@@ -1,33 +1,33 @@
 <?php
 
 return [
-    'breadcrumb' => 'Manage Users',
-    'title'      => 'Manage Users',
-    'group'      => 'General',
+    'breadcrumb' => 'Gérer les utilisateurs',
+    'title'      => 'Gérer les utilisateurs',
+    'group'      => 'Général',
 
     'navigation' => [
-        'label' => 'Manage Users',
+        'label' => 'Gérer les utilisateurs',
     ],
 
     'form' => [
         'enable-user-invitation' => [
-            'label'       => 'Enable User Invitation',
-            'helper-text' => 'Allow users to invite other users to the application.',
+            'label'       => 'Activer l’invitation des utilisateurs',
+            'helper-text' => 'Permet aux utilisateurs d’inviter d’autres utilisateurs à l’application.',
         ],
 
         'enable-reset-password' => [
-            'label'       => 'Enable Reset Password',
-            'helper-text' => 'Allow users to reset their password.',
+            'label'       => 'Activer la réinitialisation du mot de passe',
+            'helper-text' => 'Permet aux utilisateurs de réinitialiser leur mot de passe.',
         ],
 
         'default-role' => [
-            'label'       => 'Default Role',
-            'helper-text' => 'The default role assigned to new users.',
+            'label'       => 'Rôle par défaut',
+            'helper-text' => 'Le rôle attribué par défaut aux nouveaux utilisateurs.',
         ],
 
         'default-company' => [
-            'label'       => 'Default Company',
-            'helper-text' => 'The default company assigned to new users.',
+            'label'       => 'Entreprise par défaut',
+            'helper-text' => 'L’entreprise attribuée par défaut aux nouveaux utilisateurs.',
         ],
     ],
 ];

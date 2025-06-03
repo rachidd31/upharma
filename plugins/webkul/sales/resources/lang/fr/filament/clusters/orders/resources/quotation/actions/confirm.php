@@ -1,17 +1,17 @@
 <?php
 
 return [
-    'title' => 'Confirm',
+    'title' => 'Confirmer',
 
     'notification' => [
         'confirmed' => [
-            'title' => 'Quotation confirmed',
-            'body'  => 'Quotation has been confirmed and converted to sale successfully.',
+            'title' => 'Devis confirmé',
+            'body'  => 'Le devis a été confirmé et converti en vente avec succès.',
         ],
 
         'error' => [
-            'title' => 'Error',
-            'body'  => 'An error occurred while confirming the quotation.',
+            'title' => 'Erreur',
+            'body'  => 'Une erreur est survenue lors de la confirmation du devis.',
         ],
     ],
 ];

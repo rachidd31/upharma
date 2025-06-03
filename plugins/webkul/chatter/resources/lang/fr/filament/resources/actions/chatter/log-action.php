@@ -2,29 +2,29 @@
 
 return [
     'setup' => [
-        'title'        => 'Log Note',
-        'submit-title' => 'Log',
+        'title'        => 'Journal de Notes',
+        'submit-title' => 'Enregistrer',
 
         'form' => [
             'fields' => [
-                'hide-subject'            => 'Hide Subject',
-                'add-subject'             => 'Add Subject',
-                'subject'                 => 'Subject',
-                'write-message-here'      => 'Write your message here',
-                'attachments-helper-text' => 'Max file size: 10MB. Allowed types: Images, PDF, Word, Excel, Text',
+                'hide-subject'          => 'Masquer le Sujet',
+                'add-subject'           => 'Ajouter un Sujet',
+                'subject'               => 'Sujet',
+                'write-message-here'    => 'Écrivez votre message ici',
+                'attachments-helper-text' => 'Taille maximale du fichier : 10 Mo. Types autorisés : Images, PDF, Word, Excel, Texte',
             ],
         ],
 
         'actions' => [
             'notification' => [
                 'success' => [
-                    'title' => 'Log Note added',
-                    'body'  => 'Your log note added successfully.',
+                    'title' => 'Note de journal ajoutée',
+                    'body'  => 'Votre note de journal a été ajoutée avec succès.',
                 ],
 
                 'error' => [
-                    'title' => 'Log add error',
-                    'body'  => 'Failed to add your log note',
+                    'title' => 'Erreur d\'ajout de journal',
+                    'body'  => 'Échec de l\'ajout de votre note de journal',
                 ],
             ],
         ],

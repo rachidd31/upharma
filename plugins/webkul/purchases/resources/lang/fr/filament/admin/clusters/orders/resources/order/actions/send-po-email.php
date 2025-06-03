@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'label' => 'Send PO By Email',
+    'label' => 'Envoyer le Bon de Commande par E-mail',
 
     'form' => [
         'fields' => [
-            'to'      => 'To',
-            'subject' => 'Subject',
+            'to'      => 'À',
+            'subject' => 'Objet',
             'message' => 'Message',
         ],
     ],
@@ -14,8 +14,8 @@ return [
     'action' => [
         'notification' => [
             'success' => [
-                'title' => 'Email sent',
-                'body'  => 'The email has been sent successfully.',
+                'title' => 'E-mail envoyé',
+                'body'  => 'L\'e-mail a été envoyé avec succès.',
             ],
         ],
     ],

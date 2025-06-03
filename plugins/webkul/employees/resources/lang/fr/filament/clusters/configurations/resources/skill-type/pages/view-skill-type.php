@@ -4,8 +4,8 @@ return [
     'header-actions' => [
         'delete' => [
             'notification' => [
-                'title' => 'Skill type deleted',
-                'body'  => 'The skill type has been deleted successfully.',
+                'title' => 'Type de compétence supprimé',
+                'body'  => 'Le type de compétence a été supprimé avec succès.',
             ],
         ],
     ],
